@@ -10,6 +10,8 @@ import yfinance as yf
 import requests
 from bs4 import BeautifulSoup
 
+# ================= CONFIG =================
+
 FINVIZ_BASE_URL = "https://finviz.com/screener.ashx?v=111"
 
 LOOKBACK_DAYS = 180
@@ -23,6 +25,10 @@ OUTPUT_CSV = OUTPUTS_DIR / "ma_trend_signals.csv"
 HEADERS = {
     "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0 Safari/537.36"
 }
+
+FALLBACK_TICKERS = ["AAPL", "MSFT", "NVDA", "META", "TSLA"]
+
+# ================= FINVIZ SCRAPER =================
 
 def _set_r_param(url: str, r_value: int) -> str:
     parsed = urlparse(url)
@@ -44,8 +50,7 @@ def get_finviz_tickers(base_url: str, max_pages: int = 50) -> List[str]:
         try:
             resp = requests.get(page_url, headers=HEADERS, timeout=20)
             resp.raise_for_status()
-        except Exception as e:
-            print(f"[WARN] Finviz error at r={start}: {e}")
+        except Exception:
             break
 
         soup = BeautifulSoup(resp.text, "lxml")
@@ -65,12 +70,12 @@ def get_finviz_tickers(base_url: str, max_pages: int = 50) -> List[str]:
             break
 
         tickers.extend(page_syms)
-        print(f"[INFO] page r={start}: {len(page_syms)} tickers")
         start += 20
 
     tickers.sort()
-    print(f"[OK] {len(tickers)} total tickers from Finviz")
     return tickers
+
+# ================= DATA FETCH =================
 
 def fetch_history(ticker: str) -> Optional[pd.DataFrame]:
     end = datetime.utcnow().date()
@@ -83,14 +88,12 @@ def fetch_history(ticker: str) -> Optional[pd.DataFrame]:
             end=end + timedelta(days=1),
             interval="1d",
             auto_adjust=True,
-            progress=False,
+            progress=False
         )
-    except Exception as e:
-        print(f"[ERR] {ticker} fetch error: {e}")
+    except Exception:
         return None
 
     if df.empty:
-        print(f"[INFO] {ticker}: no data")
         return None
 
     df = df.rename(columns=str.capitalize)
@@ -99,8 +102,11 @@ def fetch_history(ticker: str) -> Optional[pd.DataFrame]:
 
     return df
 
-def add_indicators(df):
+# ================= INDICATORS =================
+
+def add_indicators(df: pd.DataFrame) -> pd.DataFrame:
     close = df["Close"]
+
     df["ema21"] = close.ewm(span=21, adjust=False).mean()
     df["sma50"] = close.rolling(50).mean()
     df["sma100"] = close.rolling(100).mean()
@@ -113,17 +119,20 @@ def add_indicators(df):
 
     return df
 
-def classify_long(df):
-    if len(df) < MIN_BARS:
-        return None
+# ================= STRATEGY LOGIC =================
+
+def classify_long(df: pd.DataFrame) -> Dict:
     last = df.iloc[-1]
 
-    trend_ok = (
-        pd.notna(last[["ema21","sma50","sma100"]]).all() and
-        last["Close"] > last["sma50"] and
-        last["ema21"] > last["sma50"] and
-        last["sma50"] > last["sma100"]
-    )
+    if len(df) >= MIN_BARS:
+        trend_ok = (
+            pd.notna(last[["ema21", "sma50", "sma100"]]).all()
+            and last["Close"] > last["sma50"]
+            and last["ema21"] > last["sma50"]
+            and last["sma50"] > last["sma100"]
+        )
+    else:
+        trend_ok = False
 
     signal = "NONE"
 
@@ -134,17 +143,17 @@ def classify_long(df):
             pulled_back = (df["Close"] < df["ema21"]).any()
 
         reclaimed = last["Close"] > last["ema21"]
-        not_ext = last["Close"] <= last["ema21"] * (1 + MAX_EXTENSION)
+        not_extended = last["Close"] <= last["ema21"] * (1 + MAX_EXTENSION)
 
         bull_now = last["mom"] > last["mom_signal"]
         if len(df) >= 4:
-            prev_mom = df["mom"].iloc[-4:-1]
-            prev_sig = df["mom_signal"].iloc[-4:-1]
-            crossed = (prev_mom <= prev_sig).any() and bull_now
+            prev_m = df["mom"].iloc[-4:-1]
+            prev_s = df["mom_signal"].iloc[-4:-1]
+            crossed = (prev_m <= prev_s).any() and bull_now
         else:
             crossed = bull_now
 
-        if pulled_back and reclaimed and crossed and not_ext:
+        if pulled_back and reclaimed and crossed and not_extended:
             signal = "ENTRY"
         elif pulled_back and reclaimed:
             signal = "WATCH"
@@ -153,7 +162,7 @@ def classify_long(df):
 
     return {
         "direction": "LONG",
-        "trend_ok": bool(trend_ok),
+        "trend_ok": trend_ok,
         "signal": signal,
         "as_of": df.index[-1].strftime("%Y-%m-%d"),
         "close": float(last["Close"]),
@@ -163,17 +172,18 @@ def classify_long(df):
         "sma200": float(last["sma200"]) if not pd.isna(last["sma200"]) else None,
     }
 
-def classify_short(df):
-    if len(df) < MIN_BARS:
-        return None
+def classify_short(df: pd.DataFrame) -> Dict:
     last = df.iloc[-1]
 
-    trend_ok = (
-        pd.notna(last[["ema21","sma50","sma100"]]).all() and
-        last["Close"] < last["sma50"] and
-        last["ema21"] < last["sma50"] and
-        last["sma50"] < last["sma100"]
-    )
+    if len(df) >= MIN_BARS:
+        trend_ok = (
+            pd.notna(last[["ema21", "sma50", "sma100"]]).all()
+            and last["Close"] < last["sma50"]
+            and last["ema21"] < last["sma50"]
+            and last["sma50"] < last["sma100"]
+        )
+    else:
+        trend_ok = False
 
     signal = "NONE"
 
@@ -184,17 +194,17 @@ def classify_short(df):
             rallied = (df["Close"] > df["ema21"]).any()
 
         rejected = last["Close"] < last["ema21"]
-        not_ext = last["Close"] >= last["ema21"] * (1 - MAX_EXTENSION)
+        not_extended = last["Close"] >= last["ema21"] * (1 - MAX_EXTENSION)
 
         bear_now = last["mom"] < last["mom_signal"]
         if len(df) >= 4:
-            prev_mom = df["mom"].iloc[-4:-1]
-            prev_sig = df["mom_signal"].iloc[-4:-1]
-            crossed = (prev_mom >= prev_sig).any() and bear_now
+            prev_m = df["mom"].iloc[-4:-1]
+            prev_s = df["mom_signal"].iloc[-4:-1]
+            crossed = (prev_m >= prev_s).any() and bear_now
         else:
             crossed = bear_now
 
-        if rallied and rejected and crossed and not_ext:
+        if rallied and rejected and crossed and not_extended:
             signal = "ENTRY"
         elif rallied and rejected:
             signal = "WATCH"
@@ -203,21 +213,52 @@ def classify_short(df):
 
     return {
         "direction": "SHORT",
-        "trend_ok": bool(trend_ok),
+        "trend_ok": trend_ok,
         "signal": signal,
         "as_of": df.index[-1].strftime("%Y-%m-%d"),
         "close": float(last["Close"]),
         "ema21": float(last["ema21"]),
-        "sma50": float(last["sma50"]),
-        "sma100": float(last["sma100"]),
+        "sma50": float[last["sma50"]) if not pd.isna(last["sma50"]) else None,
+        "sma100": float(last["sma100"]) if not pd.isna(last["sma100"]) else None,
         "sma200": float(last["sma200"]) if not pd.isna(last["sma200"]) else None,
     }
+
+def no_data_rows(t: str) -> List[Dict]:
+    return [
+        {
+            "ticker": t,
+            "direction": "LONG",
+            "signal": "NO_DATA",
+            "as_of": "",
+            "close": None,
+            "ema21": None,
+            "sma50": None,
+            "sma100": None,
+            "sma200": None,
+            "trend_ok": False,
+        },
+        {
+            "ticker": t,
+            "direction": "SHORT",
+            "signal": "NO_DATA",
+            "as_of": "",
+            "close": None,
+            "ema21": None,
+            "sma50": None,
+            "sma100": None,
+            "sma200": None,
+            "trend_ok": False,
+        },
+    ]
+
+# ================= MAIN =================
 
 def main():
     OUTPUTS_DIR.mkdir(parents=True, exist_ok=True)
 
     tickers = get_finviz_tickers(FINVIZ_BASE_URL)
-    print(f"[INFO] Tickers: {len(tickers)}")
+    if not tickers:
+        tickers = FALLBACK_TICKERS.copy()
 
     rows = []
     hist_ok = 0
@@ -225,38 +266,35 @@ def main():
     for t in tickers:
         df = fetch_history(t)
         if df is None:
+            rows.extend(no_data_rows(t))
             continue
-        hist_ok += 1
 
+        hist_ok += 1
         df = add_indicators(df)
 
         long_row = classify_long(df)
         short_row = classify_short(df)
 
-        for row in (long_row, short_row):
-            if row is None:
-                continue
-            entry = row.copy()
-            entry["ticker"] = t
-            rows.append(entry)
+        long_row["ticker"] = t
+        short_row["ticker"] = t
 
-    print(f"[INFO] History OK for {hist_ok} tickers. Rows: {len(rows)}")
+        rows.append(long_row)
+        rows.append(short_row)
 
     if rows:
         df_out = pd.DataFrame(rows)
-        signal_rank = {"ENTRY": 0, "WATCH": 1, "NONE": 2}
-        dir_rank = {"LONG": 0, "SHORT": 1}
-        df_out["sr"] = df_out["signal"].map(signal_rank)
-        df_out["dr"] = df_out["direction"].map(dir_rank)
-        df_out = df_out.sort_values(["sr", "dr", "ticker"]).drop(columns=["sr","dr"])
+        rank_signal = {"ENTRY":0, "WATCH":1, "NONE":2, "NO_DATA":3}
+        rank_dir = {"LONG":0, "SHORT":1}
+        df_out["sr"] = df_out["signal"].map(rank_signal).fillna(9)
+        df_out["dr"] = df_out["direction"].map(rank_dir).fillna(9)
+        df_out = df_out.sort_values(["sr","dr","ticker"]).drop(columns=["sr","dr"])
     else:
         df_out = pd.DataFrame(columns=[
-            "ticker","direction","signal","as_of",
-            "close","ema21","sma50","sma100","sma200","trend_ok"
+            "ticker","direction","signal","as_of","close",
+            "ema21","sma50","sma100","sma200","trend_ok"
         ])
 
     df_out.to_csv(OUTPUT_CSV, index=False)
-    print(f"[OK] Wrote {len(df_out)} rows to {OUTPUT_CSV}")
 
 if __name__ == "__main__":
     main()
