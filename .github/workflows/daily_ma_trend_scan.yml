@@ -3,7 +3,7 @@ name: Daily MA Trend Scan
 on:
   schedule:
     # Runs every weekday at 13:00 UTC (8 AM Eastern standard time)
-    - cron: "0 13 * * 1-5"
+    - cron: "30 21 * * 1-5"
   # Allows manual runs
   workflow_dispatch: {}
 
