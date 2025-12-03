@@ -12,20 +12,27 @@ from bs4 import BeautifulSoup
 
 # ================= CONFIG =================
 
+# Put your actual Finviz screener URL here (with v=111 view)
 FINVIZ_BASE_URL = "https://finviz.com/screener.ashx?v=111"
 
-LOOKBACK_DAYS = 180
-MIN_BARS = 120
-MAX_EXTENSION = 0.05
+LOOKBACK_DAYS = 180       # ~6 months
+MIN_BARS = 120            # enough history for 100 SMA
+MAX_EXTENSION = 0.05      # 5% from ema21
 
+# Script lives in strategies/ma_trend/, output in strategies/ma_trend/output/
 REPO_ROOT = Path(__file__).resolve().parent
 OUTPUTS_DIR = REPO_ROOT / "output"
 OUTPUT_CSV = OUTPUTS_DIR / "ma_trend_signals.csv"
 
 HEADERS = {
-    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0 Safari/537.36"
+    "User-Agent": (
+        "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
+        "AppleWebKit/537.36 (KHTML, like Gecko) "
+        "Chrome/120.0 Safari/537.36"
+    )
 }
 
+# Fallback universe if Finviz returns nothing
 FALLBACK_TICKERS = ["AAPL", "MSFT", "NVDA", "META", "TSLA"]
 
 # ================= FINVIZ SCRAPER =================
@@ -38,8 +45,8 @@ def _set_r_param(url: str, r_value: int) -> str:
     return urlunparse(parsed._replace(query=new_query))
 
 def get_finviz_tickers(base_url: str, max_pages: int = 50) -> List[str]:
-    tickers = []
-    seen = set()
+    tickers: List[str] = []
+    seen: set[str] = set()
     start = 1
 
     while True:
@@ -56,7 +63,7 @@ def get_finviz_tickers(base_url: str, max_pages: int = 50) -> List[str]:
         soup = BeautifulSoup(resp.text, "lxml")
         anchors = soup.select("a.screener-link-primary")
 
-        page_syms = []
+        page_syms: List[str] = []
         for a in anchors:
             sym = (a.text or "").strip().upper()
             if not sym or " " in sym:
@@ -88,7 +95,7 @@ def fetch_history(ticker: str) -> Optional[pd.DataFrame]:
             end=end + timedelta(days=1),
             interval="1d",
             auto_adjust=True,
-            progress=False
+            progress=False,
         )
     except Exception:
         return None
@@ -120,6 +127,10 @@ def add_indicators(df: pd.DataFrame) -> pd.DataFrame:
     return df
 
 # ================= STRATEGY LOGIC =================
+# Loosened rules:
+#   LONG trend:  ema21 > sma50 > sma100, price > sma50
+#   SHORT trend: ema21 < sma50 < sma100, price < sma50
+#   Pullback/retest within last 3 bars, momentum cross recent, max 5% from ema21.
 
 def classify_long(df: pd.DataFrame) -> Dict:
     last = df.iloc[-1]
@@ -162,7 +173,7 @@ def classify_long(df: pd.DataFrame) -> Dict:
 
     return {
         "direction": "LONG",
-        "trend_ok": trend_ok,
+        "trend_ok": bool(trend_ok),
         "signal": signal,
         "as_of": df.index[-1].strftime("%Y-%m-%d"),
         "close": float(last["Close"]),
@@ -213,54 +224,44 @@ def classify_short(df: pd.DataFrame) -> Dict:
 
     return {
         "direction": "SHORT",
-        "trend_ok": trend_ok,
+        "trend_ok": bool(trend_ok),
         "signal": signal,
         "as_of": df.index[-1].strftime("%Y-%m-%d"),
         "close": float(last["Close"]),
         "ema21": float(last["ema21"]),
-        "sma50": float[last["sma50"]) if not pd.isna(last["sma50"]) else None,
-        "sma100": float(last["sma100"]) if not pd.isna(last["sma100"]) else None,
+        "sma50": float(last["sma50"]),
+        "sma100": float(last["sma100"]),
         "sma200": float(last["sma200"]) if not pd.isna(last["sma200"]) else None,
     }
 
-def no_data_rows(t: str) -> List[Dict]:
-    return [
-        {
-            "ticker": t,
-            "direction": "LONG",
-            "signal": "NO_DATA",
-            "as_of": "",
-            "close": None,
-            "ema21": None,
-            "sma50": None,
-            "sma100": None,
-            "sma200": None,
-            "trend_ok": False,
-        },
-        {
-            "ticker": t,
-            "direction": "SHORT",
-            "signal": "NO_DATA",
-            "as_of": "",
-            "close": None,
-            "ema21": None,
-            "sma50": None,
-            "sma100": None,
-            "sma200": None,
-            "trend_ok": False,
-        },
-    ]
+def no_data_rows(ticker: str) -> List[Dict]:
+    base = {
+        "ticker": ticker,
+        "signal": "NO_DATA",
+        "as_of": "",
+        "close": None,
+        "ema21": None,
+        "sma50": None,
+        "sma100": None,
+        "sma200": None,
+        "trend_ok": False,
+    }
+    long_row = base.copy()
+    long_row["direction"] = "LONG"
+    short_row = base.copy()
+    short_row["direction"] = "SHORT"
+    return [long_row, short_row]
 
 # ================= MAIN =================
 
-def main():
+def main() -> None:
     OUTPUTS_DIR.mkdir(parents=True, exist_ok=True)
 
     tickers = get_finviz_tickers(FINVIZ_BASE_URL)
     if not tickers:
         tickers = FALLBACK_TICKERS.copy()
 
-    rows = []
+    rows: List[Dict] = []
     hist_ok = 0
 
     for t in tickers:
@@ -283,16 +284,26 @@ def main():
 
     if rows:
         df_out = pd.DataFrame(rows)
-        rank_signal = {"ENTRY":0, "WATCH":1, "NONE":2, "NO_DATA":3}
-        rank_dir = {"LONG":0, "SHORT":1}
-        df_out["sr"] = df_out["signal"].map(rank_signal).fillna(9)
-        df_out["dr"] = df_out["direction"].map(rank_dir).fillna(9)
-        df_out = df_out.sort_values(["sr","dr","ticker"]).drop(columns=["sr","dr"])
+        signal_rank = {"ENTRY": 0, "WATCH": 1, "NONE": 2, "NO_DATA": 3}
+        dir_rank = {"LONG": 0, "SHORT": 1}
+        df_out["sr"] = df_out["signal"].map(signal_rank).fillna(9)
+        df_out["dr"] = df_out["direction"].map(dir_rank).fillna(9)
+        df_out = df_out.sort_values(["sr", "dr", "ticker"]).drop(columns=["sr", "dr"])
     else:
-        df_out = pd.DataFrame(columns=[
-            "ticker","direction","signal","as_of","close",
-            "ema21","sma50","sma100","sma200","trend_ok"
-        ])
+        df_out = pd.DataFrame(
+            columns=[
+                "ticker",
+                "direction",
+                "signal",
+                "as_of",
+                "close",
+                "ema21",
+                "sma50",
+                "sma100",
+                "sma200",
+                "trend_ok",
+            ]
+        )
 
     df_out.to_csv(OUTPUT_CSV, index=False)
 
