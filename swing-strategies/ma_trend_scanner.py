@@ -1,35 +1,48 @@
 """
-ma_trend_scanner.py
+ma_trend_finviz_scanner.py
 
-Simple, self-contained scanner for your moving-average trend swing strategy.
-
-- Reads tickers from: universe.txt   (one symbol per line)
+- Scrapes ALL tickers from a Finviz screener (across pages)
 - Downloads ~6 months of daily data via yfinance
 - Computes:
     * 21 EMA
     * 50 / 100 / 200 SMA
     * MACD-style momentum proxy (fast EMA - slow EMA + signal)
-- Applies your rules:
+- Applies MA trend rules for BOTH directions:
 
-  Long-only ENTRY conditions:
+  LONG ENTRY:
     1) Trend:
          ema21 > sma50 > sma100 > sma200
          close > sma50
     2) Pullback and reclaim:
          yesterday close < ema21
-         today close > ema21
+         today    close > ema21
     3) Momentum cross up:
          today mom > mom_signal
          yesterday mom <= mom_signal
     4) Not extended:
          close <= ema21 * 1.03
 
+  SHORT ENTRY (mirror):
+    1) Trend:
+         ema21 < sma50 < sma100 < sma200
+         close < sma50
+    2) Rally and reject:
+         yesterday close > ema21
+         today    close < ema21
+    3) Momentum cross down:
+         today mom < mom_signal
+         yesterday mom >= mom_signal
+    4) Not extended:
+         close >= ema21 * (1 - 0.03)
+
   Signals:
     ENTRY  - valid swing entry candidate
-    WATCH  - trend + pullback present, but momentum not yet crossed up
-    NONE   - ignore for this strategy
+    WATCH  - pullback/rally present, trend ok, momentum not yet crossed
+    NONE   - not interesting for that direction (filtered out in output)
 
-- Writes results to: outputs/ma_trend_signals.csv
+- Writes: outputs/ma_trend_signals.csv
+  Columns:
+    ticker,direction,signal,as_of,close,ema21,sma50,sma100,sma200,trend_ok
 """
 
 from __future__ import annotations
@@ -37,48 +50,103 @@ from __future__ import annotations
 from datetime import datetime, timedelta
 from pathlib import Path
 from typing import List, Dict, Optional
+from urllib.parse import urlparse, parse_qs, urlencode, urlunparse
 
 import pandas as pd
 import yfinance as yf
+import requests
+from bs4 import BeautifulSoup
 
 
-# ----------------- basic settings -----------------
+# ------------- CONFIG -------------
+
+# PUT YOUR FINVIZ SCREENER URL HERE (v=111 table view works best).
+# Example placeholder; REPLACE THIS with your actual saved screener URL:
+FINVIZ_BASE_URL = (
+    "https://finviz.com/screener.ashx?v=111&f=exch_nasd,sh_avgvol_o500,sh_price_o10"
+)
 
 LOOKBACK_DAYS = 180       # ~6 months
-MIN_BARS = 200            # ensure enough data for 200 SMA
-MAX_EXTENSION = 0.03      # 3% above ema21 allowed
+MIN_BARS = 200            # need enough history for 200 SMA
+MAX_EXTENSION = 0.03      # 3% extension allowed from ema21
 
-# Paths are relative to this file's directory
 REPO_ROOT = Path(__file__).resolve().parent
-UNIVERSE_FILE = REPO_ROOT / "universe.txt"
 OUTPUTS_DIR = REPO_ROOT / "outputs"
 OUTPUT_CSV = OUTPUTS_DIR / "ma_trend_signals.csv"
 
+HEADERS = {
+    "User-Agent": (
+        "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
+        "AppleWebKit/537.36 (KHTML, like Gecko) "
+        "Chrome/120.0 Safari/537.36"
+    )
+}
 
-# ----------------- universe loading -----------------
 
-def load_universe(path: Path = UNIVERSE_FILE) -> List[str]:
+# ------------- FINVIZ SCRAPER -------------
+
+def _set_r_param(url: str, r_value: int) -> str:
     """
-    Read tickers from a text file (one per line).
-    Empty lines and lines starting with '#' are ignored.
+    Ensure the Finviz URL has r=<r_value> param (for pagination).
     """
-    if not path.exists():
-        print(f"[WARN] Universe file not found: {path}")
-        return []
+    parsed = urlparse(url)
+    qs = parse_qs(parsed.query)
+    qs["r"] = [str(r_value)]
+    new_query = urlencode(qs, doseq=True)
+    return urlunparse(parsed._replace(query=new_query))
 
+
+def get_finviz_tickers(base_url: str, max_pages: int = 50) -> List[str]:
+    """
+    Scrape ALL tickers from a Finviz screener across pages.
+    Finviz shows 20 results per page; r=1,21,41,...
+
+    Returns a sorted unique list of symbols.
+    """
     tickers: List[str] = []
-    for line in path.read_text().splitlines():
-        line = line.strip()
-        if not line or line.startswith("#"):
-            continue
-        tickers.append(line.upper())
+    seen: set[str] = set()
 
-    # remove duplicates and invalids
-    tickers = [t for t in tickers if t and " " not in t]
-    return sorted(set(tickers))
+    start = 1
+    while True:
+        if len(tickers) >= max_pages * 20:
+            break  # safety cap
+
+        page_url = _set_r_param(base_url, start)
+        try:
+            resp = requests.get(page_url, headers=HEADERS, timeout=20)
+            resp.raise_for_status()
+        except Exception as e:
+            print(f"[WARN] Finviz HTTP error at r={start}: {e}")
+            break
+
+        soup = BeautifulSoup(resp.text, "lxml")
+        # Tickers are usually <a class="screener-link-primary">SYMBOL</a>
+        anchors = soup.select("a.screener-link-primary")
+
+        page_symbols: List[str] = []
+        for a in anchors:
+            sym = (a.text or "").strip().upper()
+            if not sym or " " in sym:
+                continue
+            if sym in seen:
+                continue
+            seen.add(sym)
+            page_symbols.append(sym)
+
+        if not page_symbols:
+            break  # no more symbols on this page
+
+        tickers.extend(page_symbols)
+        print(f"[INFO] Finviz page r={start}: {len(page_symbols)} symbols")
+
+        start += 20  # next page
+
+    tickers.sort()
+    print(f"[OK] Collected {len(tickers)} tickers from Finviz screener")
+    return tickers
 
 
-# ----------------- data fetching -----------------
+# ------------- DATA FETCH -------------
 
 def fetch_history(ticker: str) -> Optional[pd.DataFrame]:
     """
@@ -104,15 +172,15 @@ def fetch_history(ticker: str) -> Optional[pd.DataFrame]:
         print(f"[INFO] {ticker}: no data returned")
         return None
 
-    df = df.rename(columns=str.capitalize)  # make sure 'Close' exists
+    df = df.rename(columns=str.capitalize)  # ensure 'Close'
     if "Close" not in df.columns:
-        print(f"[WARN] {ticker}: no 'Close' column after normalization")
+        print(f"[WARN] {ticker}: missing Close column after normalize")
         return None
 
     return df
 
 
-# ----------------- indicators -----------------
+# ------------- INDICATORS -------------
 
 def add_indicators(df: pd.DataFrame) -> pd.DataFrame:
     """
@@ -125,7 +193,6 @@ def add_indicators(df: pd.DataFrame) -> pd.DataFrame:
     df["sma100"] = close.rolling(100).mean()
     df["sma200"] = close.rolling(200).mean()
 
-    # MACD-style momentum proxy for your oscillator
     fast = close.ewm(span=10, adjust=False).mean()
     slow = close.ewm(span=21, adjust=False).mean()
     df["mom"] = fast - slow
@@ -134,11 +201,12 @@ def add_indicators(df: pd.DataFrame) -> pd.DataFrame:
     return df
 
 
-# ----------------- strategy logic -----------------
+# ------------- STRATEGY: LONG / SHORT -------------
 
-def classify_latest(df: pd.DataFrame) -> Optional[Dict]:
+def classify_long(df: pd.DataFrame) -> Optional[Dict]:
     """
-    Classify the latest bar as ENTRY / WATCH / NONE based on MA trend rules.
+    LONG side classification for latest bar.
+    Returns dict with signal and metadata, or None if not enough data.
     """
     if len(df) < MIN_BARS:
         return None
@@ -146,7 +214,7 @@ def classify_latest(df: pd.DataFrame) -> Optional[Dict]:
     last = df.iloc[-1]
     prev = df.iloc[-2]
 
-    # Trend filter: ema21 > sma50 > sma100 > sma200 and close > sma50
+    # Bullish trend
     trend_ok = (
         pd.notna(last[["ema21", "sma50", "sma100", "sma200"]]).all()
         and last["Close"] > last["sma50"]
@@ -154,17 +222,17 @@ def classify_latest(df: pd.DataFrame) -> Optional[Dict]:
         and last["sma50"] > last["sma100"] > last["sma200"]
     )
 
-    if not trend_ok:
-        signal = "NONE"
-    else:
-        # Pullback into ema21 yesterday, reclaim today
+    signal = "NONE"
+
+    if trend_ok:
+        # Pullback yesterday, reclaim today
         pulled_back = prev["Close"] < prev["ema21"]
         reclaimed_21 = last["Close"] > last["ema21"]
 
         # Not extended: within MAX_EXTENSION above ema21
         not_extended = last["Close"] <= last["ema21"] * (1 + MAX_EXTENSION)
 
-        # Momentum cross up today
+        # Momentum cross up
         mom_cross_up = (
             last["mom"] > last["mom_signal"]
             and prev["mom"] <= prev["mom_signal"]
@@ -174,30 +242,82 @@ def classify_latest(df: pd.DataFrame) -> Optional[Dict]:
             signal = "ENTRY"
         elif pulled_back and not mom_cross_up:
             signal = "WATCH"
-        else:
-            signal = "NONE"
 
     return {
+        "direction": "LONG",
+        "trend_ok": bool(trend_ok),
+        "signal": signal,
         "as_of": df.index[-1].strftime("%Y-%m-%d"),
         "close": round(float(last["Close"]), 2),
         "ema21": round(float(last["ema21"]), 2),
         "sma50": round(float(last["sma50"]), 2),
         "sma100": round(float(last["sma100"]), 2),
         "sma200": round(float(last["sma200"]), 2),
-        "trend_ok": bool(trend_ok),
-        "signal": signal,
     }
 
 
-# ----------------- main runner -----------------
+def classify_short(df: pd.DataFrame) -> Optional[Dict]:
+    """
+    SHORT side classification for latest bar (mirror of long).
+    Returns dict with signal and metadata, or None if not enough data.
+    """
+    if len(df) < MIN_BARS:
+        return None
+
+    last = df.iloc[-1]
+    prev = df.iloc[-2]
+
+    # Bearish trend
+    trend_ok = (
+        pd.notna(last[["ema21", "sma50", "sma100", "sma200"]]).all()
+        and last["Close"] < last["sma50"]
+        and last["ema21"] < last["sma50"]
+        and last["sma50"] < last["sma100"] < last["sma200"]
+    )
+
+    signal = "NONE"
+
+    if trend_ok:
+        # Rally yesterday, reject today
+        rallied = prev["Close"] > prev["ema21"]
+        rejected_21 = last["Close"] < last["ema21"]
+
+        # Not extended: within MAX_EXTENSION below ema21
+        not_extended = last["Close"] >= last["ema21"] * (1 - MAX_EXTENSION)
+
+        # Momentum cross down
+        mom_cross_down = (
+            last["mom"] < last["mom_signal"]
+            and prev["mom"] >= prev["mom_signal"]
+        )
+
+        if rallied and rejected_21 and mom_cross_down and not_extended:
+            signal = "ENTRY"
+        elif rallied and not mom_cross_down:
+            signal = "WATCH"
+
+    return {
+        "direction": "SHORT",
+        "trend_ok": bool(trend_ok),
+        "signal": signal,
+        "as_of": df.index[-1].strftime("%Y-%m-%d"),
+        "close": round(float(last["Close"]), 2),
+        "ema21": round(float(last["ema21"]), 2),
+        "sma50": round(float(last["sma50"]), 2),
+        "sma100": round(float(last["sma100"]), 2),
+        "sma200": round(float(last["sma200"]), 2),
+    }
+
+
+# ------------- MAIN -------------
 
 def main() -> None:
-    tickers = load_universe()
-    if not tickers:
-        print(f"[WARN] No tickers found in {UNIVERSE_FILE}")
-        return
-
     OUTPUTS_DIR.mkdir(parents=True, exist_ok=True)
+
+    tickers = get_finviz_tickers(FINVIZ_BASE_URL)
+    if not tickers:
+        print("[WARN] No tickers from Finviz screener.")
+        return
 
     rows: List[Dict] = []
 
@@ -207,23 +327,36 @@ def main() -> None:
             continue
 
         hist = add_indicators(hist)
-        row = classify_latest(hist)
-        if row is None:
-            continue
 
-        row["ticker"] = t
-        rows.append(row)
+        long_row = classify_long(hist)
+        short_row = classify_short(hist)
+
+        # Only keep meaningful signals (ENTRY or WATCH)
+        if long_row and long_row["signal"] != "NONE":
+            row = long_row.copy()
+            row["ticker"] = t
+            rows.append(row)
+
+        if short_row and short_row["signal"] != "NONE":
+            row = short_row.copy()
+            row["ticker"] = t
+            rows.append(row)
 
     if not rows:
-        print("[INFO] No signals generated.")
+        print("[INFO] No ENTRY/WATCH signals generated.")
         return
 
     df_out = pd.DataFrame(rows)
+    signal_order = {"ENTRY": 0, "WATCH": 1}
+    direction_order = {"LONG": 0, "SHORT": 1}
 
-    # Sort: ENTRY first, then WATCH, then NONE, then by ticker
-    signal_order = {"ENTRY": 0, "WATCH": 1, "NONE": 2}
-    df_out["signal_rank"] = df_out["signal"].map(signal_order).fillna(3)
-    df_out = df_out.sort_values(["signal_rank", "ticker"]).drop(columns=["signal_rank"])
+    df_out["signal_rank"] = df_out["signal"].map(signal_order).fillna(99)
+    df_out["dir_rank"] = df_out["direction"].map(direction_order).fillna(99)
+
+    df_out = (
+        df_out.sort_values(["signal_rank", "dir_rank", "ticker"])
+        .drop(columns=["signal_rank", "dir_rank"])
+    )
 
     df_out.to_csv(OUTPUT_CSV, index=False)
     print(f"[OK] Wrote {len(df_out)} rows to {OUTPUT_CSV}")
