@@ -25,7 +25,7 @@ jobs:
           pip install -r requirements.txt
 
       - name: Run MA Trend Scanner
-        run: python Swing_Systems/strategies/ma_trend/ma_trend_finviz_scanner.py
+        run: python strategies/ma_trend/ma_trend_finviz_scanner.py
 
       - name: Commit & Push Updated Signals
         env:
