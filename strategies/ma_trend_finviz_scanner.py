@@ -12,13 +12,14 @@ from bs4 import BeautifulSoup
 
 # ================= CONFIG =================
 
-# Put your actual Finviz screener URL here (with v=111 view)
+# Put your actual Finviz screener URL here (use view v=111)
 FINVIZ_BASE_URL = "https://finviz.com/screener.ashx?v=111"
 
-LOOKBACK_DAYS = 180
-MIN_BARS = 120
-MAX_EXTENSION = 0.05
+LOOKBACK_DAYS = 180          # ~6 months
+MIN_BARS = 120               # enough history for 100 SMA
+MAX_EXTENSION = 0.05         # 5% max from ema21
 
+# Script lives in strategies/ma_trend/, output in strategies/ma_trend/output/
 REPO_ROOT = Path(__file__).resolve().parent
 OUTPUTS_DIR = REPO_ROOT / "output"
 OUTPUT_CSV = OUTPUTS_DIR / "ma_trend_signals.csv"
@@ -31,10 +32,12 @@ HEADERS = {
     )
 }
 
+# If Finviz returns nothing, scan at least these
 FALLBACK_TICKERS = ["AAPL", "MSFT", "NVDA", "META", "TSLA"]
 
 
 # ================= FINVIZ SCRAPER =================
+
 
 def _set_r_param(url: str, r_value: int) -> str:
     parsed = urlparse(url)
@@ -85,6 +88,7 @@ def get_finviz_tickers(base_url: str, max_pages: int = 50) -> List[str]:
 
 # ================= DATA FETCH =================
 
+
 def fetch_history(ticker: str) -> Optional[pd.DataFrame]:
     end = datetime.utcnow().date()
     start = end - timedelta(days=LOOKBACK_DAYS)
@@ -101,17 +105,30 @@ def fetch_history(ticker: str) -> Optional[pd.DataFrame]:
     except Exception:
         return None
 
-    if df.empty:
+    if df is None or df.empty:
         return None
 
-    df = df.rename(columns=str.capitalize)
+    # Flatten MultiIndex columns if present
+    if isinstance(df.columns, pd.MultiIndex):
+        df.columns = [c[0] for c in df.columns]
+
+    # Normalize column names
+    df.columns = [str(c).strip().capitalize() for c in df.columns]
+
+    # Require a valid Close column
     if "Close" not in df.columns:
+        return None
+
+    # Drop rows with NaN Close
+    df = df[pd.notna(df["Close"])]
+    if df.empty:
         return None
 
     return df
 
 
 # ================= INDICATORS =================
+
 
 def add_indicators(df: pd.DataFrame) -> pd.DataFrame:
     close = df["Close"]
@@ -130,6 +147,15 @@ def add_indicators(df: pd.DataFrame) -> pd.DataFrame:
 
 
 # ================= STRATEGY LOGIC =================
+# LONG:
+#   trend_ok: Close > sma50, ema21 > sma50, sma50 > sma100
+#   pullback below 21 within last 3 bars
+#   reclaim 21 on current bar
+#   bullish momentum cross recent
+#   not more than 5% above 21
+#
+# SHORT: mirror conditions.
+
 
 def classify_long(df: pd.DataFrame) -> Dict:
     last = df.iloc[-1].copy()
@@ -258,6 +284,7 @@ def no_data_rows(ticker: str) -> List[Dict]:
 
 # ================= MAIN =================
 
+
 def main() -> None:
     OUTPUTS_DIR.mkdir(parents=True, exist_ok=True)
 
@@ -273,12 +300,23 @@ def main() -> None:
             rows.extend(no_data_rows(t))
             continue
 
+        # Clean index and sort
+        df = df[~df.index.duplicated(keep="last")]
+        df = df.sort_index()
+
+        if len(df) < MIN_BARS:
+            rows.extend(no_data_rows(t))
+            continue
+
         df = add_indicators(df)
 
-        df = df[~df.index.duplicated(keep="last")]
-        df = df.dropna(subset=["ema21", "sma50", "sma100"])
+        required_cols = ["ema21", "sma50", "sma100"]
+        if any(col not in df.columns for col in required_cols):
+            rows.extend(no_data_rows(t))
+            continue
 
-        if df.empty or len(df) < MIN_BARS:
+        df = df.dropna(subset=required_cols)
+        if df.empty:
             rows.extend(no_data_rows(t))
             continue
 
