@@ -1,5 +1,4 @@
 from __future__ import annotations
-
 from datetime import datetime, timedelta
 from pathlib import Path
 from typing import List, Dict, Optional
@@ -12,32 +11,24 @@ from bs4 import BeautifulSoup
 
 # ================= CONFIG =================
 
-# Put your actual Finviz screener URL here (use view v=111)
 FINVIZ_BASE_URL = "https://finviz.com/screener.ashx?v=111"
 
-LOOKBACK_DAYS = 180          # ~6 months
-MIN_BARS = 120               # enough history for 100 SMA
-MAX_EXTENSION = 0.05         # 5% max from ema21
+LOOKBACK_DAYS = 180
+MIN_BARS = 120
+MAX_EXTENSION = 0.05
 
-# Script lives in strategies/ma_trend/, output in strategies/ma_trend/output/
 REPO_ROOT = Path(__file__).resolve().parent
 OUTPUTS_DIR = REPO_ROOT / "output"
 OUTPUT_CSV = OUTPUTS_DIR / "ma_trend_signals.csv"
 
 HEADERS = {
-    "User-Agent": (
-        "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
-        "AppleWebKit/537.36 (KHTML, like Gecko) "
-        "Chrome/120.0 Safari/537.36"
-    )
+    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0 Safari/537.36"
 }
 
-# If Finviz returns nothing, scan at least these
 FALLBACK_TICKERS = ["AAPL", "MSFT", "NVDA", "META", "TSLA"]
 
 
 # ================= FINVIZ SCRAPER =================
-
 
 def _set_r_param(url: str, r_value: int) -> str:
     parsed = urlparse(url)
@@ -88,7 +79,6 @@ def get_finviz_tickers(base_url: str, max_pages: int = 50) -> List[str]:
 
 # ================= DATA FETCH =================
 
-
 def fetch_history(ticker: str) -> Optional[pd.DataFrame]:
     end = datetime.utcnow().date()
     start = end - timedelta(days=LOOKBACK_DAYS)
@@ -112,14 +102,11 @@ def fetch_history(ticker: str) -> Optional[pd.DataFrame]:
     if isinstance(df.columns, pd.MultiIndex):
         df.columns = [c[0] for c in df.columns]
 
-    # Normalize column names
-    df.columns = [str(c).strip().capitalize() for c in df.columns]
-
-    # Require a valid Close column
+    # Must have Close column
     if "Close" not in df.columns:
         return None
 
-    # Drop rows with NaN Close
+    # Remove NaN close rows
     df = df[pd.notna(df["Close"])]
     if df.empty:
         return None
@@ -128,7 +115,6 @@ def fetch_history(ticker: str) -> Optional[pd.DataFrame]:
 
 
 # ================= INDICATORS =================
-
 
 def add_indicators(df: pd.DataFrame) -> pd.DataFrame:
     close = df["Close"]
@@ -147,15 +133,6 @@ def add_indicators(df: pd.DataFrame) -> pd.DataFrame:
 
 
 # ================= STRATEGY LOGIC =================
-# LONG:
-#   trend_ok: Close > sma50, ema21 > sma50, sma50 > sma100
-#   pullback below 21 within last 3 bars
-#   reclaim 21 on current bar
-#   bullish momentum cross recent
-#   not more than 5% above 21
-#
-# SHORT: mirror conditions.
-
 
 def classify_long(df: pd.DataFrame) -> Dict:
     last = df.iloc[-1].copy()
@@ -166,14 +143,14 @@ def classify_long(df: pd.DataFrame) -> Dict:
     sma100 = float(last["sma100"])
     sma200 = float(last["sma200"]) if not pd.isna(last["sma200"]) else None
 
+    trend_ok = False
     if len(df) >= MIN_BARS:
         trend_ok = close > sma50 and ema21 > sma50 and sma50 > sma100
-    else:
-        trend_ok = False
 
     signal = "NONE"
 
     if trend_ok:
+        # Pullback detection
         if len(df) >= 4:
             pulled_back = (df["Close"].iloc[-4:-1] < df["ema21"].iloc[-4:-1]).any()
         else:
@@ -199,7 +176,7 @@ def classify_long(df: pd.DataFrame) -> Dict:
 
     return {
         "direction": "LONG",
-        "trend_ok": bool(trend_ok),
+        "trend_ok": trend_ok,
         "signal": signal,
         "as_of": df.index[-1].strftime("%Y-%m-%d"),
         "close": close,
@@ -219,10 +196,9 @@ def classify_short(df: pd.DataFrame) -> Dict:
     sma100 = float(last["sma100"])
     sma200 = float(last["sma200"]) if not pd.isna(last["sma200"]) else None
 
+    trend_ok = False
     if len(df) >= MIN_BARS:
         trend_ok = close < sma50 and ema21 < sma50 and sma50 < sma100
-    else:
-        trend_ok = False
 
     signal = "NONE"
 
@@ -252,7 +228,7 @@ def classify_short(df: pd.DataFrame) -> Dict:
 
     return {
         "direction": "SHORT",
-        "trend_ok": bool(trend_ok),
+        "trend_ok": trend_ok,
         "signal": signal,
         "as_of": df.index[-1].strftime("%Y-%m-%d"),
         "close": close,
@@ -284,7 +260,6 @@ def no_data_rows(ticker: str) -> List[Dict]:
 
 # ================= MAIN =================
 
-
 def main() -> None:
     OUTPUTS_DIR.mkdir(parents=True, exist_ok=True)
 
@@ -300,7 +275,6 @@ def main() -> None:
             rows.extend(no_data_rows(t))
             continue
 
-        # Clean index and sort
         df = df[~df.index.duplicated(keep="last")]
         df = df.sort_index()
 
@@ -311,7 +285,7 @@ def main() -> None:
         df = add_indicators(df)
 
         required_cols = ["ema21", "sma50", "sma100"]
-        if any(col not in df.columns for col in required_cols):
+        if any(c not in df.columns for c in required_cols):
             rows.extend(no_data_rows(t))
             continue
 
@@ -330,14 +304,14 @@ def main() -> None:
         rows.append(short_row)
 
     if rows:
-        df_out = pd.DataFrame(rows)
+        out = pd.DataFrame(rows)
         signal_rank = {"ENTRY": 0, "WATCH": 1, "NONE": 2, "NO_DATA": 3}
         dir_rank = {"LONG": 0, "SHORT": 1}
-        df_out["sr"] = df_out["signal"].map(signal_rank).fillna(9)
-        df_out["dr"] = df_out["direction"].map(dir_rank).fillna(9)
-        df_out = df_out.sort_values(["sr", "dr", "ticker"]).drop(columns=["sr", "dr"])
+        out["sr"] = out["signal"].map(signal_rank).fillna(9)
+        out["dr"] = out["direction"].map(dir_rank).fillna(9)
+        out = out.sort_values(["sr", "dr", "ticker"]).drop(columns=["sr", "dr"])
     else:
-        df_out = pd.DataFrame(
+        out = pd.DataFrame(
             columns=[
                 "ticker",
                 "direction",
@@ -352,7 +326,7 @@ def main() -> None:
             ]
         )
 
-    df_out.to_csv(OUTPUT_CSV, index=False)
+    out.to_csv(OUTPUT_CSV, index=False)
 
 
 if __name__ == "__main__":
