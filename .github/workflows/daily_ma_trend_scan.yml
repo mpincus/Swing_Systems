@@ -2,9 +2,8 @@ name: Daily MA Trend Scan
 
 on:
   schedule:
-    # Runs every weekday at 13:00 UTC (8 AM Eastern standard time)
+    # 4:30 PM ET (21:30 UTC), weekdays
     - cron: "30 21 * * 1-5"
-  # Allows manual runs
   workflow_dispatch: {}
 
 jobs:
@@ -26,7 +25,7 @@ jobs:
           pip install -r requirements.txt
 
       - name: Run MA trend scanner (Finviz long + short)
-        run: python ma_trend_finviz_scanner.py
+        run: python Swing_Systems/ma_trend_finviz_scanner.py
 
       - name: Commit and push updated signals
         env:
@@ -34,6 +33,6 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add outputs/ma_trend_signals.csv
+          git add Swing_Systems/outputs/ma_trend_signals.csv
           git commit -m "Update MA trend signals" || echo "No changes to commit"
           git push
