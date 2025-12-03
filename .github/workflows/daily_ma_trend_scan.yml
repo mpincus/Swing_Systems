@@ -1,21 +1,22 @@
 name: Daily MA Trend Scan
 
 on:
+  # manual run
+  workflow_dispatch:
+  # run after US market close (adjust if you want)
   schedule:
-    # Weekdays at 21:30 UTC (4:30 PM Eastern)
-    - cron: "30 21 * * 1-5"
-  workflow_dispatch: {}
-
-# Allow the workflow token to push commits
-permissions:
-  contents: write
+    - cron: "30 22 * * 1-5"  # 22:30 UTC ≈ 5:30pm ET
 
 jobs:
   scan:
     runs-on: ubuntu-latest
 
+    # allow this workflow to push the CSV back to the repo
+    permissions:
+      contents: write
+
     steps:
-      - name: Checkout repository
+      - name: Checkout repo
         uses: actions/checkout@v4
 
       - name: Set up Python
@@ -26,9 +27,8 @@ jobs:
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install -r requirements.txt
+          pip install yfinance pandas requests beautifulsoup4 lxml
 
-      # This finds ma_trend_finviz_scanner.py anywhere in the repo and runs it.
       - name: Run MA Trend Scanner
         run: |
           set -e
@@ -41,12 +41,34 @@ jobs:
           echo "Found script at: $SCRIPT_PATH"
           python "$SCRIPT_PATH"
 
-      - name: Commit & Push any changes
+      - name: Show output (for debugging)
+        run: |
+          echo "Repo tree:"
+          ls -R
+          echo
+          if [ -f strategies/ma_trend/output/ma_trend_signals.csv ]; then
+            echo "First 20 lines of output:"
+            head -n 20 strategies/ma_trend/output/ma_trend_signals.csv
+          else
+            echo "CSV not found at strategies/ma_trend/output/ma_trend_signals.csv"
+          fi
+
+      - name: Commit and push updated CSV
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
+          set -e
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add .
+
+          # adjust this path ONLY if you move the CSV
+          CSV_PATH="strategies/ma_trend/output/ma_trend_signals.csv"
+
+          if [ ! -f "$CSV_PATH" ]; then
+            echo "No CSV at $CSV_PATH to commit; skipping push."
+            exit 0
+          fi
+
+          git add "$CSV_PATH"
           git commit -m "Update MA trend signals" || echo "No changes to commit"
           git push
