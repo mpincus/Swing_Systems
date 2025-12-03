@@ -2,9 +2,13 @@ name: Daily MA Trend Scan
 
 on:
   schedule:
-    # 4:30 PM Eastern (21:30 UTC) on weekdays
+    # Weekdays at 21:30 UTC (4:30 PM Eastern)
     - cron: "30 21 * * 1-5"
   workflow_dispatch: {}
+
+# Allow the workflow token to push commits
+permissions:
+  contents: write
 
 jobs:
   scan:
@@ -24,7 +28,8 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
-      - name: Find and run MA Trend Scanner
+      # This finds ma_trend_finviz_scanner.py anywhere in the repo and runs it.
+      - name: Run MA Trend Scanner
         run: |
           set -e
           echo "Searching for ma_trend_finviz_scanner.py..."
