@@ -2,7 +2,7 @@ name: Daily MA Trend Scan
 
 on:
   schedule:
-    # 4:30 PM Eastern (21:30 UTC)
+    # 4:30 PM Eastern (21:30 UTC) on weekdays
     - cron: "30 21 * * 1-5"
   workflow_dispatch: {}
 
@@ -24,15 +24,24 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
-      - name: Run MA Trend Scanner
-        run: python strategies/ma_trend/ma_trend_finviz_scanner.py
+      - name: Find and run MA Trend Scanner
+        run: |
+          set -e
+          echo "Searching for ma_trend_finviz_scanner.py..."
+          SCRIPT_PATH=$(git ls-files '*ma_trend_finviz_scanner.py' | head -n 1)
+          if [ -z "$SCRIPT_PATH" ]; then
+            echo "ERROR: ma_trend_finviz_scanner.py not found anywhere in repo."
+            exit 1
+          fi
+          echo "Found script at: $SCRIPT_PATH"
+          python "$SCRIPT_PATH"
 
-      - name: Commit & Push Updated Signals
+      - name: Commit & Push any changes
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add strategies/ma_trend/output/ma_trend_signals.csv
+          git add .
           git commit -m "Update MA trend signals" || echo "No changes to commit"
           git push
