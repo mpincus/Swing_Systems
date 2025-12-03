@@ -71,7 +71,7 @@ MIN_BARS = 200            # need enough history for 200 SMA
 MAX_EXTENSION = 0.03      # 3% extension allowed from ema21
 
 REPO_ROOT = Path(__file__).resolve().parent
-OUTPUTS_DIR = REPO_ROOT / "outputs"
+OUTPUTS_DIR = REPO_ROOT / "output"
 OUTPUT_CSV = OUTPUTS_DIR / "ma_trend_signals.csv"
 
 HEADERS = {
