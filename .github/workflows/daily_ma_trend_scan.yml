@@ -3,8 +3,7 @@ name: Daily MA Trend Scan
 on:
   workflow_dispatch:
   schedule:
-    # 22:30 UTC Mon–Fri  (about 5:30pm ET, adjust if you want)
-    - cron: "30 22 * * 1-5"
+    - cron: "30 22 * * 1-5"   # ~5:30pm ET
 
 jobs:
   scan:
@@ -22,37 +21,25 @@ jobs:
         with:
           python-version: "3.11"
 
-      # If your current script only uses stdlib, you can delete this step.
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install yfinance pandas requests beautifulsoup4 lxml
+          pip install pandas yfinance
 
       - name: Run MA Trend Scanner
         run: |
           set -e
-          echo "Searching for ma_trend_finviz_scanner.py..."
-          SCRIPT_PATH=$(git ls-files '*ma_trend_finviz_scanner.py' | head -n 1)
-          if [ -z "$SCRIPT_PATH" ]; then
-            echo "ERROR: ma_trend_finviz_scanner.py not found anywhere in repo."
-            exit 1
-          fi
-          echo "Found script at: $SCRIPT_PATH"
-          python "$SCRIPT_PATH"
+          python strategies/ma_trend_finviz_scanner.py
 
-      - name: Show output (for debugging)
+      - name: Show output CSV
         run: |
-          echo "Repo tree:"
-          find .
-
-          echo ""
-          CSV_PATH="strategies/output/ma_trend_signals.csv"
-          echo "Checking for CSV at $CSV_PATH"
-          if [ -f "$CSV_PATH" ]; then
+          set -e
+          echo "Checking for CSV at strategies/output/ma_trend_signals.csv"
+          if [ -f strategies/output/ma_trend_signals.csv ]; then
             echo "FOUND. First 20 lines:"
-            head -n 20 "$CSV_PATH"
-          else:
-            echo "CSV NOT FOUND at $CSV_PATH"
+            head -n 20 strategies/output/ma_trend_signals.csv
+          else
+            echo "CSV NOT FOUND at strategies/output/ma_trend_signals.csv"
           fi
 
       - name: Commit and push updated CSV
