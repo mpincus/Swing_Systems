@@ -1,8 +1,8 @@
-name: Daily OHLCV Collector
+name: MA Universe OHLCV
 
 on:
   schedule:
-    - cron: "30 21 * * 1-5"
+    - cron: "30 21 * * 1-5"   # 4:30 PM ET Monday–Friday
   workflow_dispatch:
 
 jobs:
@@ -13,7 +13,7 @@ jobs:
       contents: write
 
     steps:
-      - name: Checkout repo
+      - name: Checkout repository
         uses: actions/checkout@v4
 
       - name: Set up Python
@@ -31,7 +31,7 @@ jobs:
           set -e
           python scripts/download_ohlcv.py
 
-      - name: Show output CSV head
+      - name: Show CSV head (debug)
         run: |
           if [ -f data/daily_ohlcv.csv ]; then
             echo "data/daily_ohlcv.csv preview:"
@@ -41,13 +41,20 @@ jobs:
             exit 1
           fi
 
+      - name: Copy CSV to docs for GitHub Pages
+        run: |
+          mkdir -p docs
+          cp data/daily_ohlcv.csv docs/daily_ohlcv.csv
+
       - name: Commit and push updated CSV
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           set -e
+
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add data/daily_ohlcv.csv || true
+
+          git add data/daily_ohlcv.csv docs/daily_ohlcv.csv || true
           git commit -m "Update MA universe OHLCV" || echo "No changes to commit"
           git push
