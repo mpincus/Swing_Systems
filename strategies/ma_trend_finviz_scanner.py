@@ -1,4 +1,5 @@
 from __future__ import annotations
+
 from datetime import datetime, timedelta
 from pathlib import Path
 from typing import List, Dict, Optional
@@ -11,21 +12,30 @@ from bs4 import BeautifulSoup
 
 # ================= CONFIG =================
 
+# Default Finviz screener view. Replace with your saved screener URL if you want.
 FINVIZ_BASE_URL = "https://finviz.com/screener.ashx?v=111"
 
-LOOKBACK_DAYS = 180
-MIN_BARS = 120
-MAX_EXTENSION = 0.05
+LOOKBACK_DAYS = 180            # ~6 months
+MIN_BARS = 120                 # enough history for 100 SMA
+MAX_EXTENSION = 0.05           # 5% max distance from ema21
 
 REPO_ROOT = Path(__file__).resolve().parent
 OUTPUTS_DIR = REPO_ROOT / "output"
 OUTPUT_CSV = OUTPUTS_DIR / "ma_trend_signals.csv"
 
 HEADERS = {
-    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0 Safari/537.36"
+    "User-Agent": (
+        "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
+        "AppleWebKit/537.36 (KHTML, like Gecko) "
+        "Chrome/120.0 Safari/537.36"
+    )
 }
 
-FALLBACK_TICKERS = ["AAPL", "MSFT", "NVDA", "META", "TSLA"]
+# Used if Finviz fails or returns nothing
+FALLBACK_TICKERS = [
+    "AAPL", "MSFT", "NVDA", "META", "TSLA",
+    "AMZN", "GOOGL", "NFLX", "AVGO", "AMD",
+]
 
 
 # ================= FINVIZ SCRAPER =================
@@ -38,7 +48,7 @@ def _set_r_param(url: str, r_value: int) -> str:
     return urlunparse(parsed._replace(query=new_query))
 
 
-def get_finviz_tickers(base_url: str, max_pages: int = 50) -> List[str]:
+def get_finviz_tickers(base_url: str, max_pages: int = 100) -> List[str]:
     tickers: List[str] = []
     seen: set[str] = set()
     start = 1
@@ -102,11 +112,9 @@ def fetch_history(ticker: str) -> Optional[pd.DataFrame]:
     if isinstance(df.columns, pd.MultiIndex):
         df.columns = [c[0] for c in df.columns]
 
-    # Must have Close column
     if "Close" not in df.columns:
         return None
 
-    # Remove NaN close rows
     df = df[pd.notna(df["Close"])]
     if df.empty:
         return None
@@ -150,7 +158,7 @@ def classify_long(df: pd.DataFrame) -> Dict:
     signal = "NONE"
 
     if trend_ok:
-        # Pullback detection
+        # Pullback under ema21 in last 3 bars
         if len(df) >= 4:
             pulled_back = (df["Close"].iloc[-4:-1] < df["ema21"].iloc[-4:-1]).any()
         else:
@@ -203,6 +211,7 @@ def classify_short(df: pd.DataFrame) -> Dict:
     signal = "NONE"
 
     if trend_ok:
+        # Rally above ema21 in last 3 bars
         if len(df) >= 4:
             rallied = (df["Close"].iloc[-4:-1] > df["ema21"].iloc[-4:-1]).any()
         else:
@@ -263,7 +272,11 @@ def no_data_rows(ticker: str) -> List[Dict]:
 def main() -> None:
     OUTPUTS_DIR.mkdir(parents=True, exist_ok=True)
 
-    tickers = get_finviz_tickers(FINVIZ_BASE_URL)
+    try:
+        tickers = get_finviz_tickers(FINVIZ_BASE_URL)
+    except Exception:
+        tickers = []
+
     if not tickers:
         tickers = FALLBACK_TICKERS.copy()
 
