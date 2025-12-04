@@ -1,17 +1,15 @@
 name: Daily MA Trend Scan
 
 on:
-  # manual run
   workflow_dispatch:
-  # run after US market close (adjust if you want)
   schedule:
-    - cron: "30 22 * * 1-5"  # 22:30 UTC ≈ 5:30pm ET
+    # 22:30 UTC Mon–Fri  (about 5:30pm ET, adjust if you want)
+    - cron: "30 22 * * 1-5"
 
 jobs:
   scan:
     runs-on: ubuntu-latest
 
-    # allow this workflow to push the CSV back to the repo
     permissions:
       contents: write
 
@@ -24,6 +22,7 @@ jobs:
         with:
           python-version: "3.11"
 
+      # If your current script only uses stdlib, you can delete this step.
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
@@ -44,13 +43,16 @@ jobs:
       - name: Show output (for debugging)
         run: |
           echo "Repo tree:"
-          ls -R
-          echo
-          if [ -f strategies/ma_trend/output/ma_trend_signals.csv ]; then
-            echo "First 20 lines of output:"
-            head -n 20 strategies/ma_trend/output/ma_trend_signals.csv
-          else
-            echo "CSV not found at strategies/ma_trend/output/ma_trend_signals.csv"
+          find .
+
+          echo ""
+          CSV_PATH="strategies/output/ma_trend_signals.csv"
+          echo "Checking for CSV at $CSV_PATH"
+          if [ -f "$CSV_PATH" ]; then
+            echo "FOUND. First 20 lines:"
+            head -n 20 "$CSV_PATH"
+          else:
+            echo "CSV NOT FOUND at $CSV_PATH"
           fi
 
       - name: Commit and push updated CSV
@@ -58,16 +60,15 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           set -e
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
-
-          # adjust this path ONLY if you move the CSV
-          CSV_PATH="strategies/ma_trend/output/ma_trend_signals.csv"
+          CSV_PATH="strategies/output/ma_trend_signals.csv"
 
           if [ ! -f "$CSV_PATH" ]; then
             echo "No CSV at $CSV_PATH to commit; skipping push."
             exit 0
           fi
+
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
 
           git add "$CSV_PATH"
           git commit -m "Update MA trend signals" || echo "No changes to commit"
