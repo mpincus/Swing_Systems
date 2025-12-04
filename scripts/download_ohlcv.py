@@ -1,142 +1,95 @@
-from __future__ import annotations
-
+import os
+import time
+import requests
 import pandas as pd
+from bs4 import BeautifulSoup
 import yfinance as yf
 from datetime import datetime, timedelta
-from pathlib import Path
-from urllib.parse import urlparse, parse_qs, urlencode, urlunparse
 
-import requests
-from bs4 import BeautifulSoup
-
-# ================= CONFIG =================
-
-# <<< INSERT YOUR FINVIZ SCREENER URL HERE >>>
-FINVIZ_URL = "https://finviz.com/screener.ashx?v=111"  # default view
-
-LOOKBACK_DAYS = 180
-
-REPO_ROOT = Path(__file__).resolve().parent.parent
-DATA_DIR = REPO_ROOT / "data"
-DATA_DIR.mkdir(exist_ok=True, parents=True)
+FINVIZ_URL = "https://finviz.com/screener.ashx?v=111&f=exch_nyse,exch_nasdaq,exch_amex,sh_avgvol_o750,sh_price_o5"
+OUTPUT_DIR = "data"
+OUTPUT_FILE = os.path.join(OUTPUT_DIR, "daily_ohlcv.csv")
 
 HEADERS = {
-    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/120.0"
+    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64)"
 }
 
-
-# ================= FINVIZ SCRAPER =================
-
-def _set_r_param(url: str, r_value: int) -> str:
-    parsed = urlparse(url)
-    qs = parse_qs(parsed.query)
-    qs["r"] = [str(r_value)]
-    new_query = urlencode(qs, doseq=True)
-    return urlunparse(parsed._replace(query=new_query))
-
-
-def get_finviz_tickers(base_url: str, max_pages: int = 200) -> list[str]:
+def fetch_finviz_tickers(url, max_pages=50):
     tickers = []
-    seen = set()
-    start = 1
 
-    while True:
-        page_url = _set_r_param(base_url, start)
-        resp = requests.get(page_url, headers=HEADERS, timeout=20)
-        resp.raise_for_status()
+    for page in range(1, max_pages + 1):
+        page_url = url + f"&r={1 + (page - 1) * 20}"
+        resp = requests.get(page_url, headers=HEADERS)
 
-        soup = BeautifulSoup(resp.text, "lxml")
-        anchors = soup.select("a.screener-link-primary")
+        if resp.status_code != 200:
+            time.sleep(1)
+            continue
 
-        page_syms = []
-        for a in anchors:
-            sym = (a.text or "").strip().upper()
-            if sym and " " not in sym and sym not in seen:
-                seen.add(sym)
-                page_syms.append(sym)
+        soup = BeautifulSoup(resp.text, "html.parser")
+        table = soup.find("table", class_="table-light")
 
-        if not page_syms:
+        if not table:
+            continue
+
+        rows = table.find_all("tr")[1:]
+
+        if not rows:
+            continue
+
+        for r in rows:
+            cols = r.find_all("td")
+            if len(cols) >= 2:
+                tickers.append(cols[1].text.strip())
+
+        if len(rows) < 20:
             break
 
-        tickers.extend(page_syms)
-        start += 20
+        time.sleep(0.25)
 
-    tickers.sort()
+    tickers = list(dict.fromkeys(tickers))
+
+    if len(tickers) == 0:
+        raise RuntimeError("Finviz returned ZERO tickers. Scraper blocked or URL wrong.")
+
     return tickers
 
-
-# ================= DATA DOWNLOAD =================
-
-def fetch_ohlcv(ticker: str, days: int) -> pd.DataFrame | None:
-    end = datetime.utcnow().date()
+def download_ohlcv(tickers, days=200):
+    end = datetime.now()
     start = end - timedelta(days=days)
 
-    try:
-        df = yf.download(
-            ticker,
-            start=start,
-            end=end + timedelta(days=1),
-            interval="1d",
-            auto_adjust=False,
-            progress=False
-        )
-    except Exception:
-        return None
-
-    if df is None or df.empty:
-        return None
-
-    # Fix multi-index
-    if isinstance(df.columns, pd.MultiIndex):
-        df.columns = [c[0] for c in df.columns]
-
-    if "Close" not in df.columns:
-        return None
-
-    df = df.reset_index()
-    df.insert(1, "Ticker", ticker)
-    df = df[["Date", "Ticker", "Open", "High", "Low", "Close", "Volume"]]
-
-    return df
-
-
-# ================= MAIN =================
-
-def main():
-    print("[INFO] Fetching tickers from Finviz...")
-    try:
-        tickers = get_finviz_tickers(FINVIZ_URL)
-    except Exception:
-        print("[ERROR] Failed Finviz scrape. Exiting.")
-        raise
-
-    if not tickers:
-        raise RuntimeError("No tickers returned from Finviz screener.")
-
-    print(f"[INFO] Found {len(tickers)} tickers.")
-
     frames = []
-    for t in tickers:
-        print(f"[INFO] {t}: downloading data...")
-        df = fetch_ohlcv(t, LOOKBACK_DAYS)
-        if df is None:
-            print(f"[WARN] {t}: no usable data.")
+
+    for ticker in tickers:
+        try:
+            df = yf.download(ticker, start=start, end=end, progress=False)
+            if df.empty:
+                continue
+
+            df["Ticker"] = ticker
+            df.reset_index(inplace=True)
+            frames.append(df)
+
+            time.sleep(0.05)
+        except Exception:
             continue
-        frames.append(df)
 
     if not frames:
-        raise RuntimeError("No OHLCV data could be downloaded for any ticker.")
+        raise RuntimeError("OHLCV download produced zero dataframes.")
 
     final = pd.concat(frames, ignore_index=True)
+    return final
 
-    today_str = datetime.utcnow().strftime("%Y-%m-%d")
-    out_path = DATA_DIR / f"{today_str}.csv"
+def main():
+    print("[INFO] Fetching tickers from Finviz…")
+    tickers = fetch_finviz_tickers(FINVIZ_URL)
+    print(f"[INFO] Retrieved {len(tickers)} tickers.")
 
-    final.to_csv(out_path, index=False)
+    print("[INFO] Downloading OHLCV… This may take a few minutes.")
+    df = download_ohlcv(tickers)
 
-    print(f"[INFO] Saved OHLCV dataset → {out_path}")
-    print("[INFO] Complete.")
-
+    os.makedirs(OUTPUT_DIR, exist_ok=True)
+    df.to_csv(OUTPUT_FILE, index=False)
+    print(f"[INFO] Saved OHLCV to {OUTPUT_FILE}")
 
 if __name__ == "__main__":
     main()
