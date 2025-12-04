@@ -3,16 +3,11 @@ from __future__ import annotations
 from datetime import datetime, timedelta
 from pathlib import Path
 from typing import List, Dict, Optional
-from urllib.parse import urlparse, parse_qs, urlencode, urlunparse
 
 import pandas as pd
 import yfinance as yf
-import requests
-from bs4 import BeautifulSoup
 
 # ================= CONFIG =================
-
-FINVIZ_BASE_URL = "https://finviz.com/screener.ashx?v=111"
 
 LOOKBACK_DAYS = 180          # ~6 months
 MIN_BARS = 120               # enough history for 100 SMA
@@ -22,100 +17,28 @@ REPO_ROOT = Path(__file__).resolve().parent
 OUTPUTS_DIR = REPO_ROOT / "output"
 OUTPUT_CSV = OUTPUTS_DIR / "ma_trend_signals.csv"
 
-HEADERS = {
-    "User-Agent": (
-        "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
-        "AppleWebKit/537.36 (KHTML, like Gecko) "
-        "Chrome/120.0 Safari/537.36"
-    )
-}
-
-FALLBACK_TICKERS = [
-    "AAPL", "MSFT", "NVDA", "META", "TSLA",
-    "AMZN", "GOOGL", "NFLX", "AVGO", "AMD",
-]
+# Simple fixed universe for debugging. We can plug Finviz back in later.
+TICKERS = ["AAPL", "MSFT", "NVDA", "META", "TSLA", "AMZN", "GOOGL", "NFLX", "AVGO", "AMD"]
 
 
-# ================= DEBUG HELPERS =================
-
-def dbg(msg: str) -> None:
-    """Print debug messages (visible in GitHub Actions log)."""
-    print(f"[DEBUG] {msg}")
-
-
-# ================= FINVIZ SCRAPER =================
-
-def _set_r_param(url: str, r_value: int) -> str:
-    parsed = urlparse(url)
-    qs = parse_qs(parsed.query)
-    qs["r"] = [str(r_value)]
-    new_query = urlencode(qs, doseq=True)
-    return urlunparse(parsed._replace(query=new_query))
-
-
-def get_finviz_tickers(base_url: str, max_pages: int = 100) -> List[str]:
-    tickers: List[str] = []
-    seen: set[str] = set()
-    start = 1
-
-    while True:
-        if len(tickers) >= max_pages * 20:
-            break
-
-        page_url = _set_r_param(base_url, start)
-
-        try:
-            resp = requests.get(page_url, headers=HEADERS, timeout=20)
-            resp.raise_for_status()
-        except Exception as e:
-            dbg(f"Finviz request failed on page start={start}: {type(e).__name__}")
-            break
-
-        soup = BeautifulSoup(resp.text, "lxml")
-        anchors = soup.select("a.screener-link-primary")
-
-        page_syms: List[str] = []
-        for a in anchors:
-            sym = (a.text or "").strip().upper()
-            if not sym or " " in sym:
-                continue
-            if sym in seen:
-                continue
-            seen.add(sym)
-            page_syms.append(sym)
-
-        if not page_syms:
-            break
-
-        tickers.extend(page_syms)
-        start += 20
-
-    dbg(f"Finviz returned {len(tickers)} tickers")
-    tickers.sort()
-    return tickers
-
-
-# ================= DATA FETCH =================
+# ================= HELPERS =================
 
 def fetch_history(ticker: str) -> Optional[pd.DataFrame]:
+    """Download ~6 months of daily data for ticker. Return None if unusable."""
     end = datetime.utcnow().date()
     start = end - timedelta(days=LOOKBACK_DAYS)
 
-    try:
-        df = yf.download(
-            ticker,
-            start=start,
-            end=end + timedelta(days=1),
-            interval="1d",
-            auto_adjust=True,
-            progress=False,
-        )
-    except Exception as e:
-        dbg(f"{ticker}: yfinance download error: {type(e).__name__}")
-        return None
+    df = yf.download(
+        ticker,
+        start=start,
+        end=end + timedelta(days=1),
+        interval="1d",
+        auto_adjust=True,
+        progress=False,
+    )
 
     if df is None or df.empty:
-        dbg(f"{ticker}: empty history from yfinance")
+        print(f"[DEBUG] {ticker}: empty history")
         return None
 
     # Flatten MultiIndex columns if present
@@ -123,12 +46,12 @@ def fetch_history(ticker: str) -> Optional[pd.DataFrame]:
         df.columns = [c[0] for c in df.columns]
 
     if "Close" not in df.columns:
-        dbg(f"{ticker}: no 'Close' column in data")
+        print(f"[DEBUG] {ticker}: no 'Close' column")
         return None
 
     df = df[pd.notna(df["Close"])]
     if df.empty:
-        dbg(f"{ticker}: all Close values NaN")
+        print(f"[DEBUG] {ticker}: all Close values NaN")
         return None
 
     df = df[~df.index.duplicated(keep="last")]
@@ -136,8 +59,6 @@ def fetch_history(ticker: str) -> Optional[pd.DataFrame]:
 
     return df
 
-
-# ================= INDICATORS =================
 
 def add_indicators(df: pd.DataFrame) -> pd.DataFrame:
     close = df["Close"]
@@ -154,8 +75,6 @@ def add_indicators(df: pd.DataFrame) -> pd.DataFrame:
 
     return df
 
-
-# ================= STRATEGY LOGIC =================
 
 def classify_long(df: pd.DataFrame) -> Dict:
     last = df.iloc[-1].copy()
@@ -263,135 +182,65 @@ def classify_short(df: pd.DataFrame) -> Dict:
     }
 
 
-def no_data_rows(ticker: str, reason: str) -> List[Dict]:
-    base = {
-        "ticker": ticker,
-        "signal": "NO_DATA",
-        "as_of": "",
-        "close": None,
-        "ema21": None,
-        "sma50": None,
-        "sma100": None,
-        "sma200": None,
-        "trend_ok": False,
-        "reason": reason,
-    }
-    long_row = base.copy()
-    long_row["direction"] = "LONG"
-    short_row = base.copy()
-    short_row["direction"] = "SHORT"
-    return [long_row, short_row]
-
-
 # ================= MAIN =================
 
 def main() -> None:
     OUTPUTS_DIR.mkdir(parents=True, exist_ok=True)
 
-    # Universe
-    try:
-        tickers = get_finviz_tickers(FINVIZ_BASE_URL)
-    except Exception as e:
-        dbg(f"Finviz universe failed: {type(e).__name__}")
-        tickers = []
-
-    if not tickers:
-        dbg("Using FALLBACK_TICKERS universe")
-        tickers = FALLBACK_TICKERS.copy()
-
     rows: List[Dict] = []
-    reason_counts: Dict[str, int] = {}
 
-    for t in tickers:
-        try:
-            dbg(f"{t}: start")
-            df = fetch_history(t)
-            if df is None:
-                reason = "no_history"
-                dbg(f"{t}: {reason}")
-                rows.extend(no_data_rows(t, reason))
-                reason_counts[reason] = reason_counts.get(reason, 0) + 1
-                continue
+    print(f"[DEBUG] Universe: {TICKERS}")
 
-            if len(df) < MIN_BARS:
-                reason = "too_few_bars"
-                dbg(f"{t}: {reason} (len={len(df)})")
-                rows.extend(no_data_rows(t, reason))
-                reason_counts[reason] = reason_counts.get(reason, 0) + 1
-                continue
+    for t in TICKERS:
+        print(f"[DEBUG] {t}: start")
+        df = fetch_history(t)
+        if df is None:
+            print(f"[DEBUG] {t}: skipped (no usable history)")
+            continue
 
-            df = add_indicators(df)
+        if len(df) < MIN_BARS:
+            print(f"[DEBUG] {t}: skipped (too few bars: {len(df)})")
+            continue
 
-            required_cols = ["ema21", "sma50", "sma100"]
-            missing = [c for c in required_cols if c not in df.columns]
-            if missing:
-                reason = f"missing_cols:{','.join(missing)}"
-                dbg(f"{t}: {reason}")
-                rows.extend(no_data_rows(t, reason))
-                reason_counts[reason] = reason_counts.get(reason, 0) + 1
-                continue
+        df = add_indicators(df)
 
-            df = df.dropna(subset=required_cols)
-            if df.empty:
-                reason = "indicators_all_nan"
-                dbg(f"{t}: {reason}")
-                rows.extend(no_data_rows(t, reason))
-                reason_counts[reason] = reason_counts.get(reason, 0) + 1
-                continue
+        required_cols = ["ema21", "sma50", "sma100"]
+        missing = [c for c in required_cols if c not in df.columns]
+        if missing:
+            print(f"[DEBUG] {t}: skipped (missing cols: {missing})")
+            continue
 
-            long_row = classify_long(df)
-            short_row = classify_short(df)
+        df = df.dropna(subset=required_cols)
+        if df.empty:
+            print(f"[DEBUG] {t}: skipped (indicators all NaN)")
+            continue
 
-            long_row["ticker"] = t
-            short_row["ticker"] = t
-            long_row["reason"] = ""
-            short_row["reason"] = ""
+        long_row = classify_long(df)
+        short_row = classify_short(df)
 
-            rows.append(long_row)
-            rows.append(short_row)
+        long_row["ticker"] = t
+        short_row["ticker"] = t
 
-            dbg(f"{t}: OK (long={long_row['signal']}, short={short_row['signal']})")
+        rows.append(long_row)
+        rows.append(short_row)
 
-        except Exception as e:
-            reason = f"exception:{type(e).__name__}"
-            dbg(f"{t}: {reason}")
-            rows.extend(no_data_rows(t, reason))
-            reason_counts[reason] = reason_counts.get(reason, 0) + 1
+        print(f"[DEBUG] {t}: OK (long={long_row['signal']}, short={short_row['signal']})")
 
-    if rows:
-        out = pd.DataFrame(rows)
-        # Sort with real signals first
-        signal_rank = {"ENTRY": 0, "WATCH": 1, "NONE": 2, "NO_DATA": 3}
-        dir_rank = {"LONG": 0, "SHORT": 1}
-        out["sr"] = out["signal"].map(signal_rank).fillna(9)
-        out["dr"] = out["direction"].map(dir_rank).fillna(9)
-        out = out.sort_values(["sr", "dr", "ticker"]).drop(columns=["sr", "dr"])
-    else:
-        out = pd.DataFrame(
-            columns=[
-                "ticker",
-                "direction",
-                "signal",
-                "as_of",
-                "close",
-                "ema21",
-                "sma50",
-                "sma100",
-                "sma200",
-                "trend_ok",
-                "reason",
-            ]
-        )
+    if not rows:
+        # Hard fail so you see it clearly in GitHub Actions
+        raise RuntimeError("No rows generated for any ticker. See [DEBUG] logs above.")
+
+    out = pd.DataFrame(rows)
+
+    # Optional: sort with stronger signals first
+    signal_rank = {"ENTRY": 0, "WATCH": 1, "NONE": 2}
+    dir_rank = {"LONG": 0, "SHORT": 1}
+    out["sr"] = out["signal"].map(signal_rank).fillna(9)
+    out["dr"] = out["direction"].map(dir_rank).fillna(9)
+    out = out.sort_values(["sr", "dr", "ticker"]).drop(columns=["sr", "dr"])
 
     out.to_csv(OUTPUT_CSV, index=False)
-
-    # Summary debug output
-    dbg(f"Total rows written: {len(out)}")
-    if "reason" in out.columns:
-        dbg("Reason breakdown (NO_DATA / exceptions):")
-        value_counts = out["reason"].value_counts(dropna=False)
-        for r, c in value_counts.items():
-            dbg(f"  {r!r}: {c} rows")
+    print(f"[DEBUG] Wrote {len(out)} rows to {OUTPUT_CSV}")
 
 
 if __name__ == "__main__":
