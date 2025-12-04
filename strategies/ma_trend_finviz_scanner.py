@@ -3,11 +3,17 @@ from __future__ import annotations
 from datetime import datetime, timedelta
 from pathlib import Path
 from typing import List, Dict, Optional
+from urllib.parse import urlparse, parse_qs, urlencode, urlunparse
 
 import pandas as pd
 import yfinance as yf
+import requests
+from bs4 import BeautifulSoup
 
 # ================= CONFIG =================
+
+# Put your actual Finviz screener URL here (with v=111 view)
+FINVIZ_BASE_URL = "https://finviz.com/screener.ashx?v=111"
 
 LOOKBACK_DAYS = 180          # ~6 months
 MIN_BARS = 120               # enough history for 100 SMA
@@ -17,11 +23,69 @@ REPO_ROOT = Path(__file__).resolve().parent
 OUTPUTS_DIR = REPO_ROOT / "output"
 OUTPUT_CSV = OUTPUTS_DIR / "ma_trend_signals.csv"
 
-# Simple fixed universe for debugging. We can plug Finviz back in later.
-TICKERS = ["AAPL", "MSFT", "NVDA", "META", "TSLA", "AMZN", "GOOGL", "NFLX", "AVGO", "AMD"]
+HEADERS = {
+    "User-Agent": (
+        "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
+        "AppleWebKit/537.36 (KHTML, like Gecko) "
+        "Chrome/120.0 Safari/537.36"
+    )
+}
+
+# Fallback universe if Finviz fails
+FALLBACK_TICKERS = [
+    "AAPL", "MSFT", "NVDA", "META", "TSLA",
+    "AMZN", "GOOGL", "NFLX", "AVGO", "AMD",
+]
 
 
-# ================= HELPERS =================
+# ================= FINVIZ SCRAPER =================
+
+def _set_r_param(url: str, r_value: int) -> str:
+    parsed = urlparse(url)
+    qs = parse_qs(parsed.query)
+    qs["r"] = [str(r_value)]
+    new_query = urlencode(qs, doseq=True)
+    return urlunparse(parsed._replace(query=new_query))
+
+
+def get_finviz_tickers(base_url: str, max_pages: int = 100) -> List[str]:
+    tickers: List[str] = []
+    seen: set[str] = set()
+    start = 1
+
+    while True:
+        if len(tickers) >= max_pages * 20:
+            break
+
+        page_url = _set_r_param(base_url, start)
+
+        resp = requests.get(page_url, headers=HEADERS, timeout=20)
+        resp.raise_for_status()
+
+        soup = BeautifulSoup(resp.text, "lxml")
+        anchors = soup.select("a.screener-link-primary")
+
+        page_syms: List[str] = []
+        for a in anchors:
+            sym = (a.text or "").strip().upper()
+            if not sym or " " in sym:
+                continue
+            if sym in seen:
+                continue
+            seen.add(sym)
+            page_syms.append(sym)
+
+        if not page_syms:
+            break
+
+        tickers.extend(page_syms)
+        start += 20
+
+    tickers.sort()
+    return tickers
+
+
+# ================= DATA FETCH =================
 
 def fetch_history(ticker: str) -> Optional[pd.DataFrame]:
     """Download ~6 months of daily data for ticker. Return None if unusable."""
@@ -60,6 +124,8 @@ def fetch_history(ticker: str) -> Optional[pd.DataFrame]:
     return df
 
 
+# ================= INDICATORS =================
+
 def add_indicators(df: pd.DataFrame) -> pd.DataFrame:
     close = df["Close"]
 
@@ -75,6 +141,8 @@ def add_indicators(df: pd.DataFrame) -> pd.DataFrame:
 
     return df
 
+
+# ================= STRATEGY LOGIC =================
 
 def classify_long(df: pd.DataFrame) -> Dict:
     last = df.iloc[-1].copy()
@@ -187,11 +255,22 @@ def classify_short(df: pd.DataFrame) -> Dict:
 def main() -> None:
     OUTPUTS_DIR.mkdir(parents=True, exist_ok=True)
 
+    # Build universe from Finviz; fallback if needed
+    try:
+        tickers = get_finviz_tickers(FINVIZ_BASE_URL)
+    except Exception as e:
+        print(f"[DEBUG] Finviz failed: {type(e).__name__}")
+        tickers = []
+
+    if not tickers:
+        print("[DEBUG] Using FALLBACK_TICKERS universe")
+        tickers = FALLBACK_TICKERS.copy()
+
     rows: List[Dict] = []
 
-    print(f"[DEBUG] Universe: {TICKERS}")
+    print(f"[DEBUG] Universe size: {len(tickers)}")
 
-    for t in TICKERS:
+    for t in tickers:
         print(f"[DEBUG] {t}: start")
         df = fetch_history(t)
         if df is None:
@@ -232,12 +311,17 @@ def main() -> None:
 
     out = pd.DataFrame(rows)
 
-    # Optional: sort with stronger signals first
+    # Sort with stronger signals first
     signal_rank = {"ENTRY": 0, "WATCH": 1, "NONE": 2}
     dir_rank = {"LONG": 0, "SHORT": 1}
     out["sr"] = out["signal"].map(signal_rank).fillna(9)
     out["dr"] = out["direction"].map(dir_rank).fillna(9)
     out = out.sort_values(["sr", "dr", "ticker"]).drop(columns=["sr", "dr"])
+
+    # Reorder columns: ticker first
+    cols = ["ticker", "direction", "trend_ok", "signal",
+            "as_of", "close", "ema21", "sma50", "sma100", "sma200"]
+    out = out[cols]
 
     out.to_csv(OUTPUT_CSV, index=False)
     print(f"[DEBUG] Wrote {len(out)} rows to {OUTPUT_CSV}")
