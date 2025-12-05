@@ -1,0 +1,26 @@
+Date,Ticker,Strategy,Setup,Side,EntryTrigger,Stop,Target,R,Grade,GradeBasis,Reason
+2025-12-04,AA,rsi_continuation_long,RSI Continuation Long,long,> signal candle close,,,,,gpt_to_size,RSI>70 and rising; GPT to set stop/target
+2025-11-28,ADI,rsi_continuation_long,RSI Continuation Long,long,> signal candle close,,,,,gpt_to_size,RSI>70 and rising; GPT to set stop/target
+2025-12-02,ADI,rsi_continuation_long,RSI Continuation Long,long,> signal candle close,,,,,gpt_to_size,RSI>70 and rising; GPT to set stop/target
+2025-12-04,ADI,rsi_continuation_long,RSI Continuation Long,long,> signal candle close,,,,,gpt_to_size,RSI>70 and rising; GPT to set stop/target
+2025-11-25,AKAM,rsi_continuation_long,RSI Continuation Long,long,> signal candle close,,,,,gpt_to_size,RSI>70 and rising; GPT to set stop/target
+2025-11-25,ALB,rsi_continuation_long,RSI Continuation Long,long,> signal candle close,,,,,gpt_to_size,RSI>70 and rising; GPT to set stop/target
+2025-11-26,ALB,rsi_continuation_long,RSI Continuation Long,long,> signal candle close,,,,,gpt_to_size,RSI>70 and rising; GPT to set stop/target
+2025-12-02,AMAT,rsi_continuation_long,RSI Continuation Long,long,> signal candle close,,,,,gpt_to_size,RSI>70 and rising; GPT to set stop/target
+2025-12-03,AMAT,rsi_continuation_long,RSI Continuation Long,long,> signal candle close,,,,,gpt_to_size,RSI>70 and rising; GPT to set stop/target
+2025-12-04,AMAT,rsi_continuation_long,RSI Continuation Long,long,> signal candle close,,,,,gpt_to_size,RSI>70 and rising; GPT to set stop/target
+2025-11-26,AMGN,rsi_continuation_long,RSI Continuation Long,long,> signal candle close,,,,,gpt_to_size,RSI>70 and rising; GPT to set stop/target
+2025-12-03,AMKR,rsi_continuation_long,RSI Continuation Long,long,> signal candle close,,,,,gpt_to_size,RSI>70 and rising; GPT to set stop/target
+2025-12-04,AMKR,rsi_continuation_long,RSI Continuation Long,long,> signal candle close,,,,,gpt_to_size,RSI>70 and rising; GPT to set stop/target
+2025-11-26,APG,rsi_continuation_long,RSI Continuation Long,long,> signal candle close,,,,,gpt_to_size,RSI>70 and rising; GPT to set stop/target
+2025-11-28,APG,rsi_continuation_long,RSI Continuation Long,long,> signal candle close,,,,,gpt_to_size,RSI>70 and rising; GPT to set stop/target
+2025-12-04,APP,rsi_continuation_long,RSI Continuation Long,long,> signal candle close,,,,,gpt_to_size,RSI>70 and rising; GPT to set stop/target
+2025-11-26,BBIO,rsi_continuation_long,RSI Continuation Long,long,> signal candle close,,,,,gpt_to_size,RSI>70 and rising; GPT to set stop/target
+2025-11-28,BBIO,rsi_continuation_long,RSI Continuation Long,long,> signal candle close,,,,,gpt_to_size,RSI>70 and rising; GPT to set stop/target
+2025-12-03,BBIO,rsi_continuation_long,RSI Continuation Long,long,> signal candle close,,,,,gpt_to_size,RSI>70 and rising; GPT to set stop/target
+2025-12-04,BBIO,rsi_continuation_long,RSI Continuation Long,long,> signal candle close,,,,,gpt_to_size,RSI>70 and rising; GPT to set stop/target
+2025-12-03,BKR,rsi_continuation_long,RSI Continuation Long,long,> signal candle close,,,,,gpt_to_size,RSI>70 and rising; GPT to set stop/target
+2025-12-04,BKR,rsi_continuation_long,RSI Continuation Long,long,> signal candle close,,,,,gpt_to_size,RSI>70 and rising; GPT to set stop/target
+2025-11-25,CART,rsi_continuation_long,RSI Continuation Long,long,> signal candle close,,,,,gpt_to_size,RSI>70 and rising; GPT to set stop/target
+2025-11-26,CART,rsi_continuation_long,RSI Continuation Long,long,> signal candle close,,,,,gpt_to_size,RSI>70 and rising; GPT to set stop/target
+2025-12-01,CART,rsi_continuation_long,RSI Continuation Long,long,> signal candle close,,,,,gpt_to_size,RSI>70 and rising; GPT to set stop/target
