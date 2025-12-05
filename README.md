@@ -39,12 +39,16 @@ python -m core.runner
 Outputs: `outputs/**` and mirrored copies in `docs/`. Watchlists live in `data/watchlists/`.
 
 ## Configuration (configs/settings.yaml)
-- `lookback_days`: price history window for Yahoo downloads (default 200).
+- `lookback_days`: price history window for OHLCV downloads (default 60 calendar days).
 - `signal_history_days`: keep this many days of signals in the CSVs (default 10).
 - `finviz.throttle_seconds`: delay between Finviz page requests (be polite).
 - `finviz.user_agent`: UA string for Finviz requests.
 - `paths`: where data/outputs/docs live (defaults match repo layout).
 - `strategies.<name>.urls`: Finviz screens per strategy; change to tighten/loosen universes.
+- `max_union_tickers`: cap total tickers downloaded from Yahoo to reduce rate limits (default 30).
+- `data_source`: `auto` (try Yahoo then fall back to Stooq), or force `yahoo`/`stooq`.
+- `generate_signals`: true to run built-in strategies; false to skip signals and only emit GPT features.
+- `features_window_days`: number of recent days to keep in `outputs/features.csv` for GPT context.
 
 ## Repo layout (new code)
 - `configs/settings.yaml` — knobs for lookback, history window, Finviz throttles, URLs.
@@ -69,6 +73,8 @@ The runner will auto-discover and include it; add Finviz URLs in `configs/settin
 - Primary upload: `outputs/combined_signals.csv` (has `Strategy` column). Keeps last N days (N = `signal_history_days`).
 - Per-strategy uploads: `outputs/<strategy>/signals.csv` if you want to focus on one strategy.
 - Raw OHLCV is not needed by GPT; it stays internal in `data/prices.csv`.
+- If you disable signals (`generate_signals: false`), use `outputs/features.csv` for GPT: includes recent OHLCV + RSI/L3/H3 + engulfing flags for the last `features_window_days`.
+- A ready-made GPT prompt lives at `docs/gpt_prompt.md` (use with `combined_signals.csv`, optional `features.csv`).
 
 ## Troubleshooting
 - Empty outputs: check `data/watchlists/*` (Finviz may have returned nothing) and internet access.

@@ -20,39 +20,52 @@ def main() -> None:
 
     watchlists = _build_watchlists(strategies, settings)
     union = sorted({t for tickers in watchlists.values() for t in tickers})
+    max_union = int(settings.get("max_union_tickers", 0) or 0)
+    if max_union and len(union) > max_union:
+        union = union[:max_union]
     prices = data.fetch_prices(
         tickers=union,
         lookback_days=int(settings.get("lookback_days", 200)),
         out_path=pathlib.Path(settings["paths"]["data_dir"]) / "prices.csv",
+        data_source=settings.get("data_source", "auto"),
     )
 
     outputs_dir = pathlib.Path(settings["paths"]["outputs_dir"])
     outputs_dir.mkdir(parents=True, exist_ok=True)
     history_days = int(settings.get("signal_history_days", 10))
+    features_window = int(settings.get("features_window_days", 40))
+    generate_signals = bool(settings.get("generate_signals", True))
 
-    all_frames: List[pd.DataFrame] = []
-    for strat in strategies:
-        tickers = watchlists.get(strat.name, [])
-        if not tickers:
-            continue
-        subset = prices[prices["Ticker"].isin(tickers)].copy()
-        signals = strat.generate(subset, history_days=history_days)
-        if signals.empty:
-            continue
-        out_path = outputs_dir / strat.name / "signals.csv"
-        out_path.parent.mkdir(parents=True, exist_ok=True)
-        signals.to_csv(out_path, index=False)
-        all_frames.append(signals)
+    # Features export for GPT: add indicators and trim to recent window
+    features = _build_features(prices, features_window)
+    features_path = outputs_dir / "features.csv"
+    features.to_csv(features_path, index=False)
+    _mirror_to_docs(features_path, settings)
 
-    if all_frames:
-        combined = pd.concat(all_frames, ignore_index=True)
-        combined_path = outputs_dir / "combined_signals.csv"
-        combined.to_csv(combined_path, index=False)
-        _mirror_to_docs(combined_path, settings)
+    if generate_signals:
+        all_frames: List[pd.DataFrame] = []
         for strat in strategies:
-            per_path = outputs_dir / strat.name / "signals.csv"
-            if per_path.exists():
-                _mirror_to_docs(per_path, settings, subdir=strat.name)
+            tickers = watchlists.get(strat.name, [])
+            if not tickers:
+                continue
+            subset = prices[prices["Ticker"].isin(tickers)].copy()
+            signals = strat.generate(subset, history_days=history_days)
+            if signals.empty:
+                continue
+            out_path = outputs_dir / strat.name / "signals.csv"
+            out_path.parent.mkdir(parents=True, exist_ok=True)
+            signals.to_csv(out_path, index=False)
+            all_frames.append(signals)
+
+        if all_frames:
+            combined = pd.concat(all_frames, ignore_index=True)
+            combined_path = outputs_dir / "combined_signals.csv"
+            combined.to_csv(combined_path, index=False)
+            _mirror_to_docs(combined_path, settings)
+            for strat in strategies:
+                per_path = outputs_dir / strat.name / "signals.csv"
+                if per_path.exists():
+                    _mirror_to_docs(per_path, settings, subdir=strat.name)
 
 
 def _load_strategies(settings: Dict) -> List[Strategy]:
@@ -98,6 +111,38 @@ def _mirror_to_docs(path: pathlib.Path, settings: Dict, subdir: str | None = Non
     target.mkdir(parents=True, exist_ok=True)
     dest = target / path.name
     shutil.copyfile(path, dest)
+
+
+def _build_features(prices: pd.DataFrame, window_days: int) -> pd.DataFrame:
+    from core import indicators
+
+    if prices.empty:
+        return pd.DataFrame()
+
+    df = indicators.add_common_indicators(prices)
+    df["Date"] = pd.to_datetime(df["Date"])
+    cutoff = df["Date"].max() - pd.Timedelta(days=window_days - 1)
+    df = df[df["Date"] >= cutoff]
+    df["Date"] = df["Date"].dt.date
+
+    cols = [
+        "Date",
+        "Ticker",
+        "Open",
+        "High",
+        "Low",
+        "Close",
+        "Adj Close",
+        "Volume",
+        "RSI",
+        "L3",
+        "H3",
+        "BullishEngulfing",
+        "BearishEngulfing",
+    ]
+    cols = [c for c in cols if c in df.columns]
+    df = df[cols].sort_values(["Ticker", "Date"])
+    return df
 
 
 if __name__ == "__main__":

@@ -49,9 +49,11 @@ def _with_page(url: str, start: int) -> str:
 def _extract_tickers(html: str) -> List[str]:
     soup = BeautifulSoup(html, "html.parser")
     tickers = []
-    for link in soup.select("a.screener-link-primary"):
+    for link in soup.find_all("a", href=True):
+        href = link["href"]
         text = link.text.strip().upper()
-        if text and text.isalpha():
+        # Finviz quote links look like /quote.ashx?t=MSFT
+        if "quote.ashx?t=" in href and 0 < len(text) <= 5 and text.isalpha():
             tickers.append(text)
     return tickers
 

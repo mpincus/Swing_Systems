@@ -32,21 +32,16 @@ class RSIReversalLong(Strategy):
         )
 
         candidates = df.loc[mask].copy()
-        candidates["Stop"] = candidates["L3"]
-        candidates["Target"] = candidates["Close"] + 1.25 * (candidates["Close"] - candidates["Stop"])
-        candidates["R"] = (candidates["Target"] - candidates["Close"]) / (candidates["Close"] - candidates["Stop"])
-        candidates = candidates[candidates["R"] >= 1.25]
-
-        if candidates.empty:
-            return pd.DataFrame()
-
         candidates["Strategy"] = self.name
         candidates["Setup"] = "Reversal Long"
         candidates["Side"] = "long"
         candidates["EntryTrigger"] = "> signal candle close"
-        candidates["Grade"] = candidates["R"].apply(self.grade_from_r)
-        candidates["GradeBasis"] = "rr_fallback"
-        candidates["Reason"] = "RSI<=30 + bullish engulfing; stop=prior 3d low"
+        candidates["Stop"] = ""
+        candidates["Target"] = ""
+        candidates["R"] = ""
+        candidates["Grade"] = ""
+        candidates["GradeBasis"] = "gpt_to_size"
+        candidates["Reason"] = "RSI<=30 + bullish engulfing; GPT to set stop/target"
 
         cols = [
             "Date",

@@ -34,21 +34,16 @@ class RSIContinuationShort(Strategy):
         )
 
         candidates = df.loc[mask].copy()
-        candidates["Stop"] = candidates["H3"]
-        candidates["Target"] = candidates["Close"] - 1.25 * (candidates["Stop"] - candidates["Close"])
-        candidates["R"] = (candidates["Close"] - candidates["Target"]) / (candidates["Stop"] - candidates["Close"])
-        candidates = candidates[candidates["R"] >= 1.25]
-
-        if candidates.empty:
-            return pd.DataFrame()
-
         candidates["Strategy"] = self.name
         candidates["Setup"] = "RSI Continuation Short"
         candidates["Side"] = "short"
         candidates["EntryTrigger"] = "< signal candle close"
-        candidates["Grade"] = candidates["R"].apply(self.grade_from_r)
-        candidates["GradeBasis"] = "rr_fallback"
-        candidates["Reason"] = "RSI<30 and falling; stop=prior 3d high"
+        candidates["Stop"] = ""
+        candidates["Target"] = ""
+        candidates["R"] = ""
+        candidates["Grade"] = ""
+        candidates["GradeBasis"] = "gpt_to_size"
+        candidates["Reason"] = "RSI<30 and falling; GPT to set stop/target"
 
         cols = [
             "Date",

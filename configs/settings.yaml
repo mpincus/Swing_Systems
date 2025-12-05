@@ -1,7 +1,10 @@
 # Global settings for the daily RSI pipeline: timing, download window, Finviz screens, and paths.
 timezone: America/New_York
-lookback_days: 200
+lookback_days: 60
 signal_history_days: 10
+data_source: auto   # auto|yahoo|stooq
+generate_signals: true  # set false to skip rule-based signals and only emit GPT features
+features_window_days: 40  # how many most recent days to include in features export
 finviz:
   throttle_seconds: 1.2
   user_agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0 Safari/537.36
@@ -9,16 +12,17 @@ paths:
   data_dir: data
   outputs_dir: outputs
   docs_dir: docs
+max_union_tickers: 30   # cap total tickers downloaded from Yahoo to avoid rate limits
 strategies:
   rsi_reversal_long:
     urls:
-      - https://finviz.com/screener.ashx?v=111&f=sh_opt_option,sh_price_o10,sh_avgvol_o1500,ta_rsioversold,ta_pattern_bullishengulfing
+      - https://finviz.com/screener.ashx?v=111&f=cap_midover,geo_usa,sh_opt_option,sh_price_o10,sh_avgvol_o1000,ta_rsi_os30
   rsi_reversal_short:
     urls:
-      - https://finviz.com/screener.ashx?v=111&f=sh_opt_option,sh_price_o10,sh_avgvol_o1500,ta_rsi_overbought,ta_pattern_bearishengulfing
+      - https://finviz.com/screener.ashx?v=111&f=cap_midover,geo_usa,sh_opt_option,sh_price_o10,sh_avgvol_o1000,ta_rsi_ob70
   rsi_continuation_long:
     urls:
-      - https://finviz.com/screener.ashx?v=111&f=sh_opt_option,sh_price_o10,sh_avgvol_o2000,ta_highlow52w_nh
+      - https://finviz.com/screener.ashx?v=111&f=cap_largeover,geo_usa,sh_opt_option,sh_price_o10,sh_avgvol_o2000,ta_highlow52w_a2,ta_sma50_pa,ta_sma200_pa,ta_perf_4w10o
   rsi_continuation_short:
     urls:
-      - https://finviz.com/screener.ashx?v=111&f=sh_opt_option,sh_price_o10,sh_avgvol_o2000,ta_highlow52w_nl
+      - https://finviz.com/screener.ashx?v=111&f=cap_midover,geo_usa,sh_opt_option,sh_price_o10,sh_avgvol_o1000,ta_perf_4w10o,ta_sma50_pb
