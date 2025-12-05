@@ -1,0 +1,59 @@
+## GitHub Actions workflow: run the RSI pipeline daily at 5pm ET, mirror outputs to docs, and commit artifacts.
+name: Daily RSI Pipeline
+
+on:
+  schedule:
+    - cron: "0 22 * * 1-5"  # 5pm ET on weekdays
+  workflow_dispatch: {}
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Run pipeline
+        env:
+          PYTHONPATH: src
+        run: |
+          python -m core.runner
+
+      - name: Mirror outputs to docs
+        run: |
+          rm -rf docs
+          mkdir -p docs
+          cp -r outputs/* docs/ || true
+
+      - name: Upload artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: signals
+          path: |
+            outputs/**
+            docs/**
+
+      - name: Commit and push outputs
+        if: github.event_name != 'pull_request'
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add outputs docs data/watchlists || true
+          if git diff --cached --quiet; then
+            echo "No changes to commit."
+          else
+            git commit -m "Daily pipeline outputs [skip ci]"
+            git push
+          fi
