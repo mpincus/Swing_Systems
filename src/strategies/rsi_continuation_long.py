@@ -38,6 +38,10 @@ class RSIContinuationLong(Strategy):
         candidates["Setup"] = "RSI Continuation Long"
         candidates["Side"] = "long"
         candidates["EntryTrigger"] = "> signal candle close"
+        candidates["SignalOpen"] = candidates["Open"]
+        candidates["SignalHigh"] = candidates["High"]
+        candidates["SignalLow"] = candidates["Low"]
+        candidates["SignalClose"] = candidates["Close"]
         candidates["Stop"] = ""
         candidates["Target"] = ""
         candidates["R"] = ""
@@ -52,6 +56,10 @@ class RSIContinuationLong(Strategy):
             "Setup",
             "Side",
             "EntryTrigger",
+            "SignalOpen",
+            "SignalHigh",
+            "SignalLow",
+            "SignalClose",
             "Stop",
             "Target",
             "R",

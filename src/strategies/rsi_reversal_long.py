@@ -36,6 +36,10 @@ class RSIReversalLong(Strategy):
         candidates["Setup"] = "Reversal Long"
         candidates["Side"] = "long"
         candidates["EntryTrigger"] = "> signal candle close"
+        candidates["SignalOpen"] = candidates["Open"]
+        candidates["SignalHigh"] = candidates["High"]
+        candidates["SignalLow"] = candidates["Low"]
+        candidates["SignalClose"] = candidates["Close"]
         candidates["Stop"] = ""
         candidates["Target"] = ""
         candidates["R"] = ""
@@ -50,6 +54,10 @@ class RSIReversalLong(Strategy):
             "Setup",
             "Side",
             "EntryTrigger",
+            "SignalOpen",
+            "SignalHigh",
+            "SignalLow",
+            "SignalClose",
             "Stop",
             "Target",
             "R",
