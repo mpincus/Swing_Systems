@@ -7,8 +7,8 @@ Download links (raw GitHub):
 - Features (context): https://raw.githubusercontent.com/mpincus/Swing_Systems/main/docs/features.csv
 
 If GitHub Pages is enabled for the repo (main branch /docs folder), the pretty links are:
-- https://mpincus.github.io/Swing_Systems/combined_signals.csv
-- https://mpincus.github.io/Swing_Systems/features.csv
+- https://mpincus.github.io/Swing_Systems/docs/combined_signals.csv
+- https://mpincus.github.io/Swing_Systems/docs/features.csv
 
 When responding to the user, always include both download links so they can fetch and re-upload the files to you.
 
