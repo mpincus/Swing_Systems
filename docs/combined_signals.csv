@@ -1,90 +1,209 @@
 Date,Ticker,Strategy,Setup,Side,EntryTrigger,SignalOpen,SignalHigh,SignalLow,SignalClose,Stop,Target,R,Grade,GradeBasis,Reason
 2025-12-05,A,bear_flag_short,Bear Flag Short,short,< signal candle low,148.5,149.0,144.76,145.49,,,,,gpt_to_size,Finviz bear flag pattern; GPT to set stop/target
 2025-12-05,AA,bear_flag_short,Bear Flag Short,short,< signal candle low,44.29,44.8424,43.731,43.77,,,,,gpt_to_size,Finviz bear flag pattern; GPT to set stop/target
+2025-12-05,AAON,bear_flag_short,Bear Flag Short,short,< signal candle low,86.36,89.14,84.9,87.53,,,,,gpt_to_size,Finviz bear flag pattern; GPT to set stop/target
+2025-12-05,AAP,bear_flag_short,Bear Flag Short,short,< signal candle low,52.51,54.73,52.16,52.47,,,,,gpt_to_size,Finviz bear flag pattern; GPT to set stop/target
 2025-12-05,AAPL,bear_flag_short,Bear Flag Short,short,< signal candle low,280.54,281.14,278.05,278.78,,,,,gpt_to_size,Finviz bear flag pattern; GPT to set stop/target
+2025-12-05,ABBV,bear_flag_short,Bear Flag Short,short,< signal candle low,228.85,229.25,225.05,226.08,,,,,gpt_to_size,Finviz bear flag pattern; GPT to set stop/target
+2025-12-05,ABNB,bear_flag_short,Bear Flag Short,short,< signal candle low,120.92,124.81,120.4001,124.32,,,,,gpt_to_size,Finviz bear flag pattern; GPT to set stop/target
+2025-12-05,ABT,bear_flag_short,Bear Flag Short,short,< signal candle low,125.55,126.05,124.64,125.08,,,,,gpt_to_size,Finviz bear flag pattern; GPT to set stop/target
 2025-12-05,ACM,bear_flag_short,Bear Flag Short,short,< signal candle low,105.36,105.42,102.31,102.43,,,,,gpt_to_size,Finviz bear flag pattern; GPT to set stop/target
 2025-12-05,ACMR,bear_flag_short,Bear Flag Short,short,< signal candle low,34.68,35.31,34.68,35.1,,,,,gpt_to_size,Finviz bear flag pattern; GPT to set stop/target
+2025-12-05,ADBE,bear_flag_short,Bear Flag Short,short,< signal candle low,330.6,348.59,329.71,346.26,,,,,gpt_to_size,Finviz bear flag pattern; GPT to set stop/target
 2025-12-05,ADI,bear_flag_short,Bear Flag Short,short,< signal candle low,280.12,283.235,279.14,281.29,,,,,gpt_to_size,Finviz bear flag pattern; GPT to set stop/target
+2025-12-05,ADM,bear_flag_short,Bear Flag Short,short,< signal candle low,59.255,59.59,58.965,59.01,,,,,gpt_to_size,Finviz bear flag pattern; GPT to set stop/target
+2025-12-05,ADP,bear_flag_short,Bear Flag Short,short,< signal candle low,259.4,262.76,259.34,261.63,,,,,gpt_to_size,Finviz bear flag pattern; GPT to set stop/target
 2025-12-05,ADSK,bear_flag_short,Bear Flag Short,short,< signal candle low,306.0,307.8253,304.3,306.74,,,,,gpt_to_size,Finviz bear flag pattern; GPT to set stop/target
+2025-12-05,AEE,bear_flag_short,Bear Flag Short,short,< signal candle low,100.965,101.0,99.635,99.86,,,,,gpt_to_size,Finviz bear flag pattern; GPT to set stop/target
+2025-12-05,AEP,bear_flag_short,Bear Flag Short,short,< signal candle low,117.87,118.115,116.825,117.537,,,,,gpt_to_size,Finviz bear flag pattern; GPT to set stop/target
+2025-12-05,AFL,bear_flag_short,Bear Flag Short,short,< signal candle low,108.98,109.46,108.5,109.28,,,,,gpt_to_size,Finviz bear flag pattern; GPT to set stop/target
+2025-12-05,AFRM,bear_flag_short,Bear Flag Short,short,< signal candle low,68.45,68.61,67.3,67.99,,,,,gpt_to_size,Finviz bear flag pattern; GPT to set stop/target
 2025-12-05,AHR,bear_flag_short,Bear Flag Short,short,< signal candle low,49.8429,50.32,49.675,50.11,,,,,gpt_to_size,Finviz bear flag pattern; GPT to set stop/target
+2025-12-05,AIG,bear_flag_short,Bear Flag Short,short,< signal candle low,76.7,77.28,76.4468,77.03,,,,,gpt_to_size,Finviz bear flag pattern; GPT to set stop/target
 2025-12-05,AJG,bear_flag_short,Bear Flag Short,short,< signal candle low,245.0,245.0,238.65,239.71,,,,,gpt_to_size,Finviz bear flag pattern; GPT to set stop/target
 2025-12-05,AKAM,bear_flag_short,Bear Flag Short,short,< signal candle low,86.6,87.0,82.7,83.49,,,,,gpt_to_size,Finviz bear flag pattern; GPT to set stop/target
 2025-12-05,AKRO,bear_flag_short,Bear Flag Short,short,< signal candle low,54.65,54.65,54.295,54.55,,,,,gpt_to_size,Finviz bear flag pattern; GPT to set stop/target
 2025-12-05,AL,bear_flag_short,Bear Flag Short,short,< signal candle low,64.03,64.085,63.92,63.93,,,,,gpt_to_size,Finviz bear flag pattern; GPT to set stop/target
+2025-12-05,ALAB,bear_flag_short,Bear Flag Short,short,< signal candle low,154.85,163.12,154.14,161.23,,,,,gpt_to_size,Finviz bear flag pattern; GPT to set stop/target
 2025-12-05,ALB,bear_flag_short,Bear Flag Short,short,< signal candle low,123.81,129.88,122.7,125.19,,,,,gpt_to_size,Finviz bear flag pattern; GPT to set stop/target
 2025-12-05,ALGN,bear_flag_short,Bear Flag Short,short,< signal candle low,157.92,159.5,155.395,157.21,,,,,gpt_to_size,Finviz bear flag pattern; GPT to set stop/target
+2025-12-05,ALK,bear_flag_short,Bear Flag Short,short,< signal candle low,47.19,49.935,47.18,49.65,,,,,gpt_to_size,Finviz bear flag pattern; GPT to set stop/target
+2025-12-05,ALL,bear_flag_short,Bear Flag Short,short,< signal candle low,206.47,206.47,201.82,202.27,,,,,gpt_to_size,Finviz bear flag pattern; GPT to set stop/target
 2025-12-05,ALLY,bear_flag_short,Bear Flag Short,short,< signal candle low,42.23,42.735,42.16,42.39,,,,,gpt_to_size,Finviz bear flag pattern; GPT to set stop/target
 2025-12-05,ALNY,bear_flag_short,Bear Flag Short,short,< signal candle low,468.29,473.5,455.32,458.12,,,,,gpt_to_size,Finviz bear flag pattern; GPT to set stop/target
 2025-12-05,AMAT,bear_flag_short,Bear Flag Short,short,< signal candle low,269.79,273.59,267.36,268.0,,,,,gpt_to_size,Finviz bear flag pattern; GPT to set stop/target
+2025-12-05,AMD,bear_flag_short,Bear Flag Short,short,< signal candle low,217.165,223.642,216.24,217.97,,,,,gpt_to_size,Finviz bear flag pattern; GPT to set stop/target
 2025-12-05,AME,bear_flag_short,Bear Flag Short,short,< signal candle low,199.11,201.3899,198.32,199.8,,,,,gpt_to_size,Finviz bear flag pattern; GPT to set stop/target
 2025-12-05,AMGN,bear_flag_short,Bear Flag Short,short,< signal candle low,340.46,340.87,328.63,329.89,,,,,gpt_to_size,Finviz bear flag pattern; GPT to set stop/target
+2025-12-05,AMH,bear_flag_short,Bear Flag Short,short,< signal candle low,30.96,31.165,30.63,30.83,,,,,gpt_to_size,Finviz bear flag pattern; GPT to set stop/target
 2025-12-05,AMKR,bear_flag_short,Bear Flag Short,short,< signal candle low,43.9,43.94,42.98,43.23,,,,,gpt_to_size,Finviz bear flag pattern; GPT to set stop/target
+2025-12-05,AMT,bear_flag_short,Bear Flag Short,short,< signal candle low,178.82,180.365,178.1,178.86,,,,,gpt_to_size,Finviz bear flag pattern; GPT to set stop/target
 2025-12-05,AMZN,bear_flag_short,Bear Flag Short,short,< signal candle low,230.32,231.24,228.58,229.53,,,,,gpt_to_size,Finviz bear flag pattern; GPT to set stop/target
+2025-12-05,ANET,bear_flag_short,Bear Flag Short,short,< signal candle low,128.325,129.6599,126.84,128.59,,,,,gpt_to_size,Finviz bear flag pattern; GPT to set stop/target
 2025-12-05,ANF,bear_flag_short,Bear Flag Short,short,< signal candle low,95.719,98.9999,94.76,94.87,,,,,gpt_to_size,Finviz bear flag pattern; GPT to set stop/target
 2025-12-05,AOS,bear_flag_short,Bear Flag Short,short,< signal candle low,67.26,68.4,67.26,68.03,,,,,gpt_to_size,Finviz bear flag pattern; GPT to set stop/target
+2025-12-05,APD,bear_flag_short,Bear Flag Short,short,< signal candle low,262.0,265.52,260.33,260.69,,,,,gpt_to_size,Finviz bear flag pattern; GPT to set stop/target
 2025-12-05,APG,bear_flag_short,Bear Flag Short,short,< signal candle low,38.7,39.21,38.44,39.06,,,,,gpt_to_size,Finviz bear flag pattern; GPT to set stop/target
+2025-12-05,APH,bear_flag_short,Bear Flag Short,short,< signal candle low,139.75,139.89,137.01,139.36,,,,,gpt_to_size,Finviz bear flag pattern; GPT to set stop/target
+2025-12-05,APLD,bear_flag_short,Bear Flag Short,short,< signal candle low,31.835,31.96,29.59406,31.22,,,,,gpt_to_size,Finviz bear flag pattern; GPT to set stop/target
+2025-12-05,APO,bear_flag_short,Bear Flag Short,short,< signal candle low,136.265,138.64,135.95,138.13,,,,,gpt_to_size,Finviz bear flag pattern; GPT to set stop/target
 2025-12-05,APP,bear_flag_short,Bear Flag Short,short,< signal candle low,687.445,702.3,678.69,691.94,,,,,gpt_to_size,Finviz bear flag pattern; GPT to set stop/target
 2025-12-05,AR,bear_flag_short,Bear Flag Short,short,< signal candle low,37.25,38.175,36.74,36.75,,,,,gpt_to_size,Finviz bear flag pattern; GPT to set stop/target
 2025-12-05,ARE,bear_flag_short,Bear Flag Short,short,< signal candle low,46.1,47.49,45.47,45.48,,,,,gpt_to_size,Finviz bear flag pattern; GPT to set stop/target
+2025-12-05,ARES,bear_flag_short,Bear Flag Short,short,< signal candle low,163.0,165.46,162.31,165.46,,,,,gpt_to_size,Finviz bear flag pattern; GPT to set stop/target
+2025-12-05,ARMK,bear_flag_short,Bear Flag Short,short,< signal candle low,37.6,38.02,37.39,37.95,,,,,gpt_to_size,Finviz bear flag pattern; GPT to set stop/target
 2025-12-05,ARQT,bear_flag_short,Bear Flag Short,short,< signal candle low,31.03,31.4499,30.385,31.2,,,,,gpt_to_size,Finviz bear flag pattern; GPT to set stop/target
 2025-12-05,ARWR,bear_flag_short,Bear Flag Short,short,< signal candle low,62.95,64.2775,60.29,61.44,,,,,gpt_to_size,Finviz bear flag pattern; GPT to set stop/target
+2025-12-05,ASO,bear_flag_short,Bear Flag Short,short,< signal candle low,49.51,50.78,49.155,50.23,,,,,gpt_to_size,Finviz bear flag pattern; GPT to set stop/target
+2025-12-05,ASTS,bear_flag_short,Bear Flag Short,short,< signal candle low,71.4,75.14,70.6,73.92,,,,,gpt_to_size,Finviz bear flag pattern; GPT to set stop/target
+2025-12-05,ATI,bear_flag_short,Bear Flag Short,short,< signal candle low,101.0,101.0775,99.0,100.41,,,,,gpt_to_size,Finviz bear flag pattern; GPT to set stop/target
+2025-12-05,AUB,bear_flag_short,Bear Flag Short,short,< signal candle low,34.34,34.71,33.94,34.39,,,,,gpt_to_size,Finviz bear flag pattern; GPT to set stop/target
+2025-12-05,AVAV,bear_flag_short,Bear Flag Short,short,< signal candle low,286.79,287.4499,273.37,278.39,,,,,gpt_to_size,Finviz bear flag pattern; GPT to set stop/target
+2025-12-05,AVGO,bear_flag_short,Bear Flag Short,short,< signal candle low,386.165,393.53,385.1452,390.24,,,,,gpt_to_size,Finviz bear flag pattern; GPT to set stop/target
+2025-12-05,AWK,bear_flag_short,Bear Flag Short,short,< signal candle low,128.63,130.28,128.07,129.5,,,,,gpt_to_size,Finviz bear flag pattern; GPT to set stop/target
+2025-12-05,AXP,bear_flag_short,Bear Flag Short,short,< signal candle low,369.45,374.875,369.45,370.35,,,,,gpt_to_size,Finviz bear flag pattern; GPT to set stop/target
+2025-12-05,BA,bear_flag_short,Bear Flag Short,short,< signal candle low,201.0,202.95,200.56,201.89,,,,,gpt_to_size,Finviz bear flag pattern; GPT to set stop/target
+2025-12-05,BAC,bear_flag_short,Bear Flag Short,short,< signal candle low,53.9,54.825,53.74,53.95,,,,,gpt_to_size,Finviz bear flag pattern; GPT to set stop/target
+2025-12-05,BAH,bear_flag_short,Bear Flag Short,short,< signal candle low,87.3,88.585,86.55,88.01,,,,,gpt_to_size,Finviz bear flag pattern; GPT to set stop/target
+2025-12-05,BALL,bear_flag_short,Bear Flag Short,short,< signal candle low,48.75,49.46,48.43,49.03,,,,,gpt_to_size,Finviz bear flag pattern; GPT to set stop/target
+2025-12-05,BAM,bear_flag_short,Bear Flag Short,short,< signal candle low,53.025,54.15,52.76,53.26,,,,,gpt_to_size,Finviz bear flag pattern; GPT to set stop/target
 2025-12-05,BBIO,bear_flag_short,Bear Flag Short,short,< signal candle low,74.4,74.86,72.375,73.64,,,,,gpt_to_size,Finviz bear flag pattern; GPT to set stop/target
+2025-12-05,BBY,bear_flag_short,Bear Flag Short,short,< signal candle low,74.265,74.58,73.25,74.17,,,,,gpt_to_size,Finviz bear flag pattern; GPT to set stop/target
+2025-12-05,BDX,bear_flag_short,Bear Flag Short,short,< signal candle low,193.715,196.115,193.685,193.96,,,,,gpt_to_size,Finviz bear flag pattern; GPT to set stop/target
+2025-12-05,BE,bear_flag_short,Bear Flag Short,short,< signal candle low,115.59,119.825,112.53,119.18,,,,,gpt_to_size,Finviz bear flag pattern; GPT to set stop/target
+2025-12-05,BEPC,bear_flag_short,Bear Flag Short,short,< signal candle low,40.58,40.65,39.63,39.71,,,,,gpt_to_size,Finviz bear flag pattern; GPT to set stop/target
+2025-12-05,BG,bear_flag_short,Bear Flag Short,short,< signal candle low,94.5,94.8,93.61,93.63,,,,,gpt_to_size,Finviz bear flag pattern; GPT to set stop/target
+2025-12-05,BHF,bear_flag_short,Bear Flag Short,short,< signal candle low,65.54,65.59,65.29,65.35,,,,,gpt_to_size,Finviz bear flag pattern; GPT to set stop/target
 2025-12-05,BIIB,bear_flag_short,Bear Flag Short,short,< signal candle low,181.96,183.14516,181.1,181.3,,,,,gpt_to_size,Finviz bear flag pattern; GPT to set stop/target
-2025-12-04,BKR,bear_flag_short,Bear Flag Short,short,< signal candle low,50.435,51.12,49.925,50.61,,,,,gpt_to_size,Finviz bear flag pattern; GPT to set stop/target
+2025-12-05,BILL,bear_flag_short,Bear Flag Short,short,< signal candle low,52.41,53.98,52.16,53.45,,,,,gpt_to_size,Finviz bear flag pattern; GPT to set stop/target
+2025-12-05,BJ,bear_flag_short,Bear Flag Short,short,< signal candle low,91.312,92.22,90.22,91.33,,,,,gpt_to_size,Finviz bear flag pattern; GPT to set stop/target
+2025-12-05,BK,bear_flag_short,Bear Flag Short,short,< signal candle low,113.825,114.9599,113.4,114.02,,,,,gpt_to_size,Finviz bear flag pattern; GPT to set stop/target
+2025-12-05,BKR,bear_flag_short,Bear Flag Short,short,< signal candle low,50.51,50.76,49.06,49.2,,,,,gpt_to_size,Finviz bear flag pattern; GPT to set stop/target
 2025-12-05,BKU,bear_flag_short,Bear Flag Short,short,< signal candle low,44.45,45.075,44.085,44.7,,,,,gpt_to_size,Finviz bear flag pattern; GPT to set stop/target
+2025-12-05,BLDR,bear_flag_short,Bear Flag Short,short,< signal candle low,111.47,112.4,109.79,110.01,,,,,gpt_to_size,Finviz bear flag pattern; GPT to set stop/target
+2025-12-05,BMNR,bear_flag_short,Bear Flag Short,short,< signal candle low,35.15,36.63,34.01,34.16,,,,,gpt_to_size,Finviz bear flag pattern; GPT to set stop/target
+2025-12-05,BMRN,bear_flag_short,Bear Flag Short,short,< signal candle low,53.55,53.83,52.875,53.4,,,,,gpt_to_size,Finviz bear flag pattern; GPT to set stop/target
 2025-12-05,BMY,bear_flag_short,Bear Flag Short,short,< signal candle low,51.99,52.51,51.69,52.15,,,,,gpt_to_size,Finviz bear flag pattern; GPT to set stop/target
-2025-12-04,BRKR,bear_flag_short,Bear Flag Short,short,< signal candle low,47.39,48.835,45.37,48.38,,,,,gpt_to_size,Finviz bear flag pattern; GPT to set stop/target
+2025-12-05,BOX,bear_flag_short,Bear Flag Short,short,< signal candle low,31.745,31.92,31.04,31.62,,,,,gpt_to_size,Finviz bear flag pattern; GPT to set stop/target
+2025-12-05,BRBR,bear_flag_short,Bear Flag Short,short,< signal candle low,30.809,31.42,30.475,31.17,,,,,gpt_to_size,Finviz bear flag pattern; GPT to set stop/target
+2025-12-05,BRKR,bear_flag_short,Bear Flag Short,short,< signal candle low,48.36,48.72,47.44,48.03,,,,,gpt_to_size,Finviz bear flag pattern; GPT to set stop/target
+2025-12-05,BRO,bear_flag_short,Bear Flag Short,short,< signal candle low,79.85,79.86,77.63,78.37,,,,,gpt_to_size,Finviz bear flag pattern; GPT to set stop/target
+2025-12-05,BROS,bear_flag_short,Bear Flag Short,short,< signal candle low,60.965,61.02,57.77,58.43,,,,,gpt_to_size,Finviz bear flag pattern; GPT to set stop/target
+2025-12-05,BRZE,bear_flag_short,Bear Flag Short,short,< signal candle low,29.78,31.2,29.705,30.3,,,,,gpt_to_size,Finviz bear flag pattern; GPT to set stop/target
+2025-12-05,BSX,bear_flag_short,Bear Flag Short,short,< signal candle low,97.965,98.685,97.02,97.52,,,,,gpt_to_size,Finviz bear flag pattern; GPT to set stop/target
+2025-12-05,BSY,bear_flag_short,Bear Flag Short,short,< signal candle low,42.52,43.34,42.32,43.19,,,,,gpt_to_size,Finviz bear flag pattern; GPT to set stop/target
+2025-12-05,BTSG,bear_flag_short,Bear Flag Short,short,< signal candle low,34.75,35.94,34.75,35.79,,,,,gpt_to_size,Finviz bear flag pattern; GPT to set stop/target
+2025-12-05,BURL,bear_flag_short,Bear Flag Short,short,< signal candle low,256.45,273.08,256.32,271.78,,,,,gpt_to_size,Finviz bear flag pattern; GPT to set stop/target
+2025-12-05,BWA,bear_flag_short,Bear Flag Short,short,< signal candle low,43.365,43.685,43.28,43.3,,,,,gpt_to_size,Finviz bear flag pattern; GPT to set stop/target
+2025-12-05,BWXT,bear_flag_short,Bear Flag Short,short,< signal candle low,181.0,181.48,174.87,177.87,,,,,gpt_to_size,Finviz bear flag pattern; GPT to set stop/target
+2025-12-05,BX,bear_flag_short,Bear Flag Short,short,< signal candle low,150.655,153.82,150.35,152.15,,,,,gpt_to_size,Finviz bear flag pattern; GPT to set stop/target
+2025-12-05,BXP,bear_flag_short,Bear Flag Short,short,< signal candle low,70.74,70.81,68.7,69.28,,,,,gpt_to_size,Finviz bear flag pattern; GPT to set stop/target
 2025-12-05,C,bear_flag_short,Bear Flag Short,short,< signal candle low,107.67,109.367,107.51,108.88,,,,,gpt_to_size,Finviz bear flag pattern; GPT to set stop/target
-2025-12-04,CADE,bear_flag_short,Bear Flag Short,short,< signal candle low,41.6,42.17,41.6,42.03,,,,,gpt_to_size,Finviz bear flag pattern; GPT to set stop/target
+2025-12-05,CADE,bear_flag_short,Bear Flag Short,short,< signal candle low,41.72,41.9,41.39,41.43,,,,,gpt_to_size,Finviz bear flag pattern; GPT to set stop/target
+2025-12-05,CAH,bear_flag_short,Bear Flag Short,short,< signal candle low,200.01,200.255,198.1,198.83,,,,,gpt_to_size,Finviz bear flag pattern; GPT to set stop/target
+2025-12-05,CAKE,bear_flag_short,Bear Flag Short,short,< signal candle low,47.78,47.845,46.9,46.98,,,,,gpt_to_size,Finviz bear flag pattern; GPT to set stop/target
+2025-12-05,CARR,bear_flag_short,Bear Flag Short,short,< signal candle low,54.375,54.8,54.0,54.29,,,,,gpt_to_size,Finviz bear flag pattern; GPT to set stop/target
 2025-12-05,CART,bear_flag_short,Bear Flag Short,short,< signal candle low,43.12,44.2688,43.085,44.18,,,,,gpt_to_size,Finviz bear flag pattern; GPT to set stop/target
-2025-12-05,A,bull_flag_long,Bull Flag Long,long,> signal candle high,148.5,149.0,144.76,145.49,,,,,gpt_to_size,Finviz bull flag pattern; GPT to set stop/target
-2025-12-05,AA,bull_flag_long,Bull Flag Long,long,> signal candle high,44.29,44.8424,43.731,43.77,,,,,gpt_to_size,Finviz bull flag pattern; GPT to set stop/target
-2025-12-05,AAPL,bull_flag_long,Bull Flag Long,long,> signal candle high,280.54,281.14,278.05,278.78,,,,,gpt_to_size,Finviz bull flag pattern; GPT to set stop/target
-2025-12-05,ACM,bull_flag_long,Bull Flag Long,long,> signal candle high,105.36,105.42,102.31,102.43,,,,,gpt_to_size,Finviz bull flag pattern; GPT to set stop/target
-2025-12-05,ACMR,bull_flag_long,Bull Flag Long,long,> signal candle high,34.68,35.31,34.68,35.1,,,,,gpt_to_size,Finviz bull flag pattern; GPT to set stop/target
-2025-12-05,ADI,bull_flag_long,Bull Flag Long,long,> signal candle high,280.12,283.235,279.14,281.29,,,,,gpt_to_size,Finviz bull flag pattern; GPT to set stop/target
-2025-12-05,ADSK,bull_flag_long,Bull Flag Long,long,> signal candle high,306.0,307.8253,304.3,306.74,,,,,gpt_to_size,Finviz bull flag pattern; GPT to set stop/target
-2025-12-05,AHR,bull_flag_long,Bull Flag Long,long,> signal candle high,49.8429,50.32,49.675,50.11,,,,,gpt_to_size,Finviz bull flag pattern; GPT to set stop/target
-2025-12-05,AJG,bull_flag_long,Bull Flag Long,long,> signal candle high,245.0,245.0,238.65,239.71,,,,,gpt_to_size,Finviz bull flag pattern; GPT to set stop/target
-2025-12-05,AKAM,bull_flag_long,Bull Flag Long,long,> signal candle high,86.6,87.0,82.7,83.49,,,,,gpt_to_size,Finviz bull flag pattern; GPT to set stop/target
-2025-12-05,AKRO,bull_flag_long,Bull Flag Long,long,> signal candle high,54.65,54.65,54.295,54.55,,,,,gpt_to_size,Finviz bull flag pattern; GPT to set stop/target
-2025-12-05,AL,bull_flag_long,Bull Flag Long,long,> signal candle high,64.03,64.085,63.92,63.93,,,,,gpt_to_size,Finviz bull flag pattern; GPT to set stop/target
-2025-12-05,ALB,bull_flag_long,Bull Flag Long,long,> signal candle high,123.81,129.88,122.7,125.19,,,,,gpt_to_size,Finviz bull flag pattern; GPT to set stop/target
-2025-12-05,ALGN,bull_flag_long,Bull Flag Long,long,> signal candle high,157.92,159.5,155.395,157.21,,,,,gpt_to_size,Finviz bull flag pattern; GPT to set stop/target
-2025-12-05,ALLY,bull_flag_long,Bull Flag Long,long,> signal candle high,42.23,42.735,42.16,42.39,,,,,gpt_to_size,Finviz bull flag pattern; GPT to set stop/target
-2025-12-05,ALNY,bull_flag_long,Bull Flag Long,long,> signal candle high,468.29,473.5,455.32,458.12,,,,,gpt_to_size,Finviz bull flag pattern; GPT to set stop/target
-2025-12-05,AMAT,bull_flag_long,Bull Flag Long,long,> signal candle high,269.79,273.59,267.36,268.0,,,,,gpt_to_size,Finviz bull flag pattern; GPT to set stop/target
-2025-12-05,AME,bull_flag_long,Bull Flag Long,long,> signal candle high,199.11,201.3899,198.32,199.8,,,,,gpt_to_size,Finviz bull flag pattern; GPT to set stop/target
-2025-12-05,AMGN,bull_flag_long,Bull Flag Long,long,> signal candle high,340.46,340.87,328.63,329.89,,,,,gpt_to_size,Finviz bull flag pattern; GPT to set stop/target
-2025-12-05,AMKR,bull_flag_long,Bull Flag Long,long,> signal candle high,43.9,43.94,42.98,43.23,,,,,gpt_to_size,Finviz bull flag pattern; GPT to set stop/target
-2025-12-05,AMZN,bull_flag_long,Bull Flag Long,long,> signal candle high,230.32,231.24,228.58,229.53,,,,,gpt_to_size,Finviz bull flag pattern; GPT to set stop/target
-2025-12-05,ANF,bull_flag_long,Bull Flag Long,long,> signal candle high,95.719,98.9999,94.76,94.87,,,,,gpt_to_size,Finviz bull flag pattern; GPT to set stop/target
-2025-12-05,AOS,bull_flag_long,Bull Flag Long,long,> signal candle high,67.26,68.4,67.26,68.03,,,,,gpt_to_size,Finviz bull flag pattern; GPT to set stop/target
-2025-12-05,APG,bull_flag_long,Bull Flag Long,long,> signal candle high,38.7,39.21,38.44,39.06,,,,,gpt_to_size,Finviz bull flag pattern; GPT to set stop/target
-2025-12-05,APP,bull_flag_long,Bull Flag Long,long,> signal candle high,687.445,702.3,678.69,691.94,,,,,gpt_to_size,Finviz bull flag pattern; GPT to set stop/target
-2025-12-05,AR,bull_flag_long,Bull Flag Long,long,> signal candle high,37.25,38.175,36.74,36.75,,,,,gpt_to_size,Finviz bull flag pattern; GPT to set stop/target
-2025-12-05,ARE,bull_flag_long,Bull Flag Long,long,> signal candle high,46.1,47.49,45.47,45.48,,,,,gpt_to_size,Finviz bull flag pattern; GPT to set stop/target
-2025-12-05,ARQT,bull_flag_long,Bull Flag Long,long,> signal candle high,31.03,31.4499,30.385,31.2,,,,,gpt_to_size,Finviz bull flag pattern; GPT to set stop/target
-2025-12-05,ARWR,bull_flag_long,Bull Flag Long,long,> signal candle high,62.95,64.2775,60.29,61.44,,,,,gpt_to_size,Finviz bull flag pattern; GPT to set stop/target
-2025-12-05,BBIO,bull_flag_long,Bull Flag Long,long,> signal candle high,74.4,74.86,72.375,73.64,,,,,gpt_to_size,Finviz bull flag pattern; GPT to set stop/target
-2025-12-05,BIIB,bull_flag_long,Bull Flag Long,long,> signal candle high,181.96,183.14516,181.1,181.3,,,,,gpt_to_size,Finviz bull flag pattern; GPT to set stop/target
-2025-12-04,BKR,bull_flag_long,Bull Flag Long,long,> signal candle high,50.435,51.12,49.925,50.61,,,,,gpt_to_size,Finviz bull flag pattern; GPT to set stop/target
-2025-12-05,BKU,bull_flag_long,Bull Flag Long,long,> signal candle high,44.45,45.075,44.085,44.7,,,,,gpt_to_size,Finviz bull flag pattern; GPT to set stop/target
-2025-12-05,BMY,bull_flag_long,Bull Flag Long,long,> signal candle high,51.99,52.51,51.69,52.15,,,,,gpt_to_size,Finviz bull flag pattern; GPT to set stop/target
-2025-12-04,BRKR,bull_flag_long,Bull Flag Long,long,> signal candle high,47.39,48.835,45.37,48.38,,,,,gpt_to_size,Finviz bull flag pattern; GPT to set stop/target
-2025-12-05,C,bull_flag_long,Bull Flag Long,long,> signal candle high,107.67,109.367,107.51,108.88,,,,,gpt_to_size,Finviz bull flag pattern; GPT to set stop/target
-2025-12-04,CADE,bull_flag_long,Bull Flag Long,long,> signal candle high,41.6,42.17,41.6,42.03,,,,,gpt_to_size,Finviz bull flag pattern; GPT to set stop/target
-2025-12-05,CART,bull_flag_long,Bull Flag Long,long,> signal candle high,43.12,44.2688,43.085,44.18,,,,,gpt_to_size,Finviz bull flag pattern; GPT to set stop/target
-2025-12-04,BRKR,channel_down_short,Channel Down Short,short,< signal candle low,47.39,48.835,45.37,48.38,,,,,gpt_to_size,Finviz channel down pattern; GPT to set stop/target
-2025-12-05,AAPL,channel_up_long,Channel Up Long,long,> signal candle high,280.54,281.14,278.05,278.78,,,,,gpt_to_size,Finviz channel up pattern; GPT to set stop/target
-2025-12-05,ACMR,channel_up_long,Channel Up Long,long,> signal candle high,34.68,35.31,34.68,35.1,,,,,gpt_to_size,Finviz channel up pattern; GPT to set stop/target
-2025-12-05,ADI,channel_up_long,Channel Up Long,long,> signal candle high,280.12,283.235,279.14,281.29,,,,,gpt_to_size,Finviz channel up pattern; GPT to set stop/target
-2025-12-05,AHR,channel_up_long,Channel Up Long,long,> signal candle high,49.8429,50.32,49.675,50.11,,,,,gpt_to_size,Finviz channel up pattern; GPT to set stop/target
-2025-12-05,AKAM,channel_up_long,Channel Up Long,long,> signal candle high,86.6,87.0,82.7,83.49,,,,,gpt_to_size,Finviz channel up pattern; GPT to set stop/target
-2025-12-05,ALLY,channel_up_long,Channel Up Long,long,> signal candle high,42.23,42.735,42.16,42.39,,,,,gpt_to_size,Finviz channel up pattern; GPT to set stop/target
-2025-12-05,AMZN,channel_up_long,Channel Up Long,long,> signal candle high,230.32,231.24,228.58,229.53,,,,,gpt_to_size,Finviz channel up pattern; GPT to set stop/target
-2025-12-05,APG,channel_up_long,Channel Up Long,long,> signal candle high,38.7,39.21,38.44,39.06,,,,,gpt_to_size,Finviz channel up pattern; GPT to set stop/target
-2025-12-04,CADE,channel_up_long,Channel Up Long,long,> signal candle high,41.6,42.17,41.6,42.03,,,,,gpt_to_size,Finviz channel up pattern; GPT to set stop/target
+2025-12-05,CAT,bear_flag_short,Bear Flag Short,short,< signal candle low,603.68,607.0,597.7382,603.17,,,,,gpt_to_size,Finviz bear flag pattern; GPT to set stop/target
+2025-12-05,CAVA,bear_flag_short,Bear Flag Short,short,< signal candle low,54.365,54.575,52.598,53.37,,,,,gpt_to_size,Finviz bear flag pattern; GPT to set stop/target
+2025-12-05,CBRE,bear_flag_short,Bear Flag Short,short,< signal candle low,162.24,162.24,160.36,160.86,,,,,gpt_to_size,Finviz bear flag pattern; GPT to set stop/target
+2025-12-05,CBSH,bear_flag_short,Bear Flag Short,short,< signal candle low,52.42,52.73,52.23,52.24,,,,,gpt_to_size,Finviz bear flag pattern; GPT to set stop/target
+2025-12-05,CCI,bear_flag_short,Bear Flag Short,short,< signal candle low,88.43,89.5,88.25,89.28,,,,,gpt_to_size,Finviz bear flag pattern; GPT to set stop/target
+2025-12-05,CCK,bear_flag_short,Bear Flag Short,short,< signal candle low,98.22,99.675,97.94,97.95,,,,,gpt_to_size,Finviz bear flag pattern; GPT to set stop/target
+2025-12-05,CDNS,bear_flag_short,Bear Flag Short,short,< signal candle low,338.43,341.04,336.16,337.53,,,,,gpt_to_size,Finviz bear flag pattern; GPT to set stop/target
+2025-12-05,CDTX,bear_flag_short,Bear Flag Short,short,< signal candle low,220.21,220.92,220.03,220.36,,,,,gpt_to_size,Finviz bear flag pattern; GPT to set stop/target
+2025-12-05,CDW,bear_flag_short,Bear Flag Short,short,< signal candle low,143.78,147.02,142.5,146.25,,,,,gpt_to_size,Finviz bear flag pattern; GPT to set stop/target
+2025-12-05,CE,bear_flag_short,Bear Flag Short,short,< signal candle low,39.82,41.44,39.58,40.63,,,,,gpt_to_size,Finviz bear flag pattern; GPT to set stop/target
+2025-12-05,CEG,bear_flag_short,Bear Flag Short,short,< signal candle low,369.43,370.07,357.17,359.82,,,,,gpt_to_size,Finviz bear flag pattern; GPT to set stop/target
+2025-12-05,CELC,bear_flag_short,Bear Flag Short,short,< signal candle low,106.58,107.78,105.0,105.63,,,,,gpt_to_size,Finviz bear flag pattern; GPT to set stop/target
+2025-12-05,CELH,bear_flag_short,Bear Flag Short,short,< signal candle low,42.7,42.99,41.85,42.06,,,,,gpt_to_size,Finviz bear flag pattern; GPT to set stop/target
+2025-12-05,CENX,bear_flag_short,Bear Flag Short,short,< signal candle low,31.43,32.13,30.94,31.08,,,,,gpt_to_size,Finviz bear flag pattern; GPT to set stop/target
+2025-12-05,CF,bear_flag_short,Bear Flag Short,short,< signal candle low,80.25,80.6,77.82,77.88,,,,,gpt_to_size,Finviz bear flag pattern; GPT to set stop/target
+2025-12-05,CFG,bear_flag_short,Bear Flag Short,short,< signal candle low,55.68,56.17,55.44,55.46,,,,,gpt_to_size,Finviz bear flag pattern; GPT to set stop/target
+2025-12-05,CG,bear_flag_short,Bear Flag Short,short,< signal candle low,56.27,57.59,55.97,57.11,,,,,gpt_to_size,Finviz bear flag pattern; GPT to set stop/target
+2025-12-05,CGNX,bear_flag_short,Bear Flag Short,short,< signal candle low,38.88,39.18,38.32,38.42,,,,,gpt_to_size,Finviz bear flag pattern; GPT to set stop/target
+2025-12-05,CGON,bear_flag_short,Bear Flag Short,short,< signal candle low,45.05,46.01,43.02,43.3,,,,,gpt_to_size,Finviz bear flag pattern; GPT to set stop/target
+2025-12-05,CHD,bear_flag_short,Bear Flag Short,short,< signal candle low,83.685,84.9,83.51,84.52,,,,,gpt_to_size,Finviz bear flag pattern; GPT to set stop/target
+2025-12-05,CHRW,bear_flag_short,Bear Flag Short,short,< signal candle low,156.86,158.65,154.425,157.22,,,,,gpt_to_size,Finviz bear flag pattern; GPT to set stop/target
+2025-12-05,CHTR,bear_flag_short,Bear Flag Short,short,< signal candle low,200.0,207.79,199.65,205.1,,,,,gpt_to_size,Finviz bear flag pattern; GPT to set stop/target
+2025-12-05,CHWY,bear_flag_short,Bear Flag Short,short,< signal candle low,33.34,33.62,33.105,33.47,,,,,gpt_to_size,Finviz bear flag pattern; GPT to set stop/target
+2025-12-05,CI,bear_flag_short,Bear Flag Short,short,< signal candle low,268.805,269.08,263.87,265.44,,,,,gpt_to_size,Finviz bear flag pattern; GPT to set stop/target
+2025-12-05,CIEN,bear_flag_short,Bear Flag Short,short,< signal candle low,199.63,201.77,194.88,201.71,,,,,gpt_to_size,Finviz bear flag pattern; GPT to set stop/target
+2025-12-05,CIVI,bear_flag_short,Bear Flag Short,short,< signal candle low,30.21,31.4,30.21,30.39,,,,,gpt_to_size,Finviz bear flag pattern; GPT to set stop/target
+2025-12-05,CL,bear_flag_short,Bear Flag Short,short,< signal candle low,77.47,78.2144,77.242,78.07,,,,,gpt_to_size,Finviz bear flag pattern; GPT to set stop/target
+2025-12-05,CLX,bear_flag_short,Bear Flag Short,short,< signal candle low,104.855,106.09,104.64,104.9,,,,,gpt_to_size,Finviz bear flag pattern; GPT to set stop/target
+2025-12-05,CMA,bear_flag_short,Bear Flag Short,short,< signal candle low,84.28,85.315,83.88,84.12,,,,,gpt_to_size,Finviz bear flag pattern; GPT to set stop/target
+2025-12-05,CMC,bear_flag_short,Bear Flag Short,short,< signal candle low,66.72,68.35,66.03,66.86,,,,,gpt_to_size,Finviz bear flag pattern; GPT to set stop/target
+2025-12-05,CME,bear_flag_short,Bear Flag Short,short,< signal candle low,273.345,273.87,270.1,270.87,,,,,gpt_to_size,Finviz bear flag pattern; GPT to set stop/target
+2025-12-05,CMG,bear_flag_short,Bear Flag Short,short,< signal candle low,33.96,34.15,33.655,33.94,,,,,gpt_to_size,Finviz bear flag pattern; GPT to set stop/target
+2025-12-05,CMS,bear_flag_short,Bear Flag Short,short,< signal candle low,71.695,71.865,71.04,71.09,,,,,gpt_to_size,Finviz bear flag pattern; GPT to set stop/target
+2025-12-05,CNC,bear_flag_short,Bear Flag Short,short,< signal candle low,38.85,38.88,37.75,38.34,,,,,gpt_to_size,Finviz bear flag pattern; GPT to set stop/target
+2025-12-05,CNM,bear_flag_short,Bear Flag Short,short,< signal candle low,49.785,50.7,49.37,50.23,,,,,gpt_to_size,Finviz bear flag pattern; GPT to set stop/target
+2025-12-05,CNP,bear_flag_short,Bear Flag Short,short,< signal candle low,38.545,38.765,38.37,38.43,,,,,gpt_to_size,Finviz bear flag pattern; GPT to set stop/target
+2025-12-05,CNX,bear_flag_short,Bear Flag Short,short,< signal candle low,40.68,42.1286,40.59,40.9,,,,,gpt_to_size,Finviz bear flag pattern; GPT to set stop/target
+2025-12-05,COCO,bear_flag_short,Bear Flag Short,short,< signal candle low,53.96,54.84,53.66,54.565,,,,,gpt_to_size,Finviz bear flag pattern; GPT to set stop/target
+2025-12-05,COF,bear_flag_short,Bear Flag Short,short,< signal candle low,228.79,233.01,228.79,230.68,,,,,gpt_to_size,Finviz bear flag pattern; GPT to set stop/target
+2025-12-05,COGT,bear_flag_short,Bear Flag Short,short,< signal candle low,39.46,39.94,38.2001,38.77,,,,,gpt_to_size,Finviz bear flag pattern; GPT to set stop/target
+2025-12-05,COHR,bear_flag_short,Bear Flag Short,short,< signal candle low,186.0,188.36,181.48,181.79,,,,,gpt_to_size,Finviz bear flag pattern; GPT to set stop/target
+2025-12-05,COIN,bear_flag_short,Bear Flag Short,short,< signal candle low,270.425,273.57,265.01,269.73,,,,,gpt_to_size,Finviz bear flag pattern; GPT to set stop/target
+2025-12-05,COO,bear_flag_short,Bear Flag Short,short,< signal candle low,89.66,89.83,80.89,81.4,,,,,gpt_to_size,Finviz bear flag pattern; GPT to set stop/target
+2025-12-05,COP,bear_flag_short,Bear Flag Short,short,< signal candle low,92.0817,95.07,92.0817,93.69,,,,,gpt_to_size,Finviz bear flag pattern; GPT to set stop/target
+2025-12-05,COR,bear_flag_short,Bear Flag Short,short,< signal candle low,338.11,341.18,336.37,339.66,,,,,gpt_to_size,Finviz bear flag pattern; GPT to set stop/target
+2025-12-05,COST,bear_flag_short,Bear Flag Short,short,< signal candle low,897.25,905.89,893.0,894.68,,,,,gpt_to_size,Finviz bear flag pattern; GPT to set stop/target
+2025-12-05,CPRT,bear_flag_short,Bear Flag Short,short,< signal candle low,38.9,38.98,38.64,38.72,,,,,gpt_to_size,Finviz bear flag pattern; GPT to set stop/target
+2025-12-05,CPT,bear_flag_short,Bear Flag Short,short,< signal candle low,104.13,105.01,103.46,103.88,,,,,gpt_to_size,Finviz bear flag pattern; GPT to set stop/target
+2025-12-05,CRBG,bear_flag_short,Bear Flag Short,short,< signal candle low,30.26,30.76,30.24,30.37,,,,,gpt_to_size,Finviz bear flag pattern; GPT to set stop/target
+2025-12-05,CRCL,bear_flag_short,Bear Flag Short,short,< signal candle low,86.09,86.66,83.14,85.62,,,,,gpt_to_size,Finviz bear flag pattern; GPT to set stop/target
+2025-12-05,CRH,bear_flag_short,Bear Flag Short,short,< signal candle low,120.36,121.35,118.595,119.49,,,,,gpt_to_size,Finviz bear flag pattern; GPT to set stop/target
+2025-12-05,CRL,bear_flag_short,Bear Flag Short,short,< signal candle low,184.78,185.9,182.7143,184.31,,,,,gpt_to_size,Finviz bear flag pattern; GPT to set stop/target
+2025-12-05,CRM,bear_flag_short,Bear Flag Short,short,< signal candle low,249.75,261.88,249.5,260.57,,,,,gpt_to_size,Finviz bear flag pattern; GPT to set stop/target
+2025-12-05,CRNX,bear_flag_short,Bear Flag Short,short,< signal candle low,47.52,47.83,46.65,46.67,,,,,gpt_to_size,Finviz bear flag pattern; GPT to set stop/target
+2025-12-05,CROX,bear_flag_short,Bear Flag Short,short,< signal candle low,88.04,90.82,88.04,89.7,,,,,gpt_to_size,Finviz bear flag pattern; GPT to set stop/target
+2025-12-05,CRWD,bear_flag_short,Bear Flag Short,short,< signal candle low,516.14,526.89,508.32,512.03,,,,,gpt_to_size,Finviz bear flag pattern; GPT to set stop/target
+2025-12-05,CRWV,bear_flag_short,Bear Flag Short,short,< signal candle low,87.3,88.76,84.62,88.3,,,,,gpt_to_size,Finviz bear flag pattern; GPT to set stop/target
+2025-12-05,CSCO,bear_flag_short,Bear Flag Short,short,< signal candle low,77.97,78.19,77.395,77.97,,,,,gpt_to_size,Finviz bear flag pattern; GPT to set stop/target
+2025-12-05,CSGP,bear_flag_short,Bear Flag Short,short,< signal candle low,67.82,68.77,67.4675,68.01,,,,,gpt_to_size,Finviz bear flag pattern; GPT to set stop/target
+2025-12-05,CSX,bear_flag_short,Bear Flag Short,short,< signal candle low,36.13,36.555,36.085,36.3,,,,,gpt_to_size,Finviz bear flag pattern; GPT to set stop/target
+2025-12-05,CTAS,bear_flag_short,Bear Flag Short,short,< signal candle low,184.12,186.98,183.8002,186.75,,,,,gpt_to_size,Finviz bear flag pattern; GPT to set stop/target
+2025-12-05,CTRE,bear_flag_short,Bear Flag Short,short,< signal candle low,37.82,37.87,37.6,37.7,,,,,gpt_to_size,Finviz bear flag pattern; GPT to set stop/target
+2025-12-05,CTSH,bear_flag_short,Bear Flag Short,short,< signal candle low,79.97,81.145,79.48,80.72,,,,,gpt_to_size,Finviz bear flag pattern; GPT to set stop/target
+2025-12-05,CTVA,bear_flag_short,Bear Flag Short,short,< signal candle low,66.245,67.03,65.93,66.0,,,,,gpt_to_size,Finviz bear flag pattern; GPT to set stop/target
+2025-12-05,CUBE,bear_flag_short,Bear Flag Short,short,< signal candle low,36.502,36.895,36.46,36.63,,,,,gpt_to_size,Finviz bear flag pattern; GPT to set stop/target
+2025-12-05,CVI,bear_flag_short,Bear Flag Short,short,< signal candle low,33.97,34.43,33.485,33.54,,,,,gpt_to_size,Finviz bear flag pattern; GPT to set stop/target
+2025-12-05,CVNA,bear_flag_short,Bear Flag Short,short,< signal candle low,398.35,408.19,397.21,399.77,,,,,gpt_to_size,Finviz bear flag pattern; GPT to set stop/target
+2025-12-05,CVS,bear_flag_short,Bear Flag Short,short,< signal candle low,76.66,76.89,74.98,75.63,,,,,gpt_to_size,Finviz bear flag pattern; GPT to set stop/target
+2025-12-05,CVX,bear_flag_short,Bear Flag Short,short,< signal candle low,152.0,152.63,149.83,150.0,,,,,gpt_to_size,Finviz bear flag pattern; GPT to set stop/target
+2025-12-05,CWEN,bear_flag_short,Bear Flag Short,short,< signal candle low,34.1,34.22,33.71,34.01,,,,,gpt_to_size,Finviz bear flag pattern; GPT to set stop/target
+2025-12-05,CYTK,bear_flag_short,Bear Flag Short,short,< signal candle low,66.49,66.95,65.36,65.67,,,,,gpt_to_size,Finviz bear flag pattern; GPT to set stop/target
+2025-12-05,D,bear_flag_short,Bear Flag Short,short,< signal candle low,59.09,59.14,58.46,58.49,,,,,gpt_to_size,Finviz bear flag pattern; GPT to set stop/target
+2025-12-05,DAL,bear_flag_short,Bear Flag Short,short,< signal candle low,66.79,67.75,66.3,67.1,,,,,gpt_to_size,Finviz bear flag pattern; GPT to set stop/target
+2025-12-05,DAR,bear_flag_short,Bear Flag Short,short,< signal candle low,36.53,36.9299,36.32,36.51,,,,,gpt_to_size,Finviz bear flag pattern; GPT to set stop/target
+2025-12-05,DASH,bear_flag_short,Bear Flag Short,short,< signal candle low,221.19,227.71,220.48,225.0,,,,,gpt_to_size,Finviz bear flag pattern; GPT to set stop/target
+2025-12-05,DAY,bear_flag_short,Bear Flag Short,short,< signal candle low,69.11,69.13,68.98,69.07,,,,,gpt_to_size,Finviz bear flag pattern; GPT to set stop/target
+2025-12-05,DD,bear_flag_short,Bear Flag Short,short,< signal candle low,39.9,40.77,39.815,40.51,,,,,gpt_to_size,Finviz bear flag pattern; GPT to set stop/target
+2025-12-05,DDOG,bear_flag_short,Bear Flag Short,short,< signal candle low,153.0,153.05,150.075,151.41,,,,,gpt_to_size,Finviz bear flag pattern; GPT to set stop/target
+2025-12-05,DE,bear_flag_short,Bear Flag Short,short,< signal candle low,481.57,485.44,473.69,475.11,,,,,gpt_to_size,Finviz bear flag pattern; GPT to set stop/target
+2025-12-05,DECK,bear_flag_short,Bear Flag Short,short,< signal candle low,96.5,99.74,96.175,99.7,,,,,gpt_to_size,Finviz bear flag pattern; GPT to set stop/target
+2025-12-05,DELL,bear_flag_short,Bear Flag Short,short,< signal candle low,138.95,139.2,136.11,138.91,,,,,gpt_to_size,Finviz bear flag pattern; GPT to set stop/target
+2025-12-05,DG,bear_flag_short,Bear Flag Short,short,< signal candle low,125.185,135.07,124.24,132.37,,,,,gpt_to_size,Finviz bear flag pattern; GPT to set stop/target
+2025-12-05,DGX,bear_flag_short,Bear Flag Short,short,< signal candle low,183.515,184.19,182.08,182.51,,,,,gpt_to_size,Finviz bear flag pattern; GPT to set stop/target
+2025-12-05,DHI,bear_flag_short,Bear Flag Short,short,< signal candle low,161.09,162.1,158.52,158.62,,,,,gpt_to_size,Finviz bear flag pattern; GPT to set stop/target
+2025-12-05,DHR,bear_flag_short,Bear Flag Short,short,< signal candle low,227.38,228.4765,225.0,226.25,,,,,gpt_to_size,Finviz bear flag pattern; GPT to set stop/target
+2025-12-05,DINO,bear_flag_short,Bear Flag Short,short,< signal candle low,50.545,51.25,50.02,50.07,,,,,gpt_to_size,Finviz bear flag pattern; GPT to set stop/target
+2025-12-05,DIS,bear_flag_short,Bear Flag Short,short,< signal candle low,105.03,106.17,104.56,105.3,,,,,gpt_to_size,Finviz bear flag pattern; GPT to set stop/target
+2025-12-05,DK,bear_flag_short,Bear Flag Short,short,< signal candle low,37.825,37.945,36.34,36.41,,,,,gpt_to_size,Finviz bear flag pattern; GPT to set stop/target
+2025-12-05,DKNG,bear_flag_short,Bear Flag Short,short,< signal candle low,35.23,35.84,33.73,34.0,,,,,gpt_to_size,Finviz bear flag pattern; GPT to set stop/target
+2025-12-05,DKS,bear_flag_short,Bear Flag Short,short,< signal candle low,226.67,236.855,226.4,232.22,,,,,gpt_to_size,Finviz bear flag pattern; GPT to set stop/target
+2025-12-05,DLR,bear_flag_short,Bear Flag Short,short,< signal candle low,161.0,165.99,160.995,164.73,,,,,gpt_to_size,Finviz bear flag pattern; GPT to set stop/target
+2025-12-05,DLTR,bear_flag_short,Bear Flag Short,short,< signal candle low,115.92,125.79,115.63,122.44,,,,,gpt_to_size,Finviz bear flag pattern; GPT to set stop/target
+2025-12-05,DOCN,bear_flag_short,Bear Flag Short,short,< signal candle low,46.28,48.4,45.99,48.3,,,,,gpt_to_size,Finviz bear flag pattern; GPT to set stop/target
+2025-12-02,COGT,rsi_reversal_short,Reversal Short,short,< signal candle close,39.76,40.25,37.75,38.98,,,,,gpt_to_size,RSI>=70 + bearish engulfing; GPT to set stop/target
+2025-12-05,COGT,rsi_reversal_short,Reversal Short,short,< signal candle close,39.46,39.94,38.2001,38.77,,,,,gpt_to_size,RSI>=70 + bearish engulfing; GPT to set stop/target
+2025-12-04,EXAS,rsi_reversal_short,Reversal Short,short,< signal candle close,101.25,101.365,100.98,101.13,,,,,gpt_to_size,RSI>=70 + bearish engulfing; GPT to set stop/target
+2025-11-28,GEHC,rsi_reversal_short,Reversal Short,short,< signal candle close,80.65,80.69,79.63,79.99,,,,,gpt_to_size,RSI>=70 + bearish engulfing; GPT to set stop/target
+2025-12-01,NTRA,rsi_reversal_short,Reversal Short,short,< signal candle close,239.64,240.175,233.67,234.25,,,,,gpt_to_size,RSI>=70 + bearish engulfing; GPT to set stop/target
+2025-12-05,OLMA,rsi_reversal_short,Reversal Short,short,< signal candle close,27.86,28.25,25.94,27.21,,,,,gpt_to_size,RSI>=70 + bearish engulfing; GPT to set stop/target
+2025-12-02,PACS,rsi_reversal_short,Reversal Short,short,< signal candle close,33.52,34.41,31.41,31.47,,,,,gpt_to_size,RSI>=70 + bearish engulfing; GPT to set stop/target
 2025-12-04,AA,rsi_continuation_long,RSI Continuation Long,long,> signal candle close,43.9,44.46,43.52,44.01,,,,,gpt_to_size,RSI>70 and rising; GPT to set stop/target
 2025-12-05,AA,rsi_continuation_long,RSI Continuation Long,long,> signal candle close,44.29,44.8424,43.731,43.77,,,,,gpt_to_size,RSI>70 and rising; GPT to set stop/target
 2025-11-28,ADI,rsi_continuation_long,RSI Continuation Long,long,> signal candle close,259.36,265.75,258.0401,265.34,,,,,gpt_to_size,RSI>70 and rising; GPT to set stop/target
@@ -107,3 +226,388 @@ Date,Ticker,Strategy,Setup,Side,EntryTrigger,SignalOpen,SignalHigh,SignalLow,Sig
 2025-12-05,BMY,rsi_continuation_long,RSI Continuation Long,long,> signal candle close,51.99,52.51,51.69,52.15,,,,,gpt_to_size,RSI>70 and rising; GPT to set stop/target
 2025-11-26,CART,rsi_continuation_long,RSI Continuation Long,long,> signal candle close,42.13,42.7299,41.865,42.2,,,,,gpt_to_size,RSI>70 and rising; GPT to set stop/target
 2025-12-01,CART,rsi_continuation_long,RSI Continuation Long,long,> signal candle close,41.76,42.86,41.41,42.79,,,,,gpt_to_size,RSI>70 and rising; GPT to set stop/target
+2025-12-04,COHR,rsi_continuation_long,RSI Continuation Long,long,> signal candle close,169.55,186.48,169.37,177.35,,,,,gpt_to_size,RSI>70 and rising; GPT to set stop/target
+2025-12-05,COHR,rsi_continuation_long,RSI Continuation Long,long,> signal candle close,186.0,188.36,181.48,181.79,,,,,gpt_to_size,RSI>70 and rising; GPT to set stop/target
+2025-12-05,COO,rsi_continuation_long,RSI Continuation Long,long,> signal candle close,89.66,89.83,80.89,81.4,,,,,gpt_to_size,RSI>70 and rising; GPT to set stop/target
+2025-11-26,CVNA,rsi_continuation_long,RSI Continuation Long,long,> signal candle close,354.47,364.2,350.19,357.33,,,,,gpt_to_size,RSI>70 and rising; GPT to set stop/target
+2025-11-28,CVNA,rsi_continuation_long,RSI Continuation Long,long,> signal candle close,361.5,375.77,357.5,374.5,,,,,gpt_to_size,RSI>70 and rising; GPT to set stop/target
+2025-12-02,CVNA,rsi_continuation_long,RSI Continuation Long,long,> signal candle close,379.15,392.87,373.0,382.18,,,,,gpt_to_size,RSI>70 and rising; GPT to set stop/target
+2025-12-03,CVNA,rsi_continuation_long,RSI Continuation Long,long,> signal candle close,381.22,401.55,380.0,395.0,,,,,gpt_to_size,RSI>70 and rising; GPT to set stop/target
+2025-12-04,CVNA,rsi_continuation_long,RSI Continuation Long,long,> signal candle close,398.0,399.76,386.51,398.85,,,,,gpt_to_size,RSI>70 and rising; GPT to set stop/target
+2025-12-05,CVNA,rsi_continuation_long,RSI Continuation Long,long,> signal candle close,398.35,408.19,397.21,399.77,,,,,gpt_to_size,RSI>70 and rising; GPT to set stop/target
+2025-12-05,DAL,rsi_continuation_long,RSI Continuation Long,long,> signal candle close,66.79,67.75,66.3,67.1,,,,,gpt_to_size,RSI>70 and rising; GPT to set stop/target
+2025-11-26,DG,rsi_continuation_long,RSI Continuation Long,long,> signal candle close,104.905,109.25,104.5153,108.77,,,,,gpt_to_size,RSI>70 and rising; GPT to set stop/target
+2025-12-04,DG,rsi_continuation_long,RSI Continuation Long,long,> signal candle close,115.75,125.44,114.62,125.29,,,,,gpt_to_size,RSI>70 and rising; GPT to set stop/target
+2025-12-05,DG,rsi_continuation_long,RSI Continuation Long,long,> signal candle close,125.185,135.07,124.24,132.37,,,,,gpt_to_size,RSI>70 and rising; GPT to set stop/target
+2025-12-05,DLTR,rsi_continuation_long,RSI Continuation Long,long,> signal candle close,115.92,125.79,115.63,122.44,,,,,gpt_to_size,RSI>70 and rising; GPT to set stop/target
+2025-11-26,DVN,rsi_continuation_long,RSI Continuation Long,long,> signal candle close,35.88,36.715,35.78,36.4,,,,,gpt_to_size,RSI>70 and rising; GPT to set stop/target
+2025-12-01,DVN,rsi_continuation_long,RSI Continuation Long,long,> signal candle close,36.99,38.1224,36.97,37.86,,,,,gpt_to_size,RSI>70 and rising; GPT to set stop/target
+2025-12-04,EL,rsi_continuation_long,RSI Continuation Long,long,> signal candle close,102.09,104.02,101.52,103.82,,,,,gpt_to_size,RSI>70 and rising; GPT to set stop/target
+2025-12-05,EL,rsi_continuation_long,RSI Continuation Long,long,> signal candle close,103.63,105.77,103.09,105.13,,,,,gpt_to_size,RSI>70 and rising; GPT to set stop/target
+2025-11-26,EXAS,rsi_continuation_long,RSI Continuation Long,long,> signal candle close,101.12,101.61,101.1159,101.45,,,,,gpt_to_size,RSI>70 and rising; GPT to set stop/target
+2025-11-28,EXAS,rsi_continuation_long,RSI Continuation Long,long,> signal candle close,101.43,101.54,101.01,101.29,,,,,gpt_to_size,RSI>70 and rising; GPT to set stop/target
+2025-12-04,EXAS,rsi_continuation_long,RSI Continuation Long,long,> signal candle close,101.25,101.365,100.98,101.13,,,,,gpt_to_size,RSI>70 and rising; GPT to set stop/target
+2025-12-05,EXAS,rsi_continuation_long,RSI Continuation Long,long,> signal candle close,101.13,101.255,101.01,101.06,,,,,gpt_to_size,RSI>70 and rising; GPT to set stop/target
+2025-11-26,EXE,rsi_continuation_long,RSI Continuation Long,long,> signal candle close,116.91,119.705,116.485,118.77,,,,,gpt_to_size,RSI>70 and rising; GPT to set stop/target
+2025-11-28,EXE,rsi_continuation_long,RSI Continuation Long,long,> signal candle close,119.66,122.7,119.33,121.93,,,,,gpt_to_size,RSI>70 and rising; GPT to set stop/target
+2025-12-05,FCX,rsi_continuation_long,RSI Continuation Long,long,> signal candle close,45.27,45.97,45.12,45.2,,,,,gpt_to_size,RSI>70 and rising; GPT to set stop/target
+2025-11-28,GEHC,rsi_continuation_long,RSI Continuation Long,long,> signal candle close,80.65,80.69,79.63,79.99,,,,,gpt_to_size,RSI>70 and rising; GPT to set stop/target
+2025-12-03,GEHC,rsi_continuation_long,RSI Continuation Long,long,> signal candle close,80.21,84.11,80.1,83.59,,,,,gpt_to_size,RSI>70 and rising; GPT to set stop/target
+2025-12-05,GEHC,rsi_continuation_long,RSI Continuation Long,long,> signal candle close,82.91,85.56,82.54,85.46,,,,,gpt_to_size,RSI>70 and rising; GPT to set stop/target
+2025-12-05,GM,rsi_continuation_long,RSI Continuation Long,long,> signal candle close,75.08,77.0,75.01,76.05,,,,,gpt_to_size,RSI>70 and rising; GPT to set stop/target
+2025-11-28,GOOG,rsi_continuation_long,RSI Continuation Long,long,> signal candle close,323.43,326.88,316.94,320.12,,,,,gpt_to_size,RSI>70 and rising; GPT to set stop/target
+2025-12-03,GOOG,rsi_continuation_long,RSI Continuation Long,long,> signal candle close,316.03,322.04,314.28,320.62,,,,,gpt_to_size,RSI>70 and rising; GPT to set stop/target
+2025-12-04,GOOG,rsi_continuation_long,RSI Continuation Long,long,> signal candle close,323.045,323.099,315.59,318.39,,,,,gpt_to_size,RSI>70 and rising; GPT to set stop/target
+2025-12-05,GOOG,rsi_continuation_long,RSI Continuation Long,long,> signal candle close,320.0,323.83,319.98,322.09,,,,,gpt_to_size,RSI>70 and rising; GPT to set stop/target
+2025-11-28,GOOGL,rsi_continuation_long,RSI Continuation Long,long,> signal candle close,323.365,326.85,316.79,320.18,,,,,gpt_to_size,RSI>70 and rising; GPT to set stop/target
+2025-12-03,GOOGL,rsi_continuation_long,RSI Continuation Long,long,> signal candle close,315.89,321.58,314.1,319.63,,,,,gpt_to_size,RSI>70 and rising; GPT to set stop/target
+2025-12-04,GOOGL,rsi_continuation_long,RSI Continuation Long,long,> signal candle close,322.225,322.36,314.7,317.62,,,,,gpt_to_size,RSI>70 and rising; GPT to set stop/target
+2025-12-05,GOOGL,rsi_continuation_long,RSI Continuation Long,long,> signal candle close,319.49,323.16,319.165,321.27,,,,,gpt_to_size,RSI>70 and rising; GPT to set stop/target
+2025-12-03,HBAN,rsi_continuation_long,RSI Continuation Long,long,> signal candle close,16.57,17.06,16.55,17.04,,,,,gpt_to_size,RSI>70 and rising; GPT to set stop/target
+2025-12-04,HBAN,rsi_continuation_long,RSI Continuation Long,long,> signal candle close,17.04,17.1684,16.975,17.1,,,,,gpt_to_size,RSI>70 and rising; GPT to set stop/target
+2025-12-05,IOT,rsi_continuation_long,RSI Continuation Long,long,> signal candle close,41.92,47.47,41.52,45.22,,,,,gpt_to_size,RSI>70 and rising; GPT to set stop/target
+2025-12-05,IVZ,rsi_continuation_long,RSI Continuation Long,long,> signal candle close,25.36,26.39,25.2,26.24,,,,,gpt_to_size,RSI>70 and rising; GPT to set stop/target
+2025-12-04,LITE,rsi_continuation_long,RSI Continuation Long,long,> signal candle close,309.53,330.3,306.0,327.85,,,,,gpt_to_size,RSI>70 and rising; GPT to set stop/target
+2025-12-04,LSCC,rsi_continuation_long,RSI Continuation Long,long,> signal candle close,74.82,76.525,74.04,75.83,,,,,gpt_to_size,RSI>70 and rising; GPT to set stop/target
+2025-12-05,LSCC,rsi_continuation_long,RSI Continuation Long,long,> signal candle close,78.0,81.23,76.66,78.85,,,,,gpt_to_size,RSI>70 and rising; GPT to set stop/target
+2025-12-05,LUV,rsi_continuation_long,RSI Continuation Long,long,> signal candle close,35.32,38.165,35.32,37.85,,,,,gpt_to_size,RSI>70 and rising; GPT to set stop/target
+2025-12-03,MRK,rsi_continuation_long,RSI Continuation Long,long,> signal candle close,101.895,103.09,101.52,102.27,,,,,gpt_to_size,RSI>70 and rising; GPT to set stop/target
+2025-12-04,ODFL,rsi_continuation_long,RSI Continuation Long,long,> signal candle close,151.69,154.03,150.895,153.51,,,,,gpt_to_size,RSI>70 and rising; GPT to set stop/target
+2025-12-05,ODFL,rsi_continuation_long,RSI Continuation Long,long,> signal candle close,153.03,156.73,153.03,155.15,,,,,gpt_to_size,RSI>70 and rising; GPT to set stop/target
+2025-12-03,OVV,rsi_continuation_long,RSI Continuation Long,long,> signal candle close,41.17,42.4,40.89,42.32,,,,,gpt_to_size,RSI>70 and rising; GPT to set stop/target
+2025-12-01,PR,rsi_continuation_long,RSI Continuation Long,long,> signal candle close,14.48,14.7499,14.405,14.59,,,,,gpt_to_size,RSI>70 and rising; GPT to set stop/target
+2025-12-03,PR,rsi_continuation_long,RSI Continuation Long,long,> signal candle close,14.37,14.88,14.35,14.74,,,,,gpt_to_size,RSI>70 and rising; GPT to set stop/target
+2025-12-04,PR,rsi_continuation_long,RSI Continuation Long,long,> signal candle close,14.795,14.94,14.705,14.85,,,,,gpt_to_size,RSI>70 and rising; GPT to set stop/target
+2025-12-04,QXO,rsi_continuation_long,RSI Continuation Long,long,> signal candle close,19.87,20.73,19.86,20.58,,,,,gpt_to_size,RSI>70 and rising; GPT to set stop/target
+2025-12-05,QXO,rsi_continuation_long,RSI Continuation Long,long,> signal candle close,20.648,21.065,20.39,20.82,,,,,gpt_to_size,RSI>70 and rising; GPT to set stop/target
+2025-12-05,RBRK,rsi_continuation_long,RSI Continuation Long,long,> signal candle close,87.04,90.26,84.33,86.27,,,,,gpt_to_size,RSI>70 and rising; GPT to set stop/target
+2025-12-05,RDDT,rsi_continuation_long,RSI Continuation Long,long,> signal candle close,225.15,237.59,224.175,234.11,,,,,gpt_to_size,RSI>70 and rising; GPT to set stop/target
+2025-12-05,RIVN,rsi_continuation_long,RSI Continuation Long,long,> signal candle close,18.08,18.6,17.91,17.95,,,,,gpt_to_size,RSI>70 and rising; GPT to set stop/target
+2025-11-26,RKT,rsi_continuation_long,RSI Continuation Long,long,> signal candle close,19.63,20.09,19.39,19.74,,,,,gpt_to_size,RSI>70 and rising; GPT to set stop/target
+2025-11-28,RVMD,rsi_continuation_long,RSI Continuation Long,long,> signal candle close,77.68,77.98,76.6,77.76,,,,,gpt_to_size,RSI>70 and rising; GPT to set stop/target
+2025-12-03,RVMD,rsi_continuation_long,RSI Continuation Long,long,> signal candle close,75.55,79.0699,74.52,77.69,,,,,gpt_to_size,RSI>70 and rising; GPT to set stop/target
+2025-12-04,RVMD,rsi_continuation_long,RSI Continuation Long,long,> signal candle close,77.45,79.06,76.53,78.48,,,,,gpt_to_size,RSI>70 and rising; GPT to set stop/target
+2025-12-05,AAPL,channel_up_long,Channel Up Long,long,> signal candle high,280.54,281.14,278.05,278.78,,,,,gpt_to_size,Finviz channel up pattern; GPT to set stop/target
+2025-12-05,ACMR,channel_up_long,Channel Up Long,long,> signal candle high,34.68,35.31,34.68,35.1,,,,,gpt_to_size,Finviz channel up pattern; GPT to set stop/target
+2025-12-05,ADI,channel_up_long,Channel Up Long,long,> signal candle high,280.12,283.235,279.14,281.29,,,,,gpt_to_size,Finviz channel up pattern; GPT to set stop/target
+2025-12-05,AEP,channel_up_long,Channel Up Long,long,> signal candle high,117.87,118.115,116.825,117.537,,,,,gpt_to_size,Finviz channel up pattern; GPT to set stop/target
+2025-12-05,AHR,channel_up_long,Channel Up Long,long,> signal candle high,49.8429,50.32,49.675,50.11,,,,,gpt_to_size,Finviz channel up pattern; GPT to set stop/target
+2025-12-05,AKAM,channel_up_long,Channel Up Long,long,> signal candle high,86.6,87.0,82.7,83.49,,,,,gpt_to_size,Finviz channel up pattern; GPT to set stop/target
+2025-12-05,ALL,channel_up_long,Channel Up Long,long,> signal candle high,206.47,206.47,201.82,202.27,,,,,gpt_to_size,Finviz channel up pattern; GPT to set stop/target
+2025-12-05,ALLY,channel_up_long,Channel Up Long,long,> signal candle high,42.23,42.735,42.16,42.39,,,,,gpt_to_size,Finviz channel up pattern; GPT to set stop/target
+2025-12-05,AMZN,channel_up_long,Channel Up Long,long,> signal candle high,230.32,231.24,228.58,229.53,,,,,gpt_to_size,Finviz channel up pattern; GPT to set stop/target
+2025-12-05,APG,channel_up_long,Channel Up Long,long,> signal candle high,38.7,39.21,38.44,39.06,,,,,gpt_to_size,Finviz channel up pattern; GPT to set stop/target
+2025-12-05,APH,channel_up_long,Channel Up Long,long,> signal candle high,139.75,139.89,137.01,139.36,,,,,gpt_to_size,Finviz channel up pattern; GPT to set stop/target
+2025-12-05,BBY,channel_up_long,Channel Up Long,long,> signal candle high,74.265,74.58,73.25,74.17,,,,,gpt_to_size,Finviz channel up pattern; GPT to set stop/target
+2025-12-05,BEPC,channel_up_long,Channel Up Long,long,> signal candle high,40.58,40.65,39.63,39.71,,,,,gpt_to_size,Finviz channel up pattern; GPT to set stop/target
+2025-12-05,BILL,channel_up_long,Channel Up Long,long,> signal candle high,52.41,53.98,52.16,53.45,,,,,gpt_to_size,Finviz channel up pattern; GPT to set stop/target
+2025-12-05,BK,channel_up_long,Channel Up Long,long,> signal candle high,113.825,114.9599,113.4,114.02,,,,,gpt_to_size,Finviz channel up pattern; GPT to set stop/target
+2025-12-05,BXP,channel_up_long,Channel Up Long,long,> signal candle high,70.74,70.81,68.7,69.28,,,,,gpt_to_size,Finviz channel up pattern; GPT to set stop/target
+2025-12-05,CADE,channel_up_long,Channel Up Long,long,> signal candle high,41.72,41.9,41.39,41.43,,,,,gpt_to_size,Finviz channel up pattern; GPT to set stop/target
+2025-12-05,CBRE,channel_up_long,Channel Up Long,long,> signal candle high,162.24,162.24,160.36,160.86,,,,,gpt_to_size,Finviz channel up pattern; GPT to set stop/target
+2025-12-05,CFG,channel_up_long,Channel Up Long,long,> signal candle high,55.68,56.17,55.44,55.46,,,,,gpt_to_size,Finviz channel up pattern; GPT to set stop/target
+2025-12-05,CGNX,channel_up_long,Channel Up Long,long,> signal candle high,38.88,39.18,38.32,38.42,,,,,gpt_to_size,Finviz channel up pattern; GPT to set stop/target
+2025-12-05,CHRW,channel_up_long,Channel Up Long,long,> signal candle high,156.86,158.65,154.425,157.22,,,,,gpt_to_size,Finviz channel up pattern; GPT to set stop/target
+2025-12-05,CMC,channel_up_long,Channel Up Long,long,> signal candle high,66.72,68.35,66.03,66.86,,,,,gpt_to_size,Finviz channel up pattern; GPT to set stop/target
+2025-12-05,COCO,channel_up_long,Channel Up Long,long,> signal candle high,53.96,54.84,53.66,54.565,,,,,gpt_to_size,Finviz channel up pattern; GPT to set stop/target
+2025-12-05,COHR,channel_up_long,Channel Up Long,long,> signal candle high,186.0,188.36,181.48,181.79,,,,,gpt_to_size,Finviz channel up pattern; GPT to set stop/target
+2025-12-05,CRH,channel_up_long,Channel Up Long,long,> signal candle high,120.36,121.35,118.595,119.49,,,,,gpt_to_size,Finviz channel up pattern; GPT to set stop/target
+2025-12-05,CSCO,channel_up_long,Channel Up Long,long,> signal candle high,77.97,78.19,77.395,77.97,,,,,gpt_to_size,Finviz channel up pattern; GPT to set stop/target
+2025-12-05,CTRE,channel_up_long,Channel Up Long,long,> signal candle high,37.82,37.87,37.6,37.7,,,,,gpt_to_size,Finviz channel up pattern; GPT to set stop/target
+2025-12-05,DAL,channel_up_long,Channel Up Long,long,> signal candle high,66.79,67.75,66.3,67.1,,,,,gpt_to_size,Finviz channel up pattern; GPT to set stop/target
+2025-12-05,DDOG,channel_up_long,Channel Up Long,long,> signal candle high,153.0,153.05,150.075,151.41,,,,,gpt_to_size,Finviz channel up pattern; GPT to set stop/target
+2025-12-05,DGX,channel_up_long,Channel Up Long,long,> signal candle high,183.515,184.19,182.08,182.51,,,,,gpt_to_size,Finviz channel up pattern; GPT to set stop/target
+2025-12-05,EL,channel_up_long,Channel Up Long,long,> signal candle high,103.63,105.77,103.09,105.13,,,,,gpt_to_size,Finviz channel up pattern; GPT to set stop/target
+2025-12-05,ELS,channel_up_long,Channel Up Long,long,> signal candle high,62.175,62.24,61.34,61.69,,,,,gpt_to_size,Finviz channel up pattern; GPT to set stop/target
+2025-12-05,EPD,channel_up_long,Channel Up Long,long,> signal candle high,32.64,32.7,32.55,32.61,,,,,gpt_to_size,Finviz channel up pattern; GPT to set stop/target
+2025-12-05,ES,channel_up_long,Channel Up Long,long,> signal candle high,67.06,67.47,66.37,66.74,,,,,gpt_to_size,Finviz channel up pattern; GPT to set stop/target
+2025-12-05,EVRG,channel_up_long,Channel Up Long,long,> signal candle high,73.88,74.32,73.22,73.28,,,,,gpt_to_size,Finviz channel up pattern; GPT to set stop/target
+2025-12-05,EW,channel_up_long,Channel Up Long,long,> signal candle high,86.29,87.89,85.945,86.19,,,,,gpt_to_size,Finviz channel up pattern; GPT to set stop/target
+2025-12-05,FDX,channel_up_long,Channel Up Long,long,> signal candle high,274.0,276.6,272.995,274.29,,,,,gpt_to_size,Finviz channel up pattern; GPT to set stop/target
+2025-12-05,FE,channel_up_long,Channel Up Long,long,> signal candle high,45.08,45.305,44.81,44.91,,,,,gpt_to_size,Finviz channel up pattern; GPT to set stop/target
+2025-12-05,FITB,channel_up_long,Channel Up Long,long,> signal candle high,45.35,46.07,45.17,45.42,,,,,gpt_to_size,Finviz channel up pattern; GPT to set stop/target
+2025-12-05,FLEX,channel_up_long,Channel Up Long,long,> signal candle high,61.26,62.72,61.25,62.41,,,,,gpt_to_size,Finviz channel up pattern; GPT to set stop/target
+2025-12-05,FOXA,channel_up_long,Channel Up Long,long,> signal candle high,68.02,69.24,67.77,68.4,,,,,gpt_to_size,Finviz channel up pattern; GPT to set stop/target
+2025-12-05,FRPT,channel_up_long,Channel Up Long,long,> signal candle high,61.81,62.99,61.62,62.05,,,,,gpt_to_size,Finviz channel up pattern; GPT to set stop/target
+2025-12-05,FSLR,channel_up_long,Channel Up Long,long,> signal candle high,258.0,264.0,255.12,257.61,,,,,gpt_to_size,Finviz channel up pattern; GPT to set stop/target
+2025-12-05,FYBR,channel_up_long,Channel Up Long,long,> signal candle high,38.0,38.0,37.96,37.97,,,,,gpt_to_size,Finviz channel up pattern; GPT to set stop/target
+2025-12-05,GD,channel_up_long,Channel Up Long,long,> signal candle high,341.01,341.01,333.99,337.31,,,,,gpt_to_size,Finviz channel up pattern; GPT to set stop/target
+2025-12-05,GE,channel_up_long,Channel Up Long,long,> signal candle high,291.67,293.28,282.15,283.94,,,,,gpt_to_size,Finviz channel up pattern; GPT to set stop/target
+2025-12-05,GILD,channel_up_long,Channel Up Long,long,> signal candle high,122.29,122.53,120.38,121.22,,,,,gpt_to_size,Finviz channel up pattern; GPT to set stop/target
+2025-12-05,GLW,channel_up_long,Channel Up Long,long,> signal candle high,85.45,86.68,84.93,85.97,,,,,gpt_to_size,Finviz channel up pattern; GPT to set stop/target
+2025-12-05,GOOG,channel_up_long,Channel Up Long,long,> signal candle high,320.0,323.83,319.98,322.09,,,,,gpt_to_size,Finviz channel up pattern; GPT to set stop/target
+2025-12-05,GS,channel_up_long,Channel Up Long,long,> signal candle high,837.45,856.2,836.515,854.56,,,,,gpt_to_size,Finviz channel up pattern; GPT to set stop/target
+2025-12-05,GXO,channel_up_long,Channel Up Long,long,> signal candle high,51.8001,52.68,51.8001,52.54,,,,,gpt_to_size,Finviz channel up pattern; GPT to set stop/target
+2025-12-05,HASI,channel_up_long,Channel Up Long,long,> signal candle high,33.76,34.01,33.36,33.42,,,,,gpt_to_size,Finviz channel up pattern; GPT to set stop/target
+2025-12-05,HSY,channel_up_long,Channel Up Long,long,> signal candle high,181.68,183.25,180.56,182.3,,,,,gpt_to_size,Finviz channel up pattern; GPT to set stop/target
+2025-12-05,ILMN,channel_up_long,Channel Up Long,long,> signal candle high,128.42,129.27,127.885,128.96,,,,,gpt_to_size,Finviz channel up pattern; GPT to set stop/target
+2025-12-05,JEF,channel_up_long,Channel Up Long,long,> signal candle high,58.62,60.09,58.41,59.12,,,,,gpt_to_size,Finviz channel up pattern; GPT to set stop/target
+2025-12-05,JNJ,channel_up_long,Channel Up Long,long,> signal candle high,202.98,203.45,200.81,201.93,,,,,gpt_to_size,Finviz channel up pattern; GPT to set stop/target
+2025-12-05,KEYS,channel_up_long,Channel Up Long,long,> signal candle high,209.4,211.57,208.804,210.49,,,,,gpt_to_size,Finviz channel up pattern; GPT to set stop/target
+2025-12-05,KNX,channel_up_long,Channel Up Long,long,> signal candle high,50.76,51.9,50.61,51.3,,,,,gpt_to_size,Finviz channel up pattern; GPT to set stop/target
+2025-12-05,KRC,channel_up_long,Channel Up Long,long,> signal candle high,40.78,41.56,40.57,40.78,,,,,gpt_to_size,Finviz channel up pattern; GPT to set stop/target
+2025-12-05,LHX,channel_up_long,Channel Up Long,long,> signal candle high,280.22,280.22,275.28,278.5,,,,,gpt_to_size,Finviz channel up pattern; GPT to set stop/target
+2025-12-05,LNT,channel_up_long,Channel Up Long,long,> signal candle high,65.72,65.885,65.25,65.5,,,,,gpt_to_size,Finviz channel up pattern; GPT to set stop/target
+2025-12-05,LSCC,channel_up_long,Channel Up Long,long,> signal candle high,78.0,81.23,76.66,78.85,,,,,gpt_to_size,Finviz channel up pattern; GPT to set stop/target
+2025-12-05,MDB,channel_up_long,Channel Up Long,long,> signal candle high,397.39,411.24,393.53,409.62,,,,,gpt_to_size,Finviz channel up pattern; GPT to set stop/target
+2025-12-05,MKSI,channel_up_long,Channel Up Long,long,> signal candle high,165.0,165.95,162.15,162.94,,,,,gpt_to_size,Finviz channel up pattern; GPT to set stop/target
+2025-12-05,MMM,channel_up_long,Channel Up Long,long,> signal candle high,169.005,169.34,165.655,167.48,,,,,gpt_to_size,Finviz channel up pattern; GPT to set stop/target
+2025-12-05,MPLX,channel_up_long,Channel Up Long,long,> signal candle high,55.94,56.255,55.445,55.86,,,,,gpt_to_size,Finviz channel up pattern; GPT to set stop/target
+2025-12-05,MRVL,channel_up_long,Channel Up Long,long,> signal candle high,100.4,102.64,97.31,98.91,,,,,gpt_to_size,Finviz channel up pattern; GPT to set stop/target
+2025-12-05,NI,channel_up_long,Channel Up Long,long,> signal candle high,41.805,42.26,41.785,42.0,,,,,gpt_to_size,Finviz channel up pattern; GPT to set stop/target
+2025-12-05,NSC,channel_up_long,Channel Up Long,long,> signal candle high,295.245,295.59,293.31,294.19,,,,,gpt_to_size,Finviz channel up pattern; GPT to set stop/target
+2025-12-05,NXT,channel_up_long,Channel Up Long,long,> signal candle high,90.82,93.0,89.2693,90.585,,,,,gpt_to_size,Finviz channel up pattern; GPT to set stop/target
+2025-12-05,OHI,channel_up_long,Channel Up Long,long,> signal candle high,45.89,46.1,45.72,45.73,,,,,gpt_to_size,Finviz channel up pattern; GPT to set stop/target
+2025-12-05,OMC,channel_up_long,Channel Up Long,long,> signal candle high,70.33,74.645,70.29,73.44,,,,,gpt_to_size,Finviz channel up pattern; GPT to set stop/target
+2025-12-05,OMF,channel_up_long,Channel Up Long,long,> signal candle high,64.75,65.135,64.195,64.65,,,,,gpt_to_size,Finviz channel up pattern; GPT to set stop/target
+2025-12-05,PANW,channel_up_long,Channel Up Long,long,> signal candle high,195.64,199.735,195.0,198.84,,,,,gpt_to_size,Finviz channel up pattern; GPT to set stop/target
+2025-12-05,PCVX,channel_up_long,Channel Up Long,long,> signal candle high,46.2,46.79,45.105,46.48,,,,,gpt_to_size,Finviz channel up pattern; GPT to set stop/target
+2025-12-05,PLD,channel_up_long,Channel Up Long,long,> signal candle high,128.18,128.83,127.7746,127.98,,,,,gpt_to_size,Finviz channel up pattern; GPT to set stop/target
+2025-12-05,PTGX,channel_up_long,Channel Up Long,long,> signal candle high,87.9,90.18,87.54,89.65,,,,,gpt_to_size,Finviz channel up pattern; GPT to set stop/target
+2025-12-05,QCOM,channel_up_long,Channel Up Long,long,> signal candle high,174.74,177.25,174.5,174.81,,,,,gpt_to_size,Finviz channel up pattern; GPT to set stop/target
+2025-12-05,QRVO,channel_up_long,Channel Up Long,long,> signal candle high,88.83,90.4,88.83,89.96,,,,,gpt_to_size,Finviz channel up pattern; GPT to set stop/target
+2025-12-05,RJF,channel_up_long,Channel Up Long,long,> signal candle high,161.87,164.06,161.87,163.13,,,,,gpt_to_size,Finviz channel up pattern; GPT to set stop/target
+2025-12-05,ROKU,channel_up_long,Channel Up Long,long,> signal candle high,93.0,101.29,92.88,100.09,,,,,gpt_to_size,Finviz channel up pattern; GPT to set stop/target
+2025-12-05,ROL,channel_up_long,Channel Up Long,long,> signal candle high,60.77,61.6,60.76,61.4,,,,,gpt_to_size,Finviz channel up pattern; GPT to set stop/target
+2025-12-05,RPRX,channel_up_long,Channel Up Long,long,> signal candle high,39.15,39.88,38.97,39.73,,,,,gpt_to_size,Finviz channel up pattern; GPT to set stop/target
+2025-12-05,ABNB,channel_down_short,Channel Down Short,short,< signal candle low,120.92,124.81,120.4001,124.32,,,,,gpt_to_size,Finviz channel down pattern; GPT to set stop/target
+2025-12-05,ABT,channel_down_short,Channel Down Short,short,< signal candle low,125.55,126.05,124.64,125.08,,,,,gpt_to_size,Finviz channel down pattern; GPT to set stop/target
+2025-12-05,AMH,channel_down_short,Channel Down Short,short,< signal candle low,30.96,31.165,30.63,30.83,,,,,gpt_to_size,Finviz channel down pattern; GPT to set stop/target
+2025-12-05,AWK,channel_down_short,Channel Down Short,short,< signal candle low,128.63,130.28,128.07,129.5,,,,,gpt_to_size,Finviz channel down pattern; GPT to set stop/target
+2025-12-05,BHF,channel_down_short,Channel Down Short,short,< signal candle low,65.54,65.59,65.29,65.35,,,,,gpt_to_size,Finviz channel down pattern; GPT to set stop/target
+2025-12-05,BMRN,channel_down_short,Channel Down Short,short,< signal candle low,53.55,53.83,52.875,53.4,,,,,gpt_to_size,Finviz channel down pattern; GPT to set stop/target
+2025-12-05,BRKR,channel_down_short,Channel Down Short,short,< signal candle low,48.36,48.72,47.44,48.03,,,,,gpt_to_size,Finviz channel down pattern; GPT to set stop/target
+2025-12-05,BRO,channel_down_short,Channel Down Short,short,< signal candle low,79.85,79.86,77.63,78.37,,,,,gpt_to_size,Finviz channel down pattern; GPT to set stop/target
+2025-12-05,CCK,channel_down_short,Channel Down Short,short,< signal candle low,98.22,99.675,97.94,97.95,,,,,gpt_to_size,Finviz channel down pattern; GPT to set stop/target
+2025-12-05,CDNS,channel_down_short,Channel Down Short,short,< signal candle low,338.43,341.04,336.16,337.53,,,,,gpt_to_size,Finviz channel down pattern; GPT to set stop/target
+2025-12-05,CDW,channel_down_short,Channel Down Short,short,< signal candle low,143.78,147.02,142.5,146.25,,,,,gpt_to_size,Finviz channel down pattern; GPT to set stop/target
+2025-12-05,CHD,channel_down_short,Channel Down Short,short,< signal candle low,83.685,84.9,83.51,84.52,,,,,gpt_to_size,Finviz channel down pattern; GPT to set stop/target
+2025-12-05,CI,channel_down_short,Channel Down Short,short,< signal candle low,268.805,269.08,263.87,265.44,,,,,gpt_to_size,Finviz channel down pattern; GPT to set stop/target
+2025-12-05,CIEN,channel_down_short,Channel Down Short,short,< signal candle low,199.63,201.77,194.88,201.71,,,,,gpt_to_size,Finviz channel down pattern; GPT to set stop/target
+2025-12-05,CL,channel_down_short,Channel Down Short,short,< signal candle low,77.47,78.2144,77.242,78.07,,,,,gpt_to_size,Finviz channel down pattern; GPT to set stop/target
+2025-12-05,CLX,channel_down_short,Channel Down Short,short,< signal candle low,104.855,106.09,104.64,104.9,,,,,gpt_to_size,Finviz channel down pattern; GPT to set stop/target
+2025-12-05,CME,channel_down_short,Channel Down Short,short,< signal candle low,273.345,273.87,270.1,270.87,,,,,gpt_to_size,Finviz channel down pattern; GPT to set stop/target
+2025-12-05,CRCL,channel_down_short,Channel Down Short,short,< signal candle low,86.09,86.66,83.14,85.62,,,,,gpt_to_size,Finviz channel down pattern; GPT to set stop/target
+2025-12-05,CRWV,channel_down_short,Channel Down Short,short,< signal candle low,87.3,88.76,84.62,88.3,,,,,gpt_to_size,Finviz channel down pattern; GPT to set stop/target
+2025-12-05,DLR,channel_down_short,Channel Down Short,short,< signal candle low,161.0,165.99,160.995,164.73,,,,,gpt_to_size,Finviz channel down pattern; GPT to set stop/target
+2025-12-05,DUOL,channel_down_short,Channel Down Short,short,< signal candle low,188.6,201.79,187.9,199.75,,,,,gpt_to_size,Finviz channel down pattern; GPT to set stop/target
+2025-12-05,EMR,channel_down_short,Channel Down Short,short,< signal candle low,136.34,138.09,136.0,137.39,,,,,gpt_to_size,Finviz channel down pattern; GPT to set stop/target
+2025-12-05,FISV,channel_down_short,Channel Down Short,short,< signal candle low,66.1,67.46,66.06,66.28,,,,,gpt_to_size,Finviz channel down pattern; GPT to set stop/target
+2025-12-05,GEV,channel_down_short,Channel Down Short,short,< signal candle low,631.0,640.0,621.2,631.32,,,,,gpt_to_size,Finviz channel down pattern; GPT to set stop/target
+2025-12-05,GIS,channel_down_short,Channel Down Short,short,< signal candle low,45.95,46.34,45.68,45.93,,,,,gpt_to_size,Finviz channel down pattern; GPT to set stop/target
+2025-12-05,HRB,channel_down_short,Channel Down Short,short,< signal candle low,41.945,42.66,41.7,42.11,,,,,gpt_to_size,Finviz channel down pattern; GPT to set stop/target
+2025-12-05,HSY,channel_down_short,Channel Down Short,short,< signal candle low,181.68,183.25,180.56,182.3,,,,,gpt_to_size,Finviz channel down pattern; GPT to set stop/target
+2025-12-05,IR,channel_down_short,Channel Down Short,short,< signal candle low,79.79,80.115,79.365,79.86,,,,,gpt_to_size,Finviz channel down pattern; GPT to set stop/target
+2025-12-05,IT,channel_down_short,Channel Down Short,short,< signal candle low,231.74,233.8071,228.49,229.77,,,,,gpt_to_size,Finviz channel down pattern; GPT to set stop/target
+2025-12-05,JKHY,channel_down_short,Channel Down Short,short,< signal candle low,179.98,182.0,178.405,181.71,,,,,gpt_to_size,Finviz channel down pattern; GPT to set stop/target
+2025-12-05,KMX,channel_down_short,Channel Down Short,short,< signal candle low,38.775,39.69,38.55,38.82,,,,,gpt_to_size,Finviz channel down pattern; GPT to set stop/target
+2025-12-05,KR,channel_down_short,Channel Down Short,short,< signal candle low,63.025,63.94,62.67,62.71,,,,,gpt_to_size,Finviz channel down pattern; GPT to set stop/target
+2025-12-05,LINE,channel_down_short,Channel Down Short,short,< signal candle low,36.05,36.425,35.31,35.33,,,,,gpt_to_size,Finviz channel down pattern; GPT to set stop/target
+2025-12-05,LNTH,channel_down_short,Channel Down Short,short,< signal candle low,62.04,64.4,61.25,63.3,,,,,gpt_to_size,Finviz channel down pattern; GPT to set stop/target
+2025-12-05,MKC,channel_down_short,Channel Down Short,short,< signal candle low,63.44,63.87,63.11,63.3,,,,,gpt_to_size,Finviz channel down pattern; GPT to set stop/target
+2025-12-05,NNN,channel_down_short,Channel Down Short,short,< signal candle low,40.66,40.73,40.175,40.21,,,,,gpt_to_size,Finviz channel down pattern; GPT to set stop/target
+2025-12-05,OTIS,channel_down_short,Channel Down Short,short,< signal candle low,86.825,87.21,86.03,86.45,,,,,gpt_to_size,Finviz channel down pattern; GPT to set stop/target
+2025-12-05,PB,channel_down_short,Channel Down Short,short,< signal candle low,70.3,70.89,70.165,70.63,,,,,gpt_to_size,Finviz channel down pattern; GPT to set stop/target
+2025-12-05,PM,channel_down_short,Channel Down Short,short,< signal candle low,148.02,148.92,147.3,147.81,,,,,gpt_to_size,Finviz channel down pattern; GPT to set stop/target
+2025-12-05,PNW,channel_down_short,Channel Down Short,short,< signal candle low,87.88,88.425,87.57,88.17,,,,,gpt_to_size,Finviz channel down pattern; GPT to set stop/target
+2025-12-05,POWI,channel_down_short,Channel Down Short,short,< signal candle low,36.88,37.2,36.105,36.51,,,,,gpt_to_size,Finviz channel down pattern; GPT to set stop/target
+2025-12-05,PPC,channel_down_short,Channel Down Short,short,< signal candle low,39.54,39.83,39.35,39.74,,,,,gpt_to_size,Finviz channel down pattern; GPT to set stop/target
+2025-12-05,RSG,channel_down_short,Channel Down Short,short,< signal candle low,213.98,217.19,213.75,216.53,,,,,gpt_to_size,Finviz channel down pattern; GPT to set stop/target
+2025-12-05,A,bull_flag_long,Bull Flag Long,long,> signal candle high,148.5,149.0,144.76,145.49,,,,,gpt_to_size,Finviz bull flag pattern; GPT to set stop/target
+2025-12-05,AA,bull_flag_long,Bull Flag Long,long,> signal candle high,44.29,44.8424,43.731,43.77,,,,,gpt_to_size,Finviz bull flag pattern; GPT to set stop/target
+2025-12-05,AAON,bull_flag_long,Bull Flag Long,long,> signal candle high,86.36,89.14,84.9,87.53,,,,,gpt_to_size,Finviz bull flag pattern; GPT to set stop/target
+2025-12-05,AAP,bull_flag_long,Bull Flag Long,long,> signal candle high,52.51,54.73,52.16,52.47,,,,,gpt_to_size,Finviz bull flag pattern; GPT to set stop/target
+2025-12-05,AAPL,bull_flag_long,Bull Flag Long,long,> signal candle high,280.54,281.14,278.05,278.78,,,,,gpt_to_size,Finviz bull flag pattern; GPT to set stop/target
+2025-12-05,ABBV,bull_flag_long,Bull Flag Long,long,> signal candle high,228.85,229.25,225.05,226.08,,,,,gpt_to_size,Finviz bull flag pattern; GPT to set stop/target
+2025-12-05,ABNB,bull_flag_long,Bull Flag Long,long,> signal candle high,120.92,124.81,120.4001,124.32,,,,,gpt_to_size,Finviz bull flag pattern; GPT to set stop/target
+2025-12-05,ABT,bull_flag_long,Bull Flag Long,long,> signal candle high,125.55,126.05,124.64,125.08,,,,,gpt_to_size,Finviz bull flag pattern; GPT to set stop/target
+2025-12-05,ACM,bull_flag_long,Bull Flag Long,long,> signal candle high,105.36,105.42,102.31,102.43,,,,,gpt_to_size,Finviz bull flag pattern; GPT to set stop/target
+2025-12-05,ACMR,bull_flag_long,Bull Flag Long,long,> signal candle high,34.68,35.31,34.68,35.1,,,,,gpt_to_size,Finviz bull flag pattern; GPT to set stop/target
+2025-12-05,ADBE,bull_flag_long,Bull Flag Long,long,> signal candle high,330.6,348.59,329.71,346.26,,,,,gpt_to_size,Finviz bull flag pattern; GPT to set stop/target
+2025-12-05,ADI,bull_flag_long,Bull Flag Long,long,> signal candle high,280.12,283.235,279.14,281.29,,,,,gpt_to_size,Finviz bull flag pattern; GPT to set stop/target
+2025-12-05,ADM,bull_flag_long,Bull Flag Long,long,> signal candle high,59.255,59.59,58.965,59.01,,,,,gpt_to_size,Finviz bull flag pattern; GPT to set stop/target
+2025-12-05,ADP,bull_flag_long,Bull Flag Long,long,> signal candle high,259.4,262.76,259.34,261.63,,,,,gpt_to_size,Finviz bull flag pattern; GPT to set stop/target
+2025-12-05,ADSK,bull_flag_long,Bull Flag Long,long,> signal candle high,306.0,307.8253,304.3,306.74,,,,,gpt_to_size,Finviz bull flag pattern; GPT to set stop/target
+2025-12-05,AEE,bull_flag_long,Bull Flag Long,long,> signal candle high,100.965,101.0,99.635,99.86,,,,,gpt_to_size,Finviz bull flag pattern; GPT to set stop/target
+2025-12-05,AEP,bull_flag_long,Bull Flag Long,long,> signal candle high,117.87,118.115,116.825,117.537,,,,,gpt_to_size,Finviz bull flag pattern; GPT to set stop/target
+2025-12-05,AFL,bull_flag_long,Bull Flag Long,long,> signal candle high,108.98,109.46,108.5,109.28,,,,,gpt_to_size,Finviz bull flag pattern; GPT to set stop/target
+2025-12-05,AFRM,bull_flag_long,Bull Flag Long,long,> signal candle high,68.45,68.61,67.3,67.99,,,,,gpt_to_size,Finviz bull flag pattern; GPT to set stop/target
+2025-12-05,AHR,bull_flag_long,Bull Flag Long,long,> signal candle high,49.8429,50.32,49.675,50.11,,,,,gpt_to_size,Finviz bull flag pattern; GPT to set stop/target
+2025-12-05,AIG,bull_flag_long,Bull Flag Long,long,> signal candle high,76.7,77.28,76.4468,77.03,,,,,gpt_to_size,Finviz bull flag pattern; GPT to set stop/target
+2025-12-05,AJG,bull_flag_long,Bull Flag Long,long,> signal candle high,245.0,245.0,238.65,239.71,,,,,gpt_to_size,Finviz bull flag pattern; GPT to set stop/target
+2025-12-05,AKAM,bull_flag_long,Bull Flag Long,long,> signal candle high,86.6,87.0,82.7,83.49,,,,,gpt_to_size,Finviz bull flag pattern; GPT to set stop/target
+2025-12-05,AKRO,bull_flag_long,Bull Flag Long,long,> signal candle high,54.65,54.65,54.295,54.55,,,,,gpt_to_size,Finviz bull flag pattern; GPT to set stop/target
+2025-12-05,AL,bull_flag_long,Bull Flag Long,long,> signal candle high,64.03,64.085,63.92,63.93,,,,,gpt_to_size,Finviz bull flag pattern; GPT to set stop/target
+2025-12-05,ALAB,bull_flag_long,Bull Flag Long,long,> signal candle high,154.85,163.12,154.14,161.23,,,,,gpt_to_size,Finviz bull flag pattern; GPT to set stop/target
+2025-12-05,ALB,bull_flag_long,Bull Flag Long,long,> signal candle high,123.81,129.88,122.7,125.19,,,,,gpt_to_size,Finviz bull flag pattern; GPT to set stop/target
+2025-12-05,ALGN,bull_flag_long,Bull Flag Long,long,> signal candle high,157.92,159.5,155.395,157.21,,,,,gpt_to_size,Finviz bull flag pattern; GPT to set stop/target
+2025-12-05,ALK,bull_flag_long,Bull Flag Long,long,> signal candle high,47.19,49.935,47.18,49.65,,,,,gpt_to_size,Finviz bull flag pattern; GPT to set stop/target
+2025-12-05,ALL,bull_flag_long,Bull Flag Long,long,> signal candle high,206.47,206.47,201.82,202.27,,,,,gpt_to_size,Finviz bull flag pattern; GPT to set stop/target
+2025-12-05,ALLY,bull_flag_long,Bull Flag Long,long,> signal candle high,42.23,42.735,42.16,42.39,,,,,gpt_to_size,Finviz bull flag pattern; GPT to set stop/target
+2025-12-05,ALNY,bull_flag_long,Bull Flag Long,long,> signal candle high,468.29,473.5,455.32,458.12,,,,,gpt_to_size,Finviz bull flag pattern; GPT to set stop/target
+2025-12-05,AMAT,bull_flag_long,Bull Flag Long,long,> signal candle high,269.79,273.59,267.36,268.0,,,,,gpt_to_size,Finviz bull flag pattern; GPT to set stop/target
+2025-12-05,AMD,bull_flag_long,Bull Flag Long,long,> signal candle high,217.165,223.642,216.24,217.97,,,,,gpt_to_size,Finviz bull flag pattern; GPT to set stop/target
+2025-12-05,AME,bull_flag_long,Bull Flag Long,long,> signal candle high,199.11,201.3899,198.32,199.8,,,,,gpt_to_size,Finviz bull flag pattern; GPT to set stop/target
+2025-12-05,AMGN,bull_flag_long,Bull Flag Long,long,> signal candle high,340.46,340.87,328.63,329.89,,,,,gpt_to_size,Finviz bull flag pattern; GPT to set stop/target
+2025-12-05,AMH,bull_flag_long,Bull Flag Long,long,> signal candle high,30.96,31.165,30.63,30.83,,,,,gpt_to_size,Finviz bull flag pattern; GPT to set stop/target
+2025-12-05,AMKR,bull_flag_long,Bull Flag Long,long,> signal candle high,43.9,43.94,42.98,43.23,,,,,gpt_to_size,Finviz bull flag pattern; GPT to set stop/target
+2025-12-05,AMT,bull_flag_long,Bull Flag Long,long,> signal candle high,178.82,180.365,178.1,178.86,,,,,gpt_to_size,Finviz bull flag pattern; GPT to set stop/target
+2025-12-05,AMZN,bull_flag_long,Bull Flag Long,long,> signal candle high,230.32,231.24,228.58,229.53,,,,,gpt_to_size,Finviz bull flag pattern; GPT to set stop/target
+2025-12-05,ANET,bull_flag_long,Bull Flag Long,long,> signal candle high,128.325,129.6599,126.84,128.59,,,,,gpt_to_size,Finviz bull flag pattern; GPT to set stop/target
+2025-12-05,ANF,bull_flag_long,Bull Flag Long,long,> signal candle high,95.719,98.9999,94.76,94.87,,,,,gpt_to_size,Finviz bull flag pattern; GPT to set stop/target
+2025-12-05,AOS,bull_flag_long,Bull Flag Long,long,> signal candle high,67.26,68.4,67.26,68.03,,,,,gpt_to_size,Finviz bull flag pattern; GPT to set stop/target
+2025-12-05,APD,bull_flag_long,Bull Flag Long,long,> signal candle high,262.0,265.52,260.33,260.69,,,,,gpt_to_size,Finviz bull flag pattern; GPT to set stop/target
+2025-12-05,APG,bull_flag_long,Bull Flag Long,long,> signal candle high,38.7,39.21,38.44,39.06,,,,,gpt_to_size,Finviz bull flag pattern; GPT to set stop/target
+2025-12-05,APH,bull_flag_long,Bull Flag Long,long,> signal candle high,139.75,139.89,137.01,139.36,,,,,gpt_to_size,Finviz bull flag pattern; GPT to set stop/target
+2025-12-05,APLD,bull_flag_long,Bull Flag Long,long,> signal candle high,31.835,31.96,29.59406,31.22,,,,,gpt_to_size,Finviz bull flag pattern; GPT to set stop/target
+2025-12-05,APO,bull_flag_long,Bull Flag Long,long,> signal candle high,136.265,138.64,135.95,138.13,,,,,gpt_to_size,Finviz bull flag pattern; GPT to set stop/target
+2025-12-05,APP,bull_flag_long,Bull Flag Long,long,> signal candle high,687.445,702.3,678.69,691.94,,,,,gpt_to_size,Finviz bull flag pattern; GPT to set stop/target
+2025-12-05,AR,bull_flag_long,Bull Flag Long,long,> signal candle high,37.25,38.175,36.74,36.75,,,,,gpt_to_size,Finviz bull flag pattern; GPT to set stop/target
+2025-12-05,ARE,bull_flag_long,Bull Flag Long,long,> signal candle high,46.1,47.49,45.47,45.48,,,,,gpt_to_size,Finviz bull flag pattern; GPT to set stop/target
+2025-12-05,ARES,bull_flag_long,Bull Flag Long,long,> signal candle high,163.0,165.46,162.31,165.46,,,,,gpt_to_size,Finviz bull flag pattern; GPT to set stop/target
+2025-12-05,ARMK,bull_flag_long,Bull Flag Long,long,> signal candle high,37.6,38.02,37.39,37.95,,,,,gpt_to_size,Finviz bull flag pattern; GPT to set stop/target
+2025-12-05,ARQT,bull_flag_long,Bull Flag Long,long,> signal candle high,31.03,31.4499,30.385,31.2,,,,,gpt_to_size,Finviz bull flag pattern; GPT to set stop/target
+2025-12-05,ARWR,bull_flag_long,Bull Flag Long,long,> signal candle high,62.95,64.2775,60.29,61.44,,,,,gpt_to_size,Finviz bull flag pattern; GPT to set stop/target
+2025-12-05,ASO,bull_flag_long,Bull Flag Long,long,> signal candle high,49.51,50.78,49.155,50.23,,,,,gpt_to_size,Finviz bull flag pattern; GPT to set stop/target
+2025-12-05,ASTS,bull_flag_long,Bull Flag Long,long,> signal candle high,71.4,75.14,70.6,73.92,,,,,gpt_to_size,Finviz bull flag pattern; GPT to set stop/target
+2025-12-05,ATI,bull_flag_long,Bull Flag Long,long,> signal candle high,101.0,101.0775,99.0,100.41,,,,,gpt_to_size,Finviz bull flag pattern; GPT to set stop/target
+2025-12-05,AUB,bull_flag_long,Bull Flag Long,long,> signal candle high,34.34,34.71,33.94,34.39,,,,,gpt_to_size,Finviz bull flag pattern; GPT to set stop/target
+2025-12-05,AVAV,bull_flag_long,Bull Flag Long,long,> signal candle high,286.79,287.4499,273.37,278.39,,,,,gpt_to_size,Finviz bull flag pattern; GPT to set stop/target
+2025-12-05,AVGO,bull_flag_long,Bull Flag Long,long,> signal candle high,386.165,393.53,385.1452,390.24,,,,,gpt_to_size,Finviz bull flag pattern; GPT to set stop/target
+2025-12-05,AWK,bull_flag_long,Bull Flag Long,long,> signal candle high,128.63,130.28,128.07,129.5,,,,,gpt_to_size,Finviz bull flag pattern; GPT to set stop/target
+2025-12-05,AXP,bull_flag_long,Bull Flag Long,long,> signal candle high,369.45,374.875,369.45,370.35,,,,,gpt_to_size,Finviz bull flag pattern; GPT to set stop/target
+2025-12-05,BA,bull_flag_long,Bull Flag Long,long,> signal candle high,201.0,202.95,200.56,201.89,,,,,gpt_to_size,Finviz bull flag pattern; GPT to set stop/target
+2025-12-05,BAC,bull_flag_long,Bull Flag Long,long,> signal candle high,53.9,54.825,53.74,53.95,,,,,gpt_to_size,Finviz bull flag pattern; GPT to set stop/target
+2025-12-05,BAH,bull_flag_long,Bull Flag Long,long,> signal candle high,87.3,88.585,86.55,88.01,,,,,gpt_to_size,Finviz bull flag pattern; GPT to set stop/target
+2025-12-05,BALL,bull_flag_long,Bull Flag Long,long,> signal candle high,48.75,49.46,48.43,49.03,,,,,gpt_to_size,Finviz bull flag pattern; GPT to set stop/target
+2025-12-05,BAM,bull_flag_long,Bull Flag Long,long,> signal candle high,53.025,54.15,52.76,53.26,,,,,gpt_to_size,Finviz bull flag pattern; GPT to set stop/target
+2025-12-05,BBIO,bull_flag_long,Bull Flag Long,long,> signal candle high,74.4,74.86,72.375,73.64,,,,,gpt_to_size,Finviz bull flag pattern; GPT to set stop/target
+2025-12-05,BBY,bull_flag_long,Bull Flag Long,long,> signal candle high,74.265,74.58,73.25,74.17,,,,,gpt_to_size,Finviz bull flag pattern; GPT to set stop/target
+2025-12-05,BDX,bull_flag_long,Bull Flag Long,long,> signal candle high,193.715,196.115,193.685,193.96,,,,,gpt_to_size,Finviz bull flag pattern; GPT to set stop/target
+2025-12-05,BE,bull_flag_long,Bull Flag Long,long,> signal candle high,115.59,119.825,112.53,119.18,,,,,gpt_to_size,Finviz bull flag pattern; GPT to set stop/target
+2025-12-05,BEPC,bull_flag_long,Bull Flag Long,long,> signal candle high,40.58,40.65,39.63,39.71,,,,,gpt_to_size,Finviz bull flag pattern; GPT to set stop/target
+2025-12-05,BG,bull_flag_long,Bull Flag Long,long,> signal candle high,94.5,94.8,93.61,93.63,,,,,gpt_to_size,Finviz bull flag pattern; GPT to set stop/target
+2025-12-05,BHF,bull_flag_long,Bull Flag Long,long,> signal candle high,65.54,65.59,65.29,65.35,,,,,gpt_to_size,Finviz bull flag pattern; GPT to set stop/target
+2025-12-05,BIIB,bull_flag_long,Bull Flag Long,long,> signal candle high,181.96,183.14516,181.1,181.3,,,,,gpt_to_size,Finviz bull flag pattern; GPT to set stop/target
+2025-12-05,BILL,bull_flag_long,Bull Flag Long,long,> signal candle high,52.41,53.98,52.16,53.45,,,,,gpt_to_size,Finviz bull flag pattern; GPT to set stop/target
+2025-12-05,BJ,bull_flag_long,Bull Flag Long,long,> signal candle high,91.312,92.22,90.22,91.33,,,,,gpt_to_size,Finviz bull flag pattern; GPT to set stop/target
+2025-12-05,BK,bull_flag_long,Bull Flag Long,long,> signal candle high,113.825,114.9599,113.4,114.02,,,,,gpt_to_size,Finviz bull flag pattern; GPT to set stop/target
+2025-12-05,BKR,bull_flag_long,Bull Flag Long,long,> signal candle high,50.51,50.76,49.06,49.2,,,,,gpt_to_size,Finviz bull flag pattern; GPT to set stop/target
+2025-12-05,BKU,bull_flag_long,Bull Flag Long,long,> signal candle high,44.45,45.075,44.085,44.7,,,,,gpt_to_size,Finviz bull flag pattern; GPT to set stop/target
+2025-12-05,BLDR,bull_flag_long,Bull Flag Long,long,> signal candle high,111.47,112.4,109.79,110.01,,,,,gpt_to_size,Finviz bull flag pattern; GPT to set stop/target
+2025-12-05,BMNR,bull_flag_long,Bull Flag Long,long,> signal candle high,35.15,36.63,34.01,34.16,,,,,gpt_to_size,Finviz bull flag pattern; GPT to set stop/target
+2025-12-05,BMRN,bull_flag_long,Bull Flag Long,long,> signal candle high,53.55,53.83,52.875,53.4,,,,,gpt_to_size,Finviz bull flag pattern; GPT to set stop/target
+2025-12-05,BMY,bull_flag_long,Bull Flag Long,long,> signal candle high,51.99,52.51,51.69,52.15,,,,,gpt_to_size,Finviz bull flag pattern; GPT to set stop/target
+2025-12-05,BOX,bull_flag_long,Bull Flag Long,long,> signal candle high,31.745,31.92,31.04,31.62,,,,,gpt_to_size,Finviz bull flag pattern; GPT to set stop/target
+2025-12-05,BRBR,bull_flag_long,Bull Flag Long,long,> signal candle high,30.809,31.42,30.475,31.17,,,,,gpt_to_size,Finviz bull flag pattern; GPT to set stop/target
+2025-12-05,BRKR,bull_flag_long,Bull Flag Long,long,> signal candle high,48.36,48.72,47.44,48.03,,,,,gpt_to_size,Finviz bull flag pattern; GPT to set stop/target
+2025-12-05,BRO,bull_flag_long,Bull Flag Long,long,> signal candle high,79.85,79.86,77.63,78.37,,,,,gpt_to_size,Finviz bull flag pattern; GPT to set stop/target
+2025-12-05,BROS,bull_flag_long,Bull Flag Long,long,> signal candle high,60.965,61.02,57.77,58.43,,,,,gpt_to_size,Finviz bull flag pattern; GPT to set stop/target
+2025-12-05,BRZE,bull_flag_long,Bull Flag Long,long,> signal candle high,29.78,31.2,29.705,30.3,,,,,gpt_to_size,Finviz bull flag pattern; GPT to set stop/target
+2025-12-05,BSX,bull_flag_long,Bull Flag Long,long,> signal candle high,97.965,98.685,97.02,97.52,,,,,gpt_to_size,Finviz bull flag pattern; GPT to set stop/target
+2025-12-05,BSY,bull_flag_long,Bull Flag Long,long,> signal candle high,42.52,43.34,42.32,43.19,,,,,gpt_to_size,Finviz bull flag pattern; GPT to set stop/target
+2025-12-05,BTSG,bull_flag_long,Bull Flag Long,long,> signal candle high,34.75,35.94,34.75,35.79,,,,,gpt_to_size,Finviz bull flag pattern; GPT to set stop/target
+2025-12-05,BURL,bull_flag_long,Bull Flag Long,long,> signal candle high,256.45,273.08,256.32,271.78,,,,,gpt_to_size,Finviz bull flag pattern; GPT to set stop/target
+2025-12-05,BWA,bull_flag_long,Bull Flag Long,long,> signal candle high,43.365,43.685,43.28,43.3,,,,,gpt_to_size,Finviz bull flag pattern; GPT to set stop/target
+2025-12-05,BWXT,bull_flag_long,Bull Flag Long,long,> signal candle high,181.0,181.48,174.87,177.87,,,,,gpt_to_size,Finviz bull flag pattern; GPT to set stop/target
+2025-12-05,BX,bull_flag_long,Bull Flag Long,long,> signal candle high,150.655,153.82,150.35,152.15,,,,,gpt_to_size,Finviz bull flag pattern; GPT to set stop/target
+2025-12-05,BXP,bull_flag_long,Bull Flag Long,long,> signal candle high,70.74,70.81,68.7,69.28,,,,,gpt_to_size,Finviz bull flag pattern; GPT to set stop/target
+2025-12-05,C,bull_flag_long,Bull Flag Long,long,> signal candle high,107.67,109.367,107.51,108.88,,,,,gpt_to_size,Finviz bull flag pattern; GPT to set stop/target
+2025-12-05,CADE,bull_flag_long,Bull Flag Long,long,> signal candle high,41.72,41.9,41.39,41.43,,,,,gpt_to_size,Finviz bull flag pattern; GPT to set stop/target
+2025-12-05,CAH,bull_flag_long,Bull Flag Long,long,> signal candle high,200.01,200.255,198.1,198.83,,,,,gpt_to_size,Finviz bull flag pattern; GPT to set stop/target
+2025-12-05,CAKE,bull_flag_long,Bull Flag Long,long,> signal candle high,47.78,47.845,46.9,46.98,,,,,gpt_to_size,Finviz bull flag pattern; GPT to set stop/target
+2025-12-05,CARR,bull_flag_long,Bull Flag Long,long,> signal candle high,54.375,54.8,54.0,54.29,,,,,gpt_to_size,Finviz bull flag pattern; GPT to set stop/target
+2025-12-05,CART,bull_flag_long,Bull Flag Long,long,> signal candle high,43.12,44.2688,43.085,44.18,,,,,gpt_to_size,Finviz bull flag pattern; GPT to set stop/target
+2025-12-05,CAT,bull_flag_long,Bull Flag Long,long,> signal candle high,603.68,607.0,597.7382,603.17,,,,,gpt_to_size,Finviz bull flag pattern; GPT to set stop/target
+2025-12-05,CAVA,bull_flag_long,Bull Flag Long,long,> signal candle high,54.365,54.575,52.598,53.37,,,,,gpt_to_size,Finviz bull flag pattern; GPT to set stop/target
+2025-12-05,CBRE,bull_flag_long,Bull Flag Long,long,> signal candle high,162.24,162.24,160.36,160.86,,,,,gpt_to_size,Finviz bull flag pattern; GPT to set stop/target
+2025-12-05,CBSH,bull_flag_long,Bull Flag Long,long,> signal candle high,52.42,52.73,52.23,52.24,,,,,gpt_to_size,Finviz bull flag pattern; GPT to set stop/target
+2025-12-05,CCI,bull_flag_long,Bull Flag Long,long,> signal candle high,88.43,89.5,88.25,89.28,,,,,gpt_to_size,Finviz bull flag pattern; GPT to set stop/target
+2025-12-05,CCK,bull_flag_long,Bull Flag Long,long,> signal candle high,98.22,99.675,97.94,97.95,,,,,gpt_to_size,Finviz bull flag pattern; GPT to set stop/target
+2025-12-05,CDNS,bull_flag_long,Bull Flag Long,long,> signal candle high,338.43,341.04,336.16,337.53,,,,,gpt_to_size,Finviz bull flag pattern; GPT to set stop/target
+2025-12-05,CDTX,bull_flag_long,Bull Flag Long,long,> signal candle high,220.21,220.92,220.03,220.36,,,,,gpt_to_size,Finviz bull flag pattern; GPT to set stop/target
+2025-12-05,CDW,bull_flag_long,Bull Flag Long,long,> signal candle high,143.78,147.02,142.5,146.25,,,,,gpt_to_size,Finviz bull flag pattern; GPT to set stop/target
+2025-12-05,CE,bull_flag_long,Bull Flag Long,long,> signal candle high,39.82,41.44,39.58,40.63,,,,,gpt_to_size,Finviz bull flag pattern; GPT to set stop/target
+2025-12-05,CEG,bull_flag_long,Bull Flag Long,long,> signal candle high,369.43,370.07,357.17,359.82,,,,,gpt_to_size,Finviz bull flag pattern; GPT to set stop/target
+2025-12-05,CELC,bull_flag_long,Bull Flag Long,long,> signal candle high,106.58,107.78,105.0,105.63,,,,,gpt_to_size,Finviz bull flag pattern; GPT to set stop/target
+2025-12-05,CELH,bull_flag_long,Bull Flag Long,long,> signal candle high,42.7,42.99,41.85,42.06,,,,,gpt_to_size,Finviz bull flag pattern; GPT to set stop/target
+2025-12-05,CENX,bull_flag_long,Bull Flag Long,long,> signal candle high,31.43,32.13,30.94,31.08,,,,,gpt_to_size,Finviz bull flag pattern; GPT to set stop/target
+2025-12-05,CF,bull_flag_long,Bull Flag Long,long,> signal candle high,80.25,80.6,77.82,77.88,,,,,gpt_to_size,Finviz bull flag pattern; GPT to set stop/target
+2025-12-05,CFG,bull_flag_long,Bull Flag Long,long,> signal candle high,55.68,56.17,55.44,55.46,,,,,gpt_to_size,Finviz bull flag pattern; GPT to set stop/target
+2025-12-05,CG,bull_flag_long,Bull Flag Long,long,> signal candle high,56.27,57.59,55.97,57.11,,,,,gpt_to_size,Finviz bull flag pattern; GPT to set stop/target
+2025-12-05,CGNX,bull_flag_long,Bull Flag Long,long,> signal candle high,38.88,39.18,38.32,38.42,,,,,gpt_to_size,Finviz bull flag pattern; GPT to set stop/target
+2025-12-05,CGON,bull_flag_long,Bull Flag Long,long,> signal candle high,45.05,46.01,43.02,43.3,,,,,gpt_to_size,Finviz bull flag pattern; GPT to set stop/target
+2025-12-05,CHD,bull_flag_long,Bull Flag Long,long,> signal candle high,83.685,84.9,83.51,84.52,,,,,gpt_to_size,Finviz bull flag pattern; GPT to set stop/target
+2025-12-05,CHRW,bull_flag_long,Bull Flag Long,long,> signal candle high,156.86,158.65,154.425,157.22,,,,,gpt_to_size,Finviz bull flag pattern; GPT to set stop/target
+2025-12-05,CHTR,bull_flag_long,Bull Flag Long,long,> signal candle high,200.0,207.79,199.65,205.1,,,,,gpt_to_size,Finviz bull flag pattern; GPT to set stop/target
+2025-12-05,CHWY,bull_flag_long,Bull Flag Long,long,> signal candle high,33.34,33.62,33.105,33.47,,,,,gpt_to_size,Finviz bull flag pattern; GPT to set stop/target
+2025-12-05,CI,bull_flag_long,Bull Flag Long,long,> signal candle high,268.805,269.08,263.87,265.44,,,,,gpt_to_size,Finviz bull flag pattern; GPT to set stop/target
+2025-12-05,CIEN,bull_flag_long,Bull Flag Long,long,> signal candle high,199.63,201.77,194.88,201.71,,,,,gpt_to_size,Finviz bull flag pattern; GPT to set stop/target
+2025-12-05,CIVI,bull_flag_long,Bull Flag Long,long,> signal candle high,30.21,31.4,30.21,30.39,,,,,gpt_to_size,Finviz bull flag pattern; GPT to set stop/target
+2025-12-05,CL,bull_flag_long,Bull Flag Long,long,> signal candle high,77.47,78.2144,77.242,78.07,,,,,gpt_to_size,Finviz bull flag pattern; GPT to set stop/target
+2025-12-05,CLX,bull_flag_long,Bull Flag Long,long,> signal candle high,104.855,106.09,104.64,104.9,,,,,gpt_to_size,Finviz bull flag pattern; GPT to set stop/target
+2025-12-05,CMA,bull_flag_long,Bull Flag Long,long,> signal candle high,84.28,85.315,83.88,84.12,,,,,gpt_to_size,Finviz bull flag pattern; GPT to set stop/target
+2025-12-05,CMC,bull_flag_long,Bull Flag Long,long,> signal candle high,66.72,68.35,66.03,66.86,,,,,gpt_to_size,Finviz bull flag pattern; GPT to set stop/target
+2025-12-05,CME,bull_flag_long,Bull Flag Long,long,> signal candle high,273.345,273.87,270.1,270.87,,,,,gpt_to_size,Finviz bull flag pattern; GPT to set stop/target
+2025-12-05,CMG,bull_flag_long,Bull Flag Long,long,> signal candle high,33.96,34.15,33.655,33.94,,,,,gpt_to_size,Finviz bull flag pattern; GPT to set stop/target
+2025-12-05,CMS,bull_flag_long,Bull Flag Long,long,> signal candle high,71.695,71.865,71.04,71.09,,,,,gpt_to_size,Finviz bull flag pattern; GPT to set stop/target
+2025-12-05,CNC,bull_flag_long,Bull Flag Long,long,> signal candle high,38.85,38.88,37.75,38.34,,,,,gpt_to_size,Finviz bull flag pattern; GPT to set stop/target
+2025-12-05,CNM,bull_flag_long,Bull Flag Long,long,> signal candle high,49.785,50.7,49.37,50.23,,,,,gpt_to_size,Finviz bull flag pattern; GPT to set stop/target
+2025-12-05,CNP,bull_flag_long,Bull Flag Long,long,> signal candle high,38.545,38.765,38.37,38.43,,,,,gpt_to_size,Finviz bull flag pattern; GPT to set stop/target
+2025-12-05,CNX,bull_flag_long,Bull Flag Long,long,> signal candle high,40.68,42.1286,40.59,40.9,,,,,gpt_to_size,Finviz bull flag pattern; GPT to set stop/target
+2025-12-05,COCO,bull_flag_long,Bull Flag Long,long,> signal candle high,53.96,54.84,53.66,54.565,,,,,gpt_to_size,Finviz bull flag pattern; GPT to set stop/target
+2025-12-05,COF,bull_flag_long,Bull Flag Long,long,> signal candle high,228.79,233.01,228.79,230.68,,,,,gpt_to_size,Finviz bull flag pattern; GPT to set stop/target
+2025-12-05,COGT,bull_flag_long,Bull Flag Long,long,> signal candle high,39.46,39.94,38.2001,38.77,,,,,gpt_to_size,Finviz bull flag pattern; GPT to set stop/target
+2025-12-05,COHR,bull_flag_long,Bull Flag Long,long,> signal candle high,186.0,188.36,181.48,181.79,,,,,gpt_to_size,Finviz bull flag pattern; GPT to set stop/target
+2025-12-05,COIN,bull_flag_long,Bull Flag Long,long,> signal candle high,270.425,273.57,265.01,269.73,,,,,gpt_to_size,Finviz bull flag pattern; GPT to set stop/target
+2025-12-05,COO,bull_flag_long,Bull Flag Long,long,> signal candle high,89.66,89.83,80.89,81.4,,,,,gpt_to_size,Finviz bull flag pattern; GPT to set stop/target
+2025-12-05,COP,bull_flag_long,Bull Flag Long,long,> signal candle high,92.0817,95.07,92.0817,93.69,,,,,gpt_to_size,Finviz bull flag pattern; GPT to set stop/target
+2025-12-05,COR,bull_flag_long,Bull Flag Long,long,> signal candle high,338.11,341.18,336.37,339.66,,,,,gpt_to_size,Finviz bull flag pattern; GPT to set stop/target
+2025-12-05,COST,bull_flag_long,Bull Flag Long,long,> signal candle high,897.25,905.89,893.0,894.68,,,,,gpt_to_size,Finviz bull flag pattern; GPT to set stop/target
+2025-12-05,CPRT,bull_flag_long,Bull Flag Long,long,> signal candle high,38.9,38.98,38.64,38.72,,,,,gpt_to_size,Finviz bull flag pattern; GPT to set stop/target
+2025-12-05,CPT,bull_flag_long,Bull Flag Long,long,> signal candle high,104.13,105.01,103.46,103.88,,,,,gpt_to_size,Finviz bull flag pattern; GPT to set stop/target
+2025-12-05,CRBG,bull_flag_long,Bull Flag Long,long,> signal candle high,30.26,30.76,30.24,30.37,,,,,gpt_to_size,Finviz bull flag pattern; GPT to set stop/target
+2025-12-05,CRCL,bull_flag_long,Bull Flag Long,long,> signal candle high,86.09,86.66,83.14,85.62,,,,,gpt_to_size,Finviz bull flag pattern; GPT to set stop/target
+2025-12-05,CRH,bull_flag_long,Bull Flag Long,long,> signal candle high,120.36,121.35,118.595,119.49,,,,,gpt_to_size,Finviz bull flag pattern; GPT to set stop/target
+2025-12-05,CRL,bull_flag_long,Bull Flag Long,long,> signal candle high,184.78,185.9,182.7143,184.31,,,,,gpt_to_size,Finviz bull flag pattern; GPT to set stop/target
+2025-12-05,CRM,bull_flag_long,Bull Flag Long,long,> signal candle high,249.75,261.88,249.5,260.57,,,,,gpt_to_size,Finviz bull flag pattern; GPT to set stop/target
+2025-12-05,CRNX,bull_flag_long,Bull Flag Long,long,> signal candle high,47.52,47.83,46.65,46.67,,,,,gpt_to_size,Finviz bull flag pattern; GPT to set stop/target
+2025-12-05,CROX,bull_flag_long,Bull Flag Long,long,> signal candle high,88.04,90.82,88.04,89.7,,,,,gpt_to_size,Finviz bull flag pattern; GPT to set stop/target
+2025-12-05,CRWD,bull_flag_long,Bull Flag Long,long,> signal candle high,516.14,526.89,508.32,512.03,,,,,gpt_to_size,Finviz bull flag pattern; GPT to set stop/target
+2025-12-05,CRWV,bull_flag_long,Bull Flag Long,long,> signal candle high,87.3,88.76,84.62,88.3,,,,,gpt_to_size,Finviz bull flag pattern; GPT to set stop/target
+2025-12-05,CSCO,bull_flag_long,Bull Flag Long,long,> signal candle high,77.97,78.19,77.395,77.97,,,,,gpt_to_size,Finviz bull flag pattern; GPT to set stop/target
+2025-12-05,CSGP,bull_flag_long,Bull Flag Long,long,> signal candle high,67.82,68.77,67.4675,68.01,,,,,gpt_to_size,Finviz bull flag pattern; GPT to set stop/target
+2025-12-05,CSX,bull_flag_long,Bull Flag Long,long,> signal candle high,36.13,36.555,36.085,36.3,,,,,gpt_to_size,Finviz bull flag pattern; GPT to set stop/target
+2025-12-05,CTAS,bull_flag_long,Bull Flag Long,long,> signal candle high,184.12,186.98,183.8002,186.75,,,,,gpt_to_size,Finviz bull flag pattern; GPT to set stop/target
+2025-12-05,CTRE,bull_flag_long,Bull Flag Long,long,> signal candle high,37.82,37.87,37.6,37.7,,,,,gpt_to_size,Finviz bull flag pattern; GPT to set stop/target
+2025-12-05,CTSH,bull_flag_long,Bull Flag Long,long,> signal candle high,79.97,81.145,79.48,80.72,,,,,gpt_to_size,Finviz bull flag pattern; GPT to set stop/target
+2025-12-05,CTVA,bull_flag_long,Bull Flag Long,long,> signal candle high,66.245,67.03,65.93,66.0,,,,,gpt_to_size,Finviz bull flag pattern; GPT to set stop/target
+2025-12-05,CUBE,bull_flag_long,Bull Flag Long,long,> signal candle high,36.502,36.895,36.46,36.63,,,,,gpt_to_size,Finviz bull flag pattern; GPT to set stop/target
+2025-12-05,CVI,bull_flag_long,Bull Flag Long,long,> signal candle high,33.97,34.43,33.485,33.54,,,,,gpt_to_size,Finviz bull flag pattern; GPT to set stop/target
+2025-12-05,CVNA,bull_flag_long,Bull Flag Long,long,> signal candle high,398.35,408.19,397.21,399.77,,,,,gpt_to_size,Finviz bull flag pattern; GPT to set stop/target
+2025-12-05,CVS,bull_flag_long,Bull Flag Long,long,> signal candle high,76.66,76.89,74.98,75.63,,,,,gpt_to_size,Finviz bull flag pattern; GPT to set stop/target
+2025-12-05,CVX,bull_flag_long,Bull Flag Long,long,> signal candle high,152.0,152.63,149.83,150.0,,,,,gpt_to_size,Finviz bull flag pattern; GPT to set stop/target
+2025-12-05,CWEN,bull_flag_long,Bull Flag Long,long,> signal candle high,34.1,34.22,33.71,34.01,,,,,gpt_to_size,Finviz bull flag pattern; GPT to set stop/target
+2025-12-05,CYTK,bull_flag_long,Bull Flag Long,long,> signal candle high,66.49,66.95,65.36,65.67,,,,,gpt_to_size,Finviz bull flag pattern; GPT to set stop/target
+2025-12-05,D,bull_flag_long,Bull Flag Long,long,> signal candle high,59.09,59.14,58.46,58.49,,,,,gpt_to_size,Finviz bull flag pattern; GPT to set stop/target
+2025-12-05,DAL,bull_flag_long,Bull Flag Long,long,> signal candle high,66.79,67.75,66.3,67.1,,,,,gpt_to_size,Finviz bull flag pattern; GPT to set stop/target
+2025-12-05,DAR,bull_flag_long,Bull Flag Long,long,> signal candle high,36.53,36.9299,36.32,36.51,,,,,gpt_to_size,Finviz bull flag pattern; GPT to set stop/target
+2025-12-05,DASH,bull_flag_long,Bull Flag Long,long,> signal candle high,221.19,227.71,220.48,225.0,,,,,gpt_to_size,Finviz bull flag pattern; GPT to set stop/target
+2025-12-05,DAY,bull_flag_long,Bull Flag Long,long,> signal candle high,69.11,69.13,68.98,69.07,,,,,gpt_to_size,Finviz bull flag pattern; GPT to set stop/target
+2025-12-05,DD,bull_flag_long,Bull Flag Long,long,> signal candle high,39.9,40.77,39.815,40.51,,,,,gpt_to_size,Finviz bull flag pattern; GPT to set stop/target
+2025-12-05,DDOG,bull_flag_long,Bull Flag Long,long,> signal candle high,153.0,153.05,150.075,151.41,,,,,gpt_to_size,Finviz bull flag pattern; GPT to set stop/target
+2025-12-05,DE,bull_flag_long,Bull Flag Long,long,> signal candle high,481.57,485.44,473.69,475.11,,,,,gpt_to_size,Finviz bull flag pattern; GPT to set stop/target
+2025-12-05,DECK,bull_flag_long,Bull Flag Long,long,> signal candle high,96.5,99.74,96.175,99.7,,,,,gpt_to_size,Finviz bull flag pattern; GPT to set stop/target
+2025-12-05,DELL,bull_flag_long,Bull Flag Long,long,> signal candle high,138.95,139.2,136.11,138.91,,,,,gpt_to_size,Finviz bull flag pattern; GPT to set stop/target
+2025-12-05,DG,bull_flag_long,Bull Flag Long,long,> signal candle high,125.185,135.07,124.24,132.37,,,,,gpt_to_size,Finviz bull flag pattern; GPT to set stop/target
+2025-12-05,DGX,bull_flag_long,Bull Flag Long,long,> signal candle high,183.515,184.19,182.08,182.51,,,,,gpt_to_size,Finviz bull flag pattern; GPT to set stop/target
+2025-12-05,DHI,bull_flag_long,Bull Flag Long,long,> signal candle high,161.09,162.1,158.52,158.62,,,,,gpt_to_size,Finviz bull flag pattern; GPT to set stop/target
+2025-12-05,DHR,bull_flag_long,Bull Flag Long,long,> signal candle high,227.38,228.4765,225.0,226.25,,,,,gpt_to_size,Finviz bull flag pattern; GPT to set stop/target
+2025-12-05,DINO,bull_flag_long,Bull Flag Long,long,> signal candle high,50.545,51.25,50.02,50.07,,,,,gpt_to_size,Finviz bull flag pattern; GPT to set stop/target
+2025-12-05,DIS,bull_flag_long,Bull Flag Long,long,> signal candle high,105.03,106.17,104.56,105.3,,,,,gpt_to_size,Finviz bull flag pattern; GPT to set stop/target
+2025-12-05,DK,bull_flag_long,Bull Flag Long,long,> signal candle high,37.825,37.945,36.34,36.41,,,,,gpt_to_size,Finviz bull flag pattern; GPT to set stop/target
+2025-12-05,DKNG,bull_flag_long,Bull Flag Long,long,> signal candle high,35.23,35.84,33.73,34.0,,,,,gpt_to_size,Finviz bull flag pattern; GPT to set stop/target
+2025-12-05,DKS,bull_flag_long,Bull Flag Long,long,> signal candle high,226.67,236.855,226.4,232.22,,,,,gpt_to_size,Finviz bull flag pattern; GPT to set stop/target
+2025-12-05,DLR,bull_flag_long,Bull Flag Long,long,> signal candle high,161.0,165.99,160.995,164.73,,,,,gpt_to_size,Finviz bull flag pattern; GPT to set stop/target
+2025-12-05,DLTR,bull_flag_long,Bull Flag Long,long,> signal candle high,115.92,125.79,115.63,122.44,,,,,gpt_to_size,Finviz bull flag pattern; GPT to set stop/target
+2025-12-05,DOCN,bull_flag_long,Bull Flag Long,long,> signal candle high,46.28,48.4,45.99,48.3,,,,,gpt_to_size,Finviz bull flag pattern; GPT to set stop/target
