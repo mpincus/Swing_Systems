@@ -1,2 +1,5 @@
 [2025-12-06T04:02:37.976392Z] Starting fetch: tickers=200, lookback_days=60, source=auto, append=True
 [2025-12-06T04:03:26.727841Z] Fetch complete: rows=2285, yahoo_success=20, yahoo_fail=0, stooq_success=0, stooq_fail=0
+[2025-12-06T04:08:24.856087Z] Starting fetch: tickers=815, lookback_days=60, source=auto, append=True
+[2025-12-06T04:11:46.427901Z] Fetch complete: rows=2285, yahoo_success=82, yahoo_fail=0, stooq_success=0, stooq_fail=0
+[2025-12-06T04:17:06.208407Z] Starting fetch: tickers=815, lookback_days=60, source=stooq, append=True

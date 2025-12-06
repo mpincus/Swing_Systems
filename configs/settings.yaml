@@ -3,7 +3,7 @@ timezone: America/New_York
 lookback_days: 60
 signal_history_days: 5
 data_source: auto   # auto|yahoo|stooq
-data_source: auto   # auto|yahoo|stooq (auto: try Yahoo, then fallback to Stooq)
+data_source: stooq  # temporary full backfill via Stooq to avoid Yahoo throttle
 generate_signals: true  # set false to skip rule-based signals and only emit GPT features
 features_window_days: 40  # how many most recent days to include in features export
 finviz:
@@ -14,7 +14,7 @@ paths:
   outputs_dir: outputs
   docs_dir: docs
 max_union_tickers: 0    # 0 means no cap; Stooq default to avoid Yahoo limits
-max_union_tickers: 200   # cap total tickers to 200 to keep downloads fast
+max_union_tickers: 0    # 0 means no cap; allows full watchlist union
 strategies:
   rsi_reversal_long:
     urls:
