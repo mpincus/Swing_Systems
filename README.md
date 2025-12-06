@@ -10,6 +10,14 @@ This repo builds daily Finviz watchlists, fetches OHLCV from Yahoo Finance, runs
    - `rsi_reversal_short`: RSI >= 70 + bearish engulfing; stop = prior 3-day high; target = 1.25R.
    - `rsi_continuation_long`: RSI > 70 and rising (momentum continuation); same stop/target logic.
    - `rsi_continuation_short`: RSI < 30 and falling (downside momentum); symmetric stop/target.
+   - `ma_momentum_long`: price > $30, trend (50>200; close > 200); triggers on pullback near EMA21/SMA50, fresh EMA9/EMA21 bullish crossover, or within ~3% of 20d high. GPT sizes stops/targets.
+   - `ma_momentum_short`: price > $30, downtrend (50<200; close < 200); triggers on pullback near EMA21/SMA50, fresh EMA9/EMA21 bearish crossover, or within ~3% of 20d low. GPT sizes stops/targets.
+   - `macd_long`: price > $30, close > 200, MACD (12-26) crosses above signal (9) in an uptrend. GPT sizes stops/targets.
+   - `macd_short`: price > $30, close < 200, MACD (12-26) crosses below signal (9) in a downtrend. GPT sizes stops/targets.
+   - `bull_flag_long`: Finviz bull flag pattern (optionable, >$30). GPT sizes stops/targets.
+   - `bear_flag_short`: Finviz bear flag pattern (optionable, >$30). GPT sizes stops/targets.
+   - `channel_up_long`: Finviz channel up pattern (optionable, >$30). GPT sizes stops/targets.
+   - `channel_down_short`: Finviz channel down pattern (optionable, >$30). GPT sizes stops/targets.
    Signals require R >= 1.25; grade is A+/A/B+ from R buckets; includes a short reason.
 4) Write per-strategy signals -> `outputs/<strategy>/signals.csv`.
 5) Write combined signals -> `outputs/combined_signals.csv` (has a `Strategy` column).
@@ -45,8 +53,8 @@ Outputs: `outputs/**` and mirrored copies in `docs/`. Watchlists live in `data/w
 - `finviz.user_agent`: UA string for Finviz requests.
 - `paths`: where data/outputs/docs live (defaults match repo layout).
 - `strategies.<name>.urls`: Finviz screens per strategy; change to tighten/loosen universes.
-- `max_union_tickers`: cap total tickers downloaded from Yahoo to reduce rate limits (default 30).
-- `data_source`: `auto` (try Yahoo then fall back to Stooq), or force `yahoo`/`stooq`.
+- `max_union_tickers`: cap total tickers downloaded (0 = no cap; default 0 since Stooq is primary).
+- `data_source`: `stooq` by default; or `auto` (try Yahoo then Stooq) / force `yahoo`.
 - `generate_signals`: true to run built-in strategies; false to skip signals and only emit GPT features.
 - `features_window_days`: number of recent days to keep in `outputs/features.csv` for GPT context.
 

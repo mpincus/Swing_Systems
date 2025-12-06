@@ -12,7 +12,7 @@ paths:
   data_dir: data
   outputs_dir: outputs
   docs_dir: docs
-max_union_tickers: 30   # cap total tickers downloaded from Yahoo to avoid rate limits
+max_union_tickers: 0    # 0 means no cap; Stooq default to avoid Yahoo limits
 strategies:
   rsi_reversal_long:
     urls:
@@ -26,3 +26,27 @@ strategies:
   rsi_continuation_short:
     urls:
       - https://finviz.com/screener.ashx?v=111&f=cap_midover,geo_usa,sh_opt_option,sh_price_o10,sh_avgvol_o1000,ta_perf_4w10o,ta_sma50_pb
+  ma_momentum_long:
+    urls:
+      - https://finviz.com/screener.ashx?v=111&f=cap_midover,geo_usa,sh_opt_option,sh_price_o30,sh_avgvol_o1000,ta_sma50_pa,ta_sma200_pa
+  ma_momentum_short:
+    urls:
+      - https://finviz.com/screener.ashx?v=111&f=cap_midover,geo_usa,sh_opt_option,sh_price_o30,sh_avgvol_o1000,ta_sma50_pb,ta_sma200_pb
+  macd_long:
+    urls:
+      - https://finviz.com/screener.ashx?v=111&f=cap_midover,geo_usa,sh_opt_option,sh_price_o30,sh_avgvol_o1000,ta_sma200_pa
+  macd_short:
+    urls:
+      - https://finviz.com/screener.ashx?v=111&f=cap_midover,geo_usa,sh_opt_option,sh_price_o30,sh_avgvol_o1000,ta_sma200_pb
+  bull_flag_long:
+    urls:
+      - https://finviz.com/screener.ashx?v=111&f=cap_midover,geo_usa,sh_opt_option,sh_price_o30,sh_avgvol_o1000,ta_pattern_bullflag
+  bear_flag_short:
+    urls:
+      - https://finviz.com/screener.ashx?v=111&f=cap_midover,geo_usa,sh_opt_option,sh_price_o30,sh_avgvol_o1000,ta_pattern_bearflag
+  channel_up_long:
+    urls:
+      - https://finviz.com/screener.ashx?v=111&f=cap_midover,geo_usa,sh_opt_option,sh_price_o30,sh_avgvol_o1000,ta_pattern_channelup
+  channel_down_short:
+    urls:
+      - https://finviz.com/screener.ashx?v=111&f=cap_midover,geo_usa,sh_opt_option,sh_price_o30,sh_avgvol_o1000,ta_pattern_channeldown
