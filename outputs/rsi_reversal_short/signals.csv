@@ -1,8 +1,4 @@
-Date,Ticker,Strategy,Setup,Side,EntryTrigger,SignalOpen,SignalHigh,SignalLow,SignalClose,Stop,Target,R,Grade,GradeBasis,Reason
-2025-12-02,COGT,rsi_reversal_short,Reversal Short,short,< signal candle close,39.76,40.25,37.75,38.98,,,,,gpt_to_size,RSI>=70 + bearish engulfing; GPT to set stop/target
-2025-12-05,COGT,rsi_reversal_short,Reversal Short,short,< signal candle close,39.46,39.94,38.2001,38.77,,,,,gpt_to_size,RSI>=70 + bearish engulfing; GPT to set stop/target
-2025-12-04,EXAS,rsi_reversal_short,Reversal Short,short,< signal candle close,101.25,101.365,100.98,101.13,,,,,gpt_to_size,RSI>=70 + bearish engulfing; GPT to set stop/target
-2025-11-28,GEHC,rsi_reversal_short,Reversal Short,short,< signal candle close,80.65,80.69,79.63,79.99,,,,,gpt_to_size,RSI>=70 + bearish engulfing; GPT to set stop/target
-2025-12-01,NTRA,rsi_reversal_short,Reversal Short,short,< signal candle close,239.64,240.175,233.67,234.25,,,,,gpt_to_size,RSI>=70 + bearish engulfing; GPT to set stop/target
-2025-12-05,OLMA,rsi_reversal_short,Reversal Short,short,< signal candle close,27.86,28.25,25.94,27.21,,,,,gpt_to_size,RSI>=70 + bearish engulfing; GPT to set stop/target
-2025-12-02,PACS,rsi_reversal_short,Reversal Short,short,< signal candle close,33.52,34.41,31.41,31.47,,,,,gpt_to_size,RSI>=70 + bearish engulfing; GPT to set stop/target
+Date,SignalDate,Ticker,Strategy,Setup,Side,EntryTrigger,EntryTriggerPrice,SignalOpen,SignalHigh,SignalLow,SignalClose,Stop,Target,R,Grade,GradeBasis,Reason
+2025-12-02,2025-12-02,COGT,rsi_reversal_short,Reversal Short,short,< signal close,38.98,39.76,40.25,37.75,38.98,,,,,gpt_to_size,RSI>=70 + bearish engulfing; GPT to set stop/target
+2025-12-05,2025-12-05,COGT,rsi_reversal_short,Reversal Short,short,< signal close,38.77,39.46,39.94,38.2001,38.77,,,,,gpt_to_size,RSI>=70 + bearish engulfing; GPT to set stop/target
+2025-12-04,2025-12-04,EXAS,rsi_reversal_short,Reversal Short,short,< signal close,101.13,101.25,101.365,100.98,101.13,,,,,gpt_to_size,RSI>=70 + bearish engulfing; GPT to set stop/target
