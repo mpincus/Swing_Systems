@@ -3,7 +3,7 @@ timezone: America/New_York
 lookback_days: 60
 signal_history_days: 5
 data_source: auto   # auto|yahoo|stooq
-data_source: stooq  # temporary: backfill via Stooq to avoid Yahoo throttle; switch back to auto for append runs
+data_source: auto   # auto|yahoo|stooq (auto: try Yahoo, then fallback to Stooq)
 generate_signals: true  # set false to skip rule-based signals and only emit GPT features
 features_window_days: 40  # how many most recent days to include in features export
 finviz:
