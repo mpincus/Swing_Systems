@@ -13,6 +13,7 @@ paths:
   outputs_dir: outputs
   docs_dir: docs
 max_union_tickers: 0    # 0 means no cap; Stooq default to avoid Yahoo limits
+max_union_tickers: 200   # cap total tickers to 200 to keep downloads fast
 strategies:
   rsi_reversal_long:
     urls:
