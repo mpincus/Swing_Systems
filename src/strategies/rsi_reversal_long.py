@@ -92,5 +92,94 @@ class RSIReversalLong(Strategy):
         ]
         return pd.DataFrame(rows)[cols].reset_index(drop=True)
 
+    def generate_pending(self, prices: pd.DataFrame, history_days: int) -> pd.DataFrame:
+        """
+        Emit signals that have printed (RSI<=30 + bullish engulfing) but have
+        not yet triggered within their 3-bar window. Uses the most recent
+        available data to decide if the trigger has fired; expired setups are
+        dropped.
+        """
+        if prices.empty:
+            return pd.DataFrame()
+
+        df = indicators.add_common_indicators(prices)
+        df["Date"] = pd.to_datetime(df["Date"]).dt.date
+        today = df["Date"].max()
+        cutoff = today - dt.timedelta(days=history_days - 1)
+
+        rows = []
+        for ticker, group in df.groupby("Ticker"):
+            group = group.sort_values("Date").reset_index(drop=True)
+            if len(group) < 15:
+                continue
+            for i in range(1, len(group)):
+                curr = group.loc[i]
+                if curr["Date"] < cutoff:
+                    continue
+                if not (curr["RSI"] <= 30 and curr["BullishEngulfing"]):
+                    continue
+                signal_close = curr["Close"]
+                triggered = False
+                window_end = min(i + 4, len(group))
+                for j in range(i, window_end):
+                    bar = group.loc[j]
+                    if bar["High"] > signal_close:
+                        triggered = True
+                        break
+                # If window ended and never triggered, treat as expired and skip
+                if not triggered and window_end <= len(group) and (window_end - 1) < len(group):
+                    last_window_date = group.loc[window_end - 1]["Date"]
+                    if last_window_date < today:
+                        continue
+                if triggered:
+                    continue
+                rows.append(
+                    {
+                        "Date": curr["Date"],
+                        "SignalDate": curr["Date"],
+                        "Ticker": ticker,
+                        "Strategy": self.name,
+                        "Setup": "Reversal Long (pending)",
+                        "Side": "long",
+                        "EntryTrigger": "> signal close",
+                        "EntryTriggerPrice": signal_close,
+                        "SignalOpen": curr["Open"],
+                        "SignalHigh": curr["High"],
+                        "SignalLow": curr["Low"],
+                        "SignalClose": curr["Close"],
+                        "Stop": "",
+                        "Target": "",
+                        "R": "",
+                        "Grade": "",
+                        "GradeBasis": "pending_gpt_to_size",
+                        "Reason": "RSI<=30 + bullish engulfing; awaiting trigger within 3 bars",
+                    }
+                )
+
+        if not rows:
+            return pd.DataFrame()
+
+        cols = [
+            "Date",
+            "SignalDate",
+            "Ticker",
+            "Strategy",
+            "Setup",
+            "Side",
+            "EntryTrigger",
+            "EntryTriggerPrice",
+            "SignalOpen",
+            "SignalHigh",
+            "SignalLow",
+            "SignalClose",
+            "Stop",
+            "Target",
+            "R",
+            "Grade",
+            "GradeBasis",
+            "Reason",
+        ]
+        return pd.DataFrame(rows)[cols].reset_index(drop=True)
+
 
 strategy = RSIReversalLong()

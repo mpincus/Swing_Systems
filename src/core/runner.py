@@ -42,6 +42,7 @@ def main() -> None:
     features.to_csv(features_path, index=False)
     _mirror_to_docs(features_path, settings)
 
+    pending_frames: List[pd.DataFrame] = []
     if generate_signals:
         all_frames: List[pd.DataFrame] = []
         for strat in strategies:
@@ -57,6 +58,14 @@ def main() -> None:
             signals.to_csv(out_path, index=False)
             all_frames.append(signals)
 
+            if hasattr(strat, "generate_pending"):
+                pending = strat.generate_pending(subset, history_days=history_days)
+                if not pending.empty:
+                    pending_path = outputs_dir / "pending" / strat.name / "signals.csv"
+                    pending_path.parent.mkdir(parents=True, exist_ok=True)
+                    pending.to_csv(pending_path, index=False)
+                    pending_frames.append(pending)
+
         if all_frames:
             combined = pd.concat(all_frames, ignore_index=True)
             combined_path = outputs_dir / "combined_signals.csv"
@@ -66,6 +75,16 @@ def main() -> None:
                 per_path = outputs_dir / strat.name / "signals.csv"
                 if per_path.exists():
                     _mirror_to_docs(per_path, settings, subdir=strat.name)
+
+        if pending_frames:
+            combined_pending = pd.concat(pending_frames, ignore_index=True)
+            combined_pending_path = outputs_dir / "pending_signals.csv"
+            combined_pending.to_csv(combined_pending_path, index=False)
+            _mirror_to_docs(combined_pending_path, settings)
+            for strat in strategies:
+                per_path = outputs_dir / "pending" / strat.name / "signals.csv"
+                if per_path.exists():
+                    _mirror_to_docs(per_path, settings, subdir=f"pending/{strat.name}")
 
 
 def _load_strategies(settings: Dict) -> List[Strategy]:
