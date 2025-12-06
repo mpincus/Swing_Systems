@@ -22,17 +22,38 @@ def fetch_prices(
     lookback_days: int,
     out_path: str,
     data_source: str = "auto",
+    append: bool = True,
 ) -> pd.DataFrame:
+    log_path = pathlib.Path(out_path).parent / "fetch.log"
+
+    def _log(msg: str) -> None:
+        timestamp = dt.datetime.utcnow().isoformat()
+        line = f"[{timestamp}Z] {msg}"
+        print(line)
+        try:
+            log_path.parent.mkdir(parents=True, exist_ok=True)
+            with open(log_path, "a", encoding="utf-8") as fh:
+                fh.write(line + "\n")
+        except Exception:
+            pass
+
     tickers = [t.strip().upper() for t in tickers if t.strip()]
     if not tickers:
         raise ValueError("No tickers provided for price fetch.")
 
-    start = dt.date.today() - dt.timedelta(days=lookback_days)
+    today = dt.date.today()
+    start = today - dt.timedelta(days=lookback_days)
     end = dt.date.today() + dt.timedelta(days=1)
-    existing = _load_existing(out_path, start)
+    existing = _load_existing(out_path, start) if append else None
 
     frames: List[pd.DataFrame] = []
     chunk_size = 10  # keep chunks small to reduce rate limits
+    stats = {
+        "yahoo_success": 0,
+        "yahoo_fail": 0,
+        "stooq_success": 0,
+        "stooq_fail": 0,
+    }
 
     def maybe_yahoo() -> None:
         for i in range(0, len(tickers), chunk_size):
@@ -40,6 +61,9 @@ def fetch_prices(
             df_part = _download_chunk_yahoo(chunk, start, end)
             if df_part is not None and not df_part.empty:
                 frames.append(df_part)
+                stats["yahoo_success"] += 1
+            else:
+                stats["yahoo_fail"] += 1
             time.sleep(2.0)  # throttle between chunks
 
     def stooq_all() -> None:
@@ -47,8 +71,12 @@ def fetch_prices(
             df_part = _download_stooq(sym, start, end)
             if df_part is not None and not df_part.empty:
                 frames.append(df_part)
+                stats["stooq_success"] += 1
+            else:
+                stats["stooq_fail"] += 1
             time.sleep(0.5)
 
+    _log(f"Starting fetch: tickers={len(tickers)}, lookback_days={lookback_days}, source={data_source}, append={append}")
     if data_source == "yahoo":
         maybe_yahoo()
     elif data_source == "stooq":
@@ -56,7 +84,7 @@ def fetch_prices(
     else:  # auto
         maybe_yahoo()
         if not frames:
-            print("[INFO] Yahoo yielded no data; falling back to Stooq.")
+            _log("Yahoo yielded no data; falling back to Stooq.")
             stooq_all()
 
     if not frames and existing is not None and not existing.empty:
@@ -68,13 +96,33 @@ def fetch_prices(
         df = _normalize(df)
 
     if existing is not None and not existing.empty and not df.empty:
-        df = pd.concat([existing, df], ignore_index=True)
-        df = df.drop_duplicates(subset=["Ticker", "Date"], keep="last")
-        df = df[df["Date"] >= start]
+        # Only fetch what's missing if append is enabled; otherwise re-download full window.
+        if append:
+            existing_latest = existing.groupby("Ticker")["Date"].max().to_dict()
+            needed: List[str] = []
+            for t in tickers:
+                last_date = existing_latest.get(t)
+                if last_date is None or last_date < today:
+                    needed.append(t)
+            if needed:
+                # Combine existing with newly fetched for needed tickers
+                df = pd.concat([existing, df], ignore_index=True)
+                df = df.drop_duplicates(subset=["Ticker", "Date"], keep="last")
+                df = df[df["Date"] >= start]
+            else:
+                df = existing
+        else:
+            df = pd.concat([existing, df], ignore_index=True)
+            df = df.drop_duplicates(subset=["Ticker", "Date"], keep="last")
+            df = df[df["Date"] >= start]
 
     path_obj = pathlib.Path(out_path)
     path_obj.parent.mkdir(parents=True, exist_ok=True)
     df.to_csv(path_obj, index=False)
+    _log(
+        f"Fetch complete: rows={len(df)}, yahoo_success={stats['yahoo_success']}, "
+        f"yahoo_fail={stats['yahoo_fail']}, stooq_success={stats['stooq_success']}, stooq_fail={stats['stooq_fail']}"
+    )
     return df
 
 
