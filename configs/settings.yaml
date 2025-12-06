@@ -40,13 +40,13 @@ strategies:
       - https://finviz.com/screener.ashx?v=111&f=cap_midover,geo_usa,sh_opt_option,sh_price_o30,sh_avgvol_o1000,ta_sma200_pb
   bull_flag_long:
     urls:
-      - https://finviz.com/screener.ashx?v=111&f=cap_midover,geo_usa,sh_opt_option,sh_price_o30,sh_avgvol_o1000,ta_pattern_bullflag
+      - https://finviz.com/screener.ashx?v=111&f=cap_midover,geo_usa,sh_opt_option,sh_price_o30,sh_avgvol_o3000,ta_sma50_pa,ta_pattern_bullflag
   bear_flag_short:
     urls:
-      - https://finviz.com/screener.ashx?v=111&f=cap_midover,geo_usa,sh_opt_option,sh_price_o30,sh_avgvol_o1000,ta_pattern_bearflag
+      - https://finviz.com/screener.ashx?v=111&f=cap_midover,geo_usa,sh_opt_option,sh_price_o30,sh_avgvol_o3000,ta_sma50_pb,ta_pattern_bearflag
   channel_up_long:
     urls:
-      - https://finviz.com/screener.ashx?v=111&f=cap_midover,geo_usa,sh_opt_option,sh_price_o30,sh_avgvol_o1000,ta_pattern_channelup
+      - https://finviz.com/screener.ashx?v=111&f=cap_midover,geo_usa,sh_opt_option,sh_price_o30,sh_avgvol_o3000,ta_sma50_pa,ta_pattern_channelup
   channel_down_short:
     urls:
-      - https://finviz.com/screener.ashx?v=111&f=cap_midover,geo_usa,sh_opt_option,sh_price_o30,sh_avgvol_o1000,ta_pattern_channeldown
+      - https://finviz.com/screener.ashx?v=111&f=cap_midover,geo_usa,sh_opt_option,sh_price_o30,sh_avgvol_o3000,ta_sma50_pb,ta_pattern_channeldown

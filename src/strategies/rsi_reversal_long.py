@@ -1,6 +1,6 @@
 """
-RSI Reversal Long strategy: RSI <= 30 with bullish engulfing; stop at prior 3-day low,
-target set to 1.25R or better.
+RSI Reversal Long: look for RSI <= 30 with a bullish engulfing bar, then require a trigger
+within the next 3 bars. Stops/targets left for GPT; signal bar OHLC included.
 """
 import datetime as dt
 import pandas as pd
@@ -24,36 +24,61 @@ class RSIReversalLong(Strategy):
         today = df["Date"].max()
         cutoff = today - dt.timedelta(days=history_days - 1)
 
-        mask = (
-            (df["Date"] >= cutoff)
-            & (df["RSI"] <= 30)
-            & (df["BullishEngulfing"])
-            & df["L3"].notna()
-        )
+        rows = []
+        for ticker, group in df.groupby("Ticker"):
+            group = group.sort_values("Date").reset_index(drop=True)
+            if len(group) < 15:
+                continue
+            for i in range(1, len(group)):
+                curr = group.loc[i]
+                if curr["Date"] < cutoff:
+                    continue
+                if not (curr["RSI"] <= 30 and curr["BullishEngulfing"]):
+                    continue
+                signal_close = curr["Close"]
+                trigger_date = None
+                for j in range(i, min(i + 4, len(group))):
+                    bar = group.loc[j]
+                    if bar["High"] > signal_close:
+                        trigger_date = bar["Date"]
+                        break
+                if trigger_date is None:
+                    continue
+                rows.append(
+                    {
+                        "Date": trigger_date,
+                        "SignalDate": curr["Date"],
+                        "Ticker": ticker,
+                        "Strategy": self.name,
+                        "Setup": "Reversal Long",
+                        "Side": "long",
+                        "EntryTrigger": "> signal close",
+                        "EntryTriggerPrice": signal_close,
+                        "SignalOpen": curr["Open"],
+                        "SignalHigh": curr["High"],
+                        "SignalLow": curr["Low"],
+                        "SignalClose": curr["Close"],
+                        "Stop": "",
+                        "Target": "",
+                        "R": "",
+                        "Grade": "",
+                        "GradeBasis": "gpt_to_size",
+                        "Reason": "RSI<=30 + bullish engulfing; GPT to set stop/target",
+                    }
+                )
 
-        candidates = df.loc[mask].copy()
-        candidates["Strategy"] = self.name
-        candidates["Setup"] = "Reversal Long"
-        candidates["Side"] = "long"
-        candidates["EntryTrigger"] = "> signal candle close"
-        candidates["SignalOpen"] = candidates["Open"]
-        candidates["SignalHigh"] = candidates["High"]
-        candidates["SignalLow"] = candidates["Low"]
-        candidates["SignalClose"] = candidates["Close"]
-        candidates["Stop"] = ""
-        candidates["Target"] = ""
-        candidates["R"] = ""
-        candidates["Grade"] = ""
-        candidates["GradeBasis"] = "gpt_to_size"
-        candidates["Reason"] = "RSI<=30 + bullish engulfing; GPT to set stop/target"
+        if not rows:
+            return pd.DataFrame()
 
         cols = [
             "Date",
+            "SignalDate",
             "Ticker",
             "Strategy",
             "Setup",
             "Side",
             "EntryTrigger",
+            "EntryTriggerPrice",
             "SignalOpen",
             "SignalHigh",
             "SignalLow",
@@ -65,7 +90,7 @@ class RSIReversalLong(Strategy):
             "GradeBasis",
             "Reason",
         ]
-        return candidates[cols].reset_index(drop=True)
+        return pd.DataFrame(rows)[cols].reset_index(drop=True)
 
 
 strategy = RSIReversalLong()

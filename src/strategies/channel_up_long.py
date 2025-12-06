@@ -10,8 +10,9 @@ from core.strategy_base import Strategy
 
 class ChannelUpLong(Strategy):
     name = "channel_up_long"
+    TOP_N = 10  # keep only the top 10 by dollar volume to avoid noise
     urls = [
-        "https://finviz.com/screener.ashx?v=111&f=cap_midover,geo_usa,sh_opt_option,sh_price_o30,sh_avgvol_o1000,ta_pattern_channelup"
+        "https://finviz.com/screener.ashx?v=111&f=cap_midover,geo_usa,sh_opt_option,sh_price_o30,sh_avgvol_o3000,ta_sma50_pa,ta_pattern_channelup"
     ]
 
     def generate(self, prices: pd.DataFrame, history_days: int) -> pd.DataFrame:
@@ -26,7 +27,11 @@ class ChannelUpLong(Strategy):
         if df.empty:
             return pd.DataFrame()
 
-        latest = df.sort_values(["Ticker", "Date"]).groupby("Ticker").tail(1)
+        latest = df.sort_values(["Ticker", "Date"]).groupby("Ticker").tail(1).copy()
+        if "Volume" in latest.columns:
+            latest["DollarVolume"] = latest["Close"] * latest["Volume"]
+            latest = latest.sort_values("DollarVolume", ascending=False).head(self.TOP_N)
+            latest = latest.drop(columns=["DollarVolume"])
 
         latest["Strategy"] = self.name
         latest["Setup"] = "Channel Up Long"
@@ -41,7 +46,7 @@ class ChannelUpLong(Strategy):
         latest["R"] = ""
         latest["Grade"] = ""
         latest["GradeBasis"] = "gpt_to_size"
-        latest["Reason"] = "Finviz channel up pattern; GPT to set stop/target"
+        latest["Reason"] = "Finviz channel up pattern; filtered by top dollar volume; GPT to set stop/target"
 
         cols = [
             "Date",
