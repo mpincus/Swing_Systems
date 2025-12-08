@@ -1,4 +1,4 @@
 Date,SignalDate,Ticker,Strategy,Setup,Side,EntryTrigger,EntryTriggerPrice,SignalOpen,SignalHigh,SignalLow,SignalClose,Stop,Target,R,Grade,GradeBasis,Reason
-2025-12-02,2025-12-02,COGT,rsi_reversal_short,Reversal Short,short,< signal close,38.98,39.76,40.25,37.75,38.98,,,,,gpt_to_size,RSI>=70 + bearish engulfing; GPT to set stop/target
+2025-12-08,2025-12-08,ADI,rsi_reversal_short,Reversal Short,short,< signal close,279.24,281.78,282.54,276.965,279.24,,,,,gpt_to_size,RSI>=70 + bearish engulfing; GPT to set stop/target
 2025-12-05,2025-12-05,COGT,rsi_reversal_short,Reversal Short,short,< signal close,38.77,39.46,39.94,38.2001,38.77,,,,,gpt_to_size,RSI>=70 + bearish engulfing; GPT to set stop/target
 2025-12-04,2025-12-04,EXAS,rsi_reversal_short,Reversal Short,short,< signal close,101.13,101.25,101.365,100.98,101.13,,,,,gpt_to_size,RSI>=70 + bearish engulfing; GPT to set stop/target
