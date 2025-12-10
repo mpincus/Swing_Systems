@@ -1,11 +1,11 @@
 Date,Ticker,Strategy,Setup,Side,EntryTrigger,SignalOpen,SignalHigh,SignalLow,SignalClose,Stop,Target,R,Grade,GradeBasis,Reason
-2025-12-09,AMD,bear_flag_short,Bear Flag Short,short,< signal candle low,221.04,224.84,217.907,221.62,,,,,gpt_to_size,Finviz bear flag pattern; filtered by top dollar volume; GPT to set stop/target
-2025-12-09,AMZN,bear_flag_short,Bear Flag Short,short,< signal candle low,226.84,228.57,225.11,227.92,,,,,gpt_to_size,Finviz bear flag pattern; filtered by top dollar volume; GPT to set stop/target
-2025-12-09,BMNR,bear_flag_short,Bear Flag Short,short,< signal candle low,35.01,39.79,34.66,39.19,,,,,gpt_to_size,Finviz bear flag pattern; filtered by top dollar volume; GPT to set stop/target
-2025-12-09,CRWV,bear_flag_short,Bear Flag Short,short,< signal candle low,84.52,91.22,83.77,90.66,,,,,gpt_to_size,Finviz bear flag pattern; filtered by top dollar volume; GPT to set stop/target
-2025-12-09,COIN,bear_flag_short,Bear Flag Short,short,< signal candle low,270.64,284.74,266.83,277.36,,,,,gpt_to_size,Finviz bear flag pattern; filtered by top dollar volume; GPT to set stop/target
-2025-12-09,BA,bear_flag_short,Bear Flag Short,short,< signal candle low,205.35,207.1,200.02,200.37,,,,,gpt_to_size,Finviz bear flag pattern; filtered by top dollar volume; GPT to set stop/target
-2025-12-09,COST,bear_flag_short,Bear Flag Short,short,< signal candle low,886.85,889.02,881.51,888.44,,,,,gpt_to_size,Finviz bear flag pattern; filtered by top dollar volume; GPT to set stop/target
-2025-12-09,DASH,bear_flag_short,Bear Flag Short,short,< signal candle low,225.0,232.63,222.64,229.99,,,,,gpt_to_size,Finviz bear flag pattern; filtered by top dollar volume; GPT to set stop/target
-2025-12-09,CRCL,bear_flag_short,Bear Flag Short,short,< signal candle low,83.23,89.98,81.7601,88.88,,,,,gpt_to_size,Finviz bear flag pattern; filtered by top dollar volume; GPT to set stop/target
-2025-12-09,BSX,bear_flag_short,Bear Flag Short,short,< signal candle low,94.49,94.84,92.26,92.53,,,,,gpt_to_size,Finviz bear flag pattern; filtered by top dollar volume; GPT to set stop/target
+2025-12-10,AMD,bear_flag_short,Bear Flag Short,short,< signal candle low,222.0,222.605,218.67,221.42,,,,,gpt_to_size,Finviz bear flag pattern; filtered by top dollar volume; GPT to set stop/target
+2025-12-10,HD,bear_flag_short,Bear Flag Short,short,< signal candle low,344.5,352.02,344.0,351.13,,,,,gpt_to_size,Finviz bear flag pattern; filtered by top dollar volume; GPT to set stop/target
+2025-12-10,BA,bear_flag_short,Bear Flag Short,short,< signal candle low,200.37,201.35,198.35,198.72,,,,,gpt_to_size,Finviz bear flag pattern; filtered by top dollar volume; GPT to set stop/target
+2025-12-10,BMNR,bear_flag_short,Bear Flag Short,short,< signal candle low,39.01,42.085,38.436,40.36,,,,,gpt_to_size,Finviz bear flag pattern; filtered by top dollar volume; GPT to set stop/target
+2025-12-10,CRWV,bear_flag_short,Bear Flag Short,short,< signal candle low,88.435,89.7899,85.35,88.16,,,,,gpt_to_size,Finviz bear flag pattern; filtered by top dollar volume; GPT to set stop/target
+2025-12-10,GE,bear_flag_short,Bear Flag Short,short,< signal candle low,285.45,285.88,281.31,283.6,,,,,gpt_to_size,Finviz bear flag pattern; filtered by top dollar volume; GPT to set stop/target
+2025-12-10,COIN,bear_flag_short,Bear Flag Short,short,< signal candle low,273.2,279.443,270.76,275.09,,,,,gpt_to_size,Finviz bear flag pattern; filtered by top dollar volume; GPT to set stop/target
+2025-12-10,COST,bear_flag_short,Bear Flag Short,short,< signal candle low,887.82,889.58,871.09,874.29,,,,,gpt_to_size,Finviz bear flag pattern; filtered by top dollar volume; GPT to set stop/target
+2025-12-10,ABBV,bear_flag_short,Bear Flag Short,short,< signal candle low,225.0,225.98,221.0,225.18,,,,,gpt_to_size,Finviz bear flag pattern; filtered by top dollar volume; GPT to set stop/target
+2025-12-10,DASH,bear_flag_short,Bear Flag Short,short,< signal candle low,228.965,229.05,216.72,220.3,,,,,gpt_to_size,Finviz bear flag pattern; filtered by top dollar volume; GPT to set stop/target
