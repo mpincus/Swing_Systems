@@ -1,11 +1,11 @@
 Date,Ticker,Strategy,Setup,Side,EntryTrigger,SignalOpen,SignalHigh,SignalLow,SignalClose,Stop,Target,R,Grade,GradeBasis,Reason
-2025-12-10,AMD,bear_flag_short,Bear Flag Short,short,< signal candle low,222.0,222.605,218.67,221.42,,,,,gpt_to_size,Finviz bear flag pattern; filtered by top dollar volume; GPT to set stop/target
-2025-12-10,HD,bear_flag_short,Bear Flag Short,short,< signal candle low,344.5,352.02,344.0,351.13,,,,,gpt_to_size,Finviz bear flag pattern; filtered by top dollar volume; GPT to set stop/target
-2025-12-10,BA,bear_flag_short,Bear Flag Short,short,< signal candle low,200.37,201.35,198.35,198.72,,,,,gpt_to_size,Finviz bear flag pattern; filtered by top dollar volume; GPT to set stop/target
-2025-12-10,BMNR,bear_flag_short,Bear Flag Short,short,< signal candle low,39.01,42.085,38.436,40.36,,,,,gpt_to_size,Finviz bear flag pattern; filtered by top dollar volume; GPT to set stop/target
-2025-12-10,CRWV,bear_flag_short,Bear Flag Short,short,< signal candle low,88.435,89.7899,85.35,88.16,,,,,gpt_to_size,Finviz bear flag pattern; filtered by top dollar volume; GPT to set stop/target
-2025-12-10,GE,bear_flag_short,Bear Flag Short,short,< signal candle low,285.45,285.88,281.31,283.6,,,,,gpt_to_size,Finviz bear flag pattern; filtered by top dollar volume; GPT to set stop/target
-2025-12-10,COIN,bear_flag_short,Bear Flag Short,short,< signal candle low,273.2,279.443,270.76,275.09,,,,,gpt_to_size,Finviz bear flag pattern; filtered by top dollar volume; GPT to set stop/target
-2025-12-10,COST,bear_flag_short,Bear Flag Short,short,< signal candle low,887.82,889.58,871.09,874.29,,,,,gpt_to_size,Finviz bear flag pattern; filtered by top dollar volume; GPT to set stop/target
-2025-12-10,ABBV,bear_flag_short,Bear Flag Short,short,< signal candle low,225.0,225.98,221.0,225.18,,,,,gpt_to_size,Finviz bear flag pattern; filtered by top dollar volume; GPT to set stop/target
-2025-12-10,DASH,bear_flag_short,Bear Flag Short,short,< signal candle low,228.965,229.05,216.72,220.3,,,,,gpt_to_size,Finviz bear flag pattern; filtered by top dollar volume; GPT to set stop/target
+2025-12-11,HOOD,bear_flag_short,Bear Flag Short,short,< signal candle low,131.775,131.775,122.53,123.38,,,,,gpt_to_size,Finviz bear flag pattern; filtered by top dollar volume; GPT to set stop/target
+2025-12-11,AMD,bear_flag_short,Bear Flag Short,short,< signal candle low,217.81,221.4989,210.1901,221.43,,,,,gpt_to_size,Finviz bear flag pattern; filtered by top dollar volume; GPT to set stop/target
+2025-12-11,HD,bear_flag_short,Bear Flag Short,short,< signal candle low,354.555,362.72,353.94,357.46,,,,,gpt_to_size,Finviz bear flag pattern; filtered by top dollar volume; GPT to set stop/target
+2025-12-11,GE,bear_flag_short,Bear Flag Short,short,< signal candle low,282.16,289.36,279.64,288.42,,,,,gpt_to_size,Finviz bear flag pattern; filtered by top dollar volume; GPT to set stop/target
+2025-12-11,COST,bear_flag_short,Bear Flag Short,short,< signal candle low,875.86,886.0,872.5501,884.48,,,,,gpt_to_size,Finviz bear flag pattern; filtered by top dollar volume; GPT to set stop/target
+2025-12-11,CRWV,bear_flag_short,Bear Flag Short,short,< signal candle low,83.01,88.53,81.1,87.38,,,,,gpt_to_size,Finviz bear flag pattern; filtered by top dollar volume; GPT to set stop/target
+2025-12-11,COIN,bear_flag_short,Bear Flag Short,short,< signal candle low,266.9,271.16,258.72,269.02,,,,,gpt_to_size,Finviz bear flag pattern; filtered by top dollar volume; GPT to set stop/target
+2025-12-11,BMNR,bear_flag_short,Bear Flag Short,short,< signal candle low,38.8,39.4676,37.6609,38.38,,,,,gpt_to_size,Finviz bear flag pattern; filtered by top dollar volume; GPT to set stop/target
+2025-12-11,BA,bear_flag_short,Bear Flag Short,short,< signal candle low,198.725,201.86,198.05,200.71,,,,,gpt_to_size,Finviz bear flag pattern; filtered by top dollar volume; GPT to set stop/target
+2025-12-11,BE,bear_flag_short,Bear Flag Short,short,< signal candle low,100.5,110.29,96.5,108.99,,,,,gpt_to_size,Finviz bear flag pattern; filtered by top dollar volume; GPT to set stop/target
