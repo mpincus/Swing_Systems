@@ -1,7 +1,10 @@
 Date,SignalDate,Ticker,Strategy,Setup,Side,EntryTrigger,EntryTriggerPrice,SignalOpen,SignalHigh,SignalLow,SignalClose,Stop,Target,R,Grade,GradeBasis,Reason
-2025-12-08,2025-12-08,ADI,rsi_reversal_short,Reversal Short,short,< signal close,279.13,281.78,282.54,276.965,279.13,,,,,gpt_to_size,RSI>=70 + bearish engulfing; GPT to set stop/target
+2025-12-12,2025-12-12,APO,rsi_reversal_short,Reversal Short,short,< signal close,148.05,151.325,151.6245,146.93,148.05,,,,,gpt_to_size,RSI>=70 + bearish engulfing; GPT to set stop/target
 2025-12-08,2025-12-08,COCO,rsi_reversal_short,Reversal Short,short,< signal close,53.57,55.03,55.03,53.305,53.57,,,,,gpt_to_size,RSI>=70 + bearish engulfing; GPT to set stop/target
 2025-12-08,2025-12-08,DG,rsi_reversal_short,Reversal Short,short,< signal close,124.27,133.08,133.09,122.7,124.27,,,,,gpt_to_size,RSI>=70 + bearish engulfing; GPT to set stop/target
+2025-12-12,2025-12-12,FDX,rsi_reversal_short,Reversal Short,short,< signal close,284.34,286.41,287.5399,283.195,284.34,,,,,gpt_to_size,RSI>=70 + bearish engulfing; GPT to set stop/target
 2025-12-08,2025-12-08,FITB,rsi_reversal_short,Reversal Short,short,< signal close,45.22,45.61,45.74,45.015,45.22,,,,,gpt_to_size,RSI>=70 + bearish engulfing; GPT to set stop/target
+2025-12-12,2025-12-12,FOXA,rsi_reversal_short,Reversal Short,short,< signal close,71.1,72.125,72.54,71.005,71.1,,,,,gpt_to_size,RSI>=70 + bearish engulfing; GPT to set stop/target
 2025-12-09,2025-12-09,GKOS,rsi_reversal_short,Reversal Short,short,< signal close,106.87,108.755,110.02,106.52,106.87,,,,,gpt_to_size,RSI>=70 + bearish engulfing; GPT to set stop/target
+2025-12-12,2025-12-12,GKOS,rsi_reversal_short,Reversal Short,short,< signal close,108.88,109.3,110.37,108.45,108.88,,,,,gpt_to_size,RSI>=70 + bearish engulfing; GPT to set stop/target
 2025-12-08,2025-12-08,GOLD,rsi_reversal_short,Reversal Short,short,< signal close,30.33,31.11,31.432,29.93,30.33,,,,,gpt_to_size,RSI>=70 + bearish engulfing; GPT to set stop/target

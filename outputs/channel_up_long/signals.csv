@@ -1,11 +1,11 @@
 Date,Ticker,Strategy,Setup,Side,EntryTrigger,SignalOpen,SignalHigh,SignalLow,SignalClose,Stop,Target,R,Grade,GradeBasis,Reason
-2025-12-11,GOOGL,channel_up_long,Channel Up Long,long,> signal candle high,320.08,321.12,308.6,312.43,,,,,gpt_to_size,Finviz channel up pattern; filtered by top dollar volume; GPT to set stop/target
-2025-12-11,AVGO,channel_up_long,Channel Up Long,long,> signal candle high,404.825,409.3,394.19,406.37,,,,,gpt_to_size,Finviz channel up pattern; filtered by top dollar volume; GPT to set stop/target
-2025-12-11,GOOG,channel_up_long,Channel Up Long,long,> signal candle high,321.1,321.99,309.88,313.7,,,,,gpt_to_size,Finviz channel up pattern; filtered by top dollar volume; GPT to set stop/target
-2025-12-11,AAPL,channel_up_long,Channel Up Long,long,> signal candle high,279.095,279.59,273.81,278.03,,,,,gpt_to_size,Finviz channel up pattern; filtered by top dollar volume; GPT to set stop/target
-2025-12-11,AMZN,channel_up_long,Channel Up Long,long,> signal candle high,230.71,232.11,228.6901,230.28,,,,,gpt_to_size,Finviz channel up pattern; filtered by top dollar volume; GPT to set stop/target
-2025-12-11,GS,channel_up_long,Channel Up Long,long,> signal candle high,889.98,919.098,888.0,911.03,,,,,gpt_to_size,Finviz channel up pattern; filtered by top dollar volume; GPT to set stop/target
-2025-12-11,CSCO,channel_up_long,Channel Up Long,long,> signal candle high,80.24,80.37,78.825,79.27,,,,,gpt_to_size,Finviz channel up pattern; filtered by top dollar volume; GPT to set stop/target
-2025-12-11,GLW,channel_up_long,Channel Up Long,long,> signal candle high,93.66,96.64,92.0,95.97,,,,,gpt_to_size,Finviz channel up pattern; filtered by top dollar volume; GPT to set stop/target
-2025-12-11,COHR,channel_up_long,Channel Up Long,long,> signal candle high,192.66,200.01,188.75,198.5,,,,,gpt_to_size,Finviz channel up pattern; filtered by top dollar volume; GPT to set stop/target
-2025-12-11,CRH,channel_up_long,Channel Up Long,long,> signal candle high,125.79,127.2,124.94,126.99,,,,,gpt_to_size,Finviz channel up pattern; filtered by top dollar volume; GPT to set stop/target
+2025-12-12,AAPL,channel_up_long,Channel Up Long,long,> signal candle high,277.9,279.22,276.82,278.28,,,,,gpt_to_size,Finviz channel up pattern; filtered by top dollar volume; GPT to set stop/target
+2025-12-12,GOOGL,channel_up_long,Channel Up Long,long,> signal candle high,313.7,314.87,305.56,309.29,,,,,gpt_to_size,Finviz channel up pattern; filtered by top dollar volume; GPT to set stop/target
+2025-12-12,GOOG,channel_up_long,Channel Up Long,long,> signal candle high,314.795,316.14,306.96,310.52,,,,,gpt_to_size,Finviz channel up pattern; filtered by top dollar volume; GPT to set stop/target
+2025-12-12,GS,channel_up_long,Channel Up Long,long,> signal candle high,913.78,914.99,886.99,887.96,,,,,gpt_to_size,Finviz channel up pattern; filtered by top dollar volume; GPT to set stop/target
+2025-12-12,CSCO,channel_up_long,Channel Up Long,long,> signal candle high,79.45,79.55,77.715,77.8,,,,,gpt_to_size,Finviz channel up pattern; filtered by top dollar volume; GPT to set stop/target
+2025-12-12,COHR,channel_up_long,Channel Up Long,long,> signal candle high,195.8,196.0358,176.63,178.34,,,,,gpt_to_size,Finviz channel up pattern; filtered by top dollar volume; GPT to set stop/target
+2025-12-12,CRH,channel_up_long,Channel Up Long,long,> signal candle high,126.59,127.435,125.19,126.4,,,,,gpt_to_size,Finviz channel up pattern; filtered by top dollar volume; GPT to set stop/target
+2025-12-12,FIX,channel_up_long,Channel Up Long,long,> signal candle high,1019.49,1023.87,912.4,967.95,,,,,gpt_to_size,Finviz channel up pattern; filtered by top dollar volume; GPT to set stop/target
+2025-12-12,FSLR,channel_up_long,Channel Up Long,long,> signal candle high,273.0,273.8,249.0,254.8,,,,,gpt_to_size,Finviz channel up pattern; filtered by top dollar volume; GPT to set stop/target
+2025-12-12,GLW,channel_up_long,Channel Up Long,long,> signal candle high,95.565,95.955,87.91,88.32,,,,,gpt_to_size,Finviz channel up pattern; filtered by top dollar volume; GPT to set stop/target
