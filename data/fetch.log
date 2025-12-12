@@ -4,3 +4,7 @@
 [2025-12-06T04:11:46.427901Z] Fetch complete: rows=2285, yahoo_success=82, yahoo_fail=0, stooq_success=0, stooq_fail=0
 [2025-12-06T04:17:06.208407Z] Starting fetch: tickers=815, lookback_days=60, source=stooq, append=True
 [2025-12-06T04:31:09.653278Z] Fetch complete: rows=2285, yahoo_success=0, yahoo_fail=0, stooq_success=0, stooq_fail=815
+[2025-12-12T22:23:43.085068Z] Starting fetch: tickers=813, lookback_days=60, source=auto, append=True
+[2025-12-12T22:27:03.373396Z] Fetch complete: rows=2055, yahoo_success=82, yahoo_fail=0, stooq_success=0, stooq_fail=0
+[2025-12-12T22:29:02.314546Z] Starting fetch: tickers=200, lookback_days=60, source=auto, append=True
+[2025-12-12T22:29:50.775473Z] Fetch complete: rows=2055, yahoo_success=20, yahoo_fail=0, stooq_success=0, stooq_fail=0

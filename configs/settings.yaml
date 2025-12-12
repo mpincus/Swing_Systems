@@ -1,7 +1,7 @@
 # Global settings for the daily RSI pipeline: timing, download window, Finviz screens, and paths.
 timezone: America/New_York
 lookback_days: 60
-signal_history_days: 5
+signal_history_days: 1
 data_source: auto   # auto|yahoo|stooq (auto: try Yahoo, then fallback to Stooq)
 generate_signals: true  # set false to skip rule-based signals and only emit GPT features
 features_window_days: 40  # how many most recent days to include in features export
@@ -12,7 +12,7 @@ paths:
   data_dir: data
   outputs_dir: outputs
   docs_dir: docs
-max_union_tickers: 0    # 0 means no cap; allows full watchlist union
+max_union_tickers: 200   # cap to speed fetch; adjust as needed
 strategies:
   rsi_reversal_long:
     urls:
