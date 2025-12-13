@@ -68,6 +68,27 @@ def main() -> None:
 
         if all_frames:
             combined = pd.concat(all_frames, ignore_index=True)
+            # Attach bar OHLCV for the row's Date to give GPT the exact bar context.
+            price_cols = ["Date", "Ticker", "Open", "High", "Low", "Close", "Adj Close", "Volume"]
+            price_lookup = prices.copy()
+            price_lookup["Date"] = pd.to_datetime(price_lookup["Date"]).dt.date
+            price_lookup = price_lookup[price_cols]
+            combined["Date"] = pd.to_datetime(combined["Date"]).dt.date
+            combined = combined.merge(
+                price_lookup,
+                on=["Ticker", "Date"],
+                how="left",
+                suffixes=("", "_Bar"),
+            ).rename(
+                columns={
+                    "Open": "BarOpen",
+                    "High": "BarHigh",
+                    "Low": "BarLow",
+                    "Close": "BarClose",
+                    "Adj Close": "BarAdjClose",
+                    "Volume": "BarVolume",
+                }
+            )
             combined_path = outputs_dir / "combined_signals.csv"
             combined.to_csv(combined_path, index=False)
             _mirror_to_docs(combined_path, settings)

@@ -8,3 +8,5 @@
 [2025-12-12T22:27:03.373396Z] Fetch complete: rows=2055, yahoo_success=82, yahoo_fail=0, stooq_success=0, stooq_fail=0
 [2025-12-12T22:29:02.314546Z] Starting fetch: tickers=200, lookback_days=60, source=auto, append=True
 [2025-12-12T22:29:50.775473Z] Fetch complete: rows=2055, yahoo_success=20, yahoo_fail=0, stooq_success=0, stooq_fail=0
+[2025-12-13T00:33:19.190279Z] Starting fetch: tickers=200, lookback_days=60, source=auto, append=True
+[2025-12-13T00:34:07.442512Z] Fetch complete: rows=2055, yahoo_success=20, yahoo_fail=0, stooq_success=0, stooq_fail=0
