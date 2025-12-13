@@ -56,7 +56,7 @@ Outputs: `outputs/**` and mirrored copies in `docs/`. Watchlists live in `data/w
 - `max_union_tickers`: cap total tickers downloaded (0 = no cap; default 0 since Stooq is primary).
 - `data_source`: `stooq` by default; or `auto` (try Yahoo then Stooq) / force `yahoo`.
 - `generate_signals`: true to run built-in strategies; false to skip signals and only emit GPT features.
-- `features_window_days`: number of recent days to keep in `outputs/features.csv` for GPT context.
+- `features_window_days`: number of recent days to keep in `outputs/price_history_all.csv` for GPT context.
 
 ## Repo layout (new code)
 - `configs/settings.yaml` — knobs for lookback, history window, Finviz throttles, URLs.
@@ -81,8 +81,8 @@ The runner will auto-discover and include it; add Finviz URLs in `configs/settin
 - Primary upload: `outputs/combined_signals.csv` (has `Strategy` column). Keeps last N days (N = `signal_history_days`).
 - Per-strategy uploads: `outputs/<strategy>/signals.csv` if you want to focus on one strategy.
 - Raw OHLCV is not needed by GPT; it stays internal in `data/prices.csv`.
-- If you disable signals (`generate_signals: false`), use `outputs/features.csv` for GPT: includes recent OHLCV + RSI/L3/H3 + engulfing flags for the last `features_window_days`.
-- A ready-made GPT prompt lives at `docs/gpt_prompt.md` (use with `combined_signals.csv`, optional `features.csv`).
+- If you disable signals (`generate_signals: false`), use `outputs/price_history_all.csv` for GPT: includes recent OHLCV + RSI/L3/H3 + engulfing flags for the last `features_window_days`.
+- A ready-made GPT prompt lives at `docs/gpt_prompt.md` (use with `combined_signals.csv`, optional `price_history_all.csv`).
 
 ## Troubleshooting
 - Empty outputs: check `data/watchlists/*` (Finviz may have returned nothing) and internet access.

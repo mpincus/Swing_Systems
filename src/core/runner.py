@@ -36,10 +36,10 @@ def main() -> None:
     features_window = int(settings.get("features_window_days", 40))
     generate_signals = bool(settings.get("generate_signals", True))
 
-    # Features export for GPT: add indicators and trim to recent window
-    features = _build_features(prices, features_window)
-    features_path = outputs_dir / "features.csv"
-    features.to_csv(features_path, index=False)
+    # Price history export for GPT: add indicators and trim to recent window
+    price_history = _build_features(prices, features_window)
+    features_path = outputs_dir / "price_history_all.csv"
+    price_history.to_csv(features_path, index=False)
     _mirror_to_docs(features_path, settings)
 
     pending_frames: List[pd.DataFrame] = []
@@ -96,6 +96,20 @@ def main() -> None:
                 per_path = outputs_dir / strat.name / "signals.csv"
                 if per_path.exists():
                     _mirror_to_docs(per_path, settings, subdir=strat.name)
+
+            # Build a combined signals + price history file for today's tickers.
+            # Keep only tickers present in the combined signals and include their
+            # recent OHLCV/indicator history.
+            tickers_today = set(combined["Ticker"].unique())
+            history_subset = price_history[price_history["Ticker"].isin(tickers_today)].copy()
+            # Attach strategy metadata per ticker; if multiple strategies share a ticker,
+            # we'll duplicate history rows per strategy.
+            meta_cols = [c for c in ["Ticker", "Strategy", "Setup", "SignalDate", "EntryTrigger", "Reason"] if c in combined.columns]
+            meta = combined[meta_cols].drop_duplicates()
+            history_with_meta = history_subset.merge(meta, on="Ticker", how="left")
+            combined_history_path = outputs_dir / "combined_signals_price_history.csv"
+            history_with_meta.to_csv(combined_history_path, index=False)
+            _mirror_to_docs(combined_history_path, settings)
 
         if pending_frames:
             combined_pending = pd.concat(pending_frames, ignore_index=True)

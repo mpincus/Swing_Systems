@@ -3,8 +3,8 @@ timezone: America/New_York
 lookback_days: 60
 signal_history_days: 1
 data_source: auto   # auto|yahoo|stooq (auto: try Yahoo, then fallback to Stooq)
-generate_signals: true  # set false to skip rule-based signals and only emit GPT features
-features_window_days: 40  # how many most recent days to include in features export
+generate_signals: true  # set false to skip rule-based signals and only emit GPT price history
+features_window_days: 40  # how many most recent days to include in price_history_all export
 finviz:
   throttle_seconds: 1.2
   user_agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0 Safari/537.36

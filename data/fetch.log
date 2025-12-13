@@ -10,3 +10,9 @@
 [2025-12-12T22:29:50.775473Z] Fetch complete: rows=2055, yahoo_success=20, yahoo_fail=0, stooq_success=0, stooq_fail=0
 [2025-12-13T00:33:19.190279Z] Starting fetch: tickers=200, lookback_days=60, source=auto, append=True
 [2025-12-13T00:34:07.442512Z] Fetch complete: rows=2055, yahoo_success=20, yahoo_fail=0, stooq_success=0, stooq_fail=0
+[2025-12-13T00:43:37.885718Z] Starting fetch: tickers=200, lookback_days=60, source=auto, append=True
+[2025-12-13T00:44:27.705891Z] Fetch complete: rows=2055, yahoo_success=20, yahoo_fail=0, stooq_success=0, stooq_fail=0
+[2025-12-13T00:47:27.396351Z] Starting fetch: tickers=200, lookback_days=60, source=auto, append=True
+[2025-12-13T00:48:17.086794Z] Fetch complete: rows=2055, yahoo_success=20, yahoo_fail=0, stooq_success=0, stooq_fail=0
+[2025-12-13T00:50:30.659159Z] Starting fetch: tickers=200, lookback_days=60, source=auto, append=True
+[2025-12-13T00:51:23.319284Z] Fetch complete: rows=2055, yahoo_success=20, yahoo_fail=0, stooq_success=0, stooq_fail=0
