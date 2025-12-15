@@ -1,0 +1,2 @@
+Date,Ticker,Strategy,Setup,Side,EntryTrigger,SignalOpen,SignalHigh,SignalLow,SignalClose,Stop,Target,R,Grade,GradeBasis,Reason
+2025-12-15,ADPT,rsi_continuation_short,RSI Continuation Short,short,< signal candle close,16.03,16.08,15.3506,15.7,,,,,gpt_to_size,RSI<30 and falling; GPT to set stop/target
