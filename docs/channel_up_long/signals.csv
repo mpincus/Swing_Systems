@@ -1,11 +1,11 @@
 Date,Ticker,Strategy,Setup,Side,EntryTrigger,SignalOpen,SignalHigh,SignalLow,SignalClose,Stop,Target,R,Grade,GradeBasis,Reason
-2025-12-15,AAPL,channel_up_long,Channel Up Long,long,> signal candle high,280.15,280.15,272.84,274.115,,,,,gpt_to_size,Finviz channel up pattern; filtered by top dollar volume; GPT to set stop/target
-2025-12-15,BK,channel_up_long,Channel Up Long,long,> signal candle high,117.57,118.02,116.5,116.96,,,,,gpt_to_size,Finviz channel up pattern; filtered by top dollar volume; GPT to set stop/target
-2025-12-15,ALL,channel_up_long,Channel Up Long,long,> signal candle high,207.725,211.99,207.725,211.94,,,,,gpt_to_size,Finviz channel up pattern; filtered by top dollar volume; GPT to set stop/target
-2025-12-15,AKAM,channel_up_long,Channel Up Long,long,> signal candle high,88.04,90.04,85.31,86.53,,,,,gpt_to_size,Finviz channel up pattern; filtered by top dollar volume; GPT to set stop/target
-2025-12-15,BBIO,channel_up_long,Channel Up Long,long,> signal candle high,74.96,75.61,73.95,74.55,,,,,gpt_to_size,Finviz channel up pattern; filtered by top dollar volume; GPT to set stop/target
-2025-12-15,CADE,channel_up_long,Channel Up Long,long,> signal candle high,43.65,44.19,43.19,43.24,,,,,gpt_to_size,Finviz channel up pattern; filtered by top dollar volume; GPT to set stop/target
-2025-12-15,BILL,channel_up_long,Channel Up Long,long,> signal candle high,54.92,55.0,53.5,54.17,,,,,gpt_to_size,Finviz channel up pattern; filtered by top dollar volume; GPT to set stop/target
-2025-12-15,AGCO,channel_up_long,Channel Up Long,long,> signal candle high,108.67,110.286,108.03,108.33,,,,,gpt_to_size,Finviz channel up pattern; filtered by top dollar volume; GPT to set stop/target
-2025-12-15,AMG,channel_up_long,Channel Up Long,long,> signal candle high,280.56,280.725,273.335,275.37,,,,,gpt_to_size,Finviz channel up pattern; filtered by top dollar volume; GPT to set stop/target
-2025-12-15,BXP,channel_up_long,Channel Up Long,long,> signal candle high,71.875,72.3165,71.175,71.62,,,,,gpt_to_size,Finviz channel up pattern; filtered by top dollar volume; GPT to set stop/target
+2025-12-16,AAPL,channel_up_long,Channel Up Long,long,> signal candle high,272.82,275.5,271.79,274.46,,,,,gpt_to_size,Finviz channel up pattern; filtered by top dollar volume; GPT to set stop/target
+2025-12-16,BAC,channel_up_long,Channel Up Long,long,> signal candle high,55.15,55.35,54.69,54.81,,,,,gpt_to_size,Finviz channel up pattern; filtered by top dollar volume; GPT to set stop/target
+2025-12-16,BK,channel_up_long,Channel Up Long,long,> signal candle high,117.06,117.06,114.08,114.35,,,,,gpt_to_size,Finviz channel up pattern; filtered by top dollar volume; GPT to set stop/target
+2025-12-16,ALL,channel_up_long,Channel Up Long,long,> signal candle high,210.45,212.76,208.4,209.51,,,,,gpt_to_size,Finviz channel up pattern; filtered by top dollar volume; GPT to set stop/target
+2025-12-16,AKAM,channel_up_long,Channel Up Long,long,> signal candle high,86.7,87.915,85.8,87.72,,,,,gpt_to_size,Finviz channel up pattern; filtered by top dollar volume; GPT to set stop/target
+2025-12-16,BBIO,channel_up_long,Channel Up Long,long,> signal candle high,73.49,76.51,72.73,75.71,,,,,gpt_to_size,Finviz channel up pattern; filtered by top dollar volume; GPT to set stop/target
+2025-12-16,CADE,channel_up_long,Channel Up Long,long,> signal candle high,43.34,43.41,42.78,42.98,,,,,gpt_to_size,Finviz channel up pattern; filtered by top dollar volume; GPT to set stop/target
+2025-12-16,BFH,channel_up_long,Channel Up Long,long,> signal candle high,74.76,76.66,73.82,75.81,,,,,gpt_to_size,Finviz channel up pattern; filtered by top dollar volume; GPT to set stop/target
+2025-12-16,AMG,channel_up_long,Channel Up Long,long,> signal candle high,270.0,275.95,270.0,273.15,,,,,gpt_to_size,Finviz channel up pattern; filtered by top dollar volume; GPT to set stop/target
+2025-12-16,AGCO,channel_up_long,Channel Up Long,long,> signal candle high,105.005,108.07,102.21,106.46,,,,,gpt_to_size,Finviz channel up pattern; filtered by top dollar volume; GPT to set stop/target
