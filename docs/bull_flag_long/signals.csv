@@ -1,11 +1,11 @@
 Date,Ticker,Strategy,Setup,Side,EntryTrigger,SignalOpen,SignalHigh,SignalLow,SignalClose,Stop,Target,R,Grade,GradeBasis,Reason
-2025-12-22,AAPL,bull_flag_long,Bull Flag Long,long,> signal candle high,272.86,273.88,270.505,270.82,,,,,gpt_to_size,Finviz bull flag pattern; filtered by top dollar volume; GPT to set stop/target
-2025-12-22,C,bull_flag_long,Bull Flag Long,long,> signal candle high,115.21,118.65,114.87,118.09,,,,,gpt_to_size,Finviz bull flag pattern; filtered by top dollar volume; GPT to set stop/target
-2025-12-22,BAC,bull_flag_long,Bull Flag Long,long,> signal candle high,55.34,56.11,55.34,55.88,,,,,gpt_to_size,Finviz bull flag pattern; filtered by top dollar volume; GPT to set stop/target
-2025-12-22,APP,bull_flag_long,Bull Flag Long,long,> signal candle high,731.97,738.01,722.0301,733.6,,,,,gpt_to_size,Finviz bull flag pattern; filtered by top dollar volume; GPT to set stop/target
-2025-12-22,ASTS,bull_flag_long,Bull Flag Long,long,> signal candle high,79.66,87.03,77.92,86.48,,,,,gpt_to_size,Finviz bull flag pattern; filtered by top dollar volume; GPT to set stop/target
-2025-12-22,BA,bull_flag_long,Bull Flag Long,long,> signal candle high,215.59,217.15,214.22,216.84,,,,,gpt_to_size,Finviz bull flag pattern; filtered by top dollar volume; GPT to set stop/target
-2025-12-22,AXP,bull_flag_long,Bull Flag Long,long,> signal candle high,378.33,382.42,377.08,380.85,,,,,gpt_to_size,Finviz bull flag pattern; filtered by top dollar volume; GPT to set stop/target
-2025-12-22,AMAT,bull_flag_long,Bull Flag Long,long,> signal candle high,262.83,262.83,257.6,259.01,,,,,gpt_to_size,Finviz bull flag pattern; filtered by top dollar volume; GPT to set stop/target
-2025-12-22,ADBE,bull_flag_long,Bull Flag Long,long,> signal candle high,355.59,359.5706,354.7,357.53,,,,,gpt_to_size,Finviz bull flag pattern; filtered by top dollar volume; GPT to set stop/target
-2025-12-22,ABBV,bull_flag_long,Bull Flag Long,long,> signal candle high,226.11,228.65,224.25,227.91,,,,,gpt_to_size,Finviz bull flag pattern; filtered by top dollar volume; GPT to set stop/target
+2025-12-23,AAPL,bull_flag_long,Bull Flag Long,long,> signal candle high,270.84,272.5,269.56,272.36,,,,,gpt_to_size,Finviz bull flag pattern; filtered by top dollar volume; GPT to set stop/target
+2025-12-23,AMZN,bull_flag_long,Bull Flag Long,long,> signal candle high,229.055,232.445,228.73,232.14,,,,,gpt_to_size,Finviz bull flag pattern; filtered by top dollar volume; GPT to set stop/target
+2025-12-23,C,bull_flag_long,Bull Flag Long,long,> signal candle high,118.16,120.27,118.07,119.4,,,,,gpt_to_size,Finviz bull flag pattern; filtered by top dollar volume; GPT to set stop/target
+2025-12-23,APP,bull_flag_long,Bull Flag Long,long,> signal candle high,727.38,737.0,710.25,728.45,,,,,gpt_to_size,Finviz bull flag pattern; filtered by top dollar volume; GPT to set stop/target
+2025-12-23,BAC,bull_flag_long,Bull Flag Long,long,> signal candle high,55.84,56.22,55.83,55.97,,,,,gpt_to_size,Finviz bull flag pattern; filtered by top dollar volume; GPT to set stop/target
+2025-12-23,ASTS,bull_flag_long,Bull Flag Long,long,> signal candle high,82.23,87.75,81.98,85.67,,,,,gpt_to_size,Finviz bull flag pattern; filtered by top dollar volume; GPT to set stop/target
+2025-12-23,ADBE,bull_flag_long,Bull Flag Long,long,> signal candle high,357.47,359.6699,350.58,352.42,,,,,gpt_to_size,Finviz bull flag pattern; filtered by top dollar volume; GPT to set stop/target
+2025-12-23,BA,bull_flag_long,Bull Flag Long,long,> signal candle high,216.9,217.56,215.32,216.85,,,,,gpt_to_size,Finviz bull flag pattern; filtered by top dollar volume; GPT to set stop/target
+2025-12-23,ABBV,bull_flag_long,Bull Flag Long,long,> signal candle high,228.0,230.79,227.91,228.79,,,,,gpt_to_size,Finviz bull flag pattern; filtered by top dollar volume; GPT to set stop/target
+2025-12-23,AMAT,bull_flag_long,Bull Flag Long,long,> signal candle high,258.16,260.45,257.88,260.23,,,,,gpt_to_size,Finviz bull flag pattern; filtered by top dollar volume; GPT to set stop/target
