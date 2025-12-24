@@ -1,11 +1,11 @@
 Date,Ticker,Strategy,Setup,Side,EntryTrigger,SignalOpen,SignalHigh,SignalLow,SignalClose,Stop,Target,R,Grade,GradeBasis,Reason
-2025-12-23,AVGO,bear_flag_short,Bear Flag Short,short,< signal candle low,340.81,350.11,338.54,349.32,,,,,gpt_to_size,Finviz bear flag pattern; filtered by top dollar volume; GPT to set stop/target
-2025-12-23,AMD,bear_flag_short,Bear Flag Short,short,< signal candle low,212.855,217.03,212.28,214.9,,,,,gpt_to_size,Finviz bear flag pattern; filtered by top dollar volume; GPT to set stop/target
-2025-12-23,AZO,bear_flag_short,Bear Flag Short,short,< signal candle low,3419.36,3486.2,3419.36,3463.61,,,,,gpt_to_size,Finviz bear flag pattern; filtered by top dollar volume; GPT to set stop/target
-2025-12-23,ABT,bear_flag_short,Bear Flag Short,short,< signal candle low,125.0,125.18,123.85,124.54,,,,,gpt_to_size,Finviz bear flag pattern; filtered by top dollar volume; GPT to set stop/target
-2025-12-23,AMT,bear_flag_short,Bear Flag Short,short,< signal candle low,172.745,174.58,172.13,174.51,,,,,gpt_to_size,Finviz bear flag pattern; filtered by top dollar volume; GPT to set stop/target
-2025-12-23,BSX,bear_flag_short,Bear Flag Short,short,< signal candle low,95.735,96.25,95.69,96.09,,,,,gpt_to_size,Finviz bear flag pattern; filtered by top dollar volume; GPT to set stop/target
-2025-12-23,ADP,bear_flag_short,Bear Flag Short,short,< signal candle low,260.27,260.37,256.59,257.005,,,,,gpt_to_size,Finviz bear flag pattern; filtered by top dollar volume; GPT to set stop/target
-2025-12-23,BE,bear_flag_short,Bear Flag Short,short,< signal candle low,91.22,93.4029,88.6602,91.43,,,,,gpt_to_size,Finviz bear flag pattern; filtered by top dollar volume; GPT to set stop/target
-2025-12-23,AXON,bear_flag_short,Bear Flag Short,short,< signal candle low,597.26,608.38,584.29,591.02,,,,,gpt_to_size,Finviz bear flag pattern; filtered by top dollar volume; GPT to set stop/target
-2025-12-23,ADSK,bear_flag_short,Bear Flag Short,short,< signal candle low,298.86,300.38,295.605,297.58,,,,,gpt_to_size,Finviz bear flag pattern; filtered by top dollar volume; GPT to set stop/target
+2025-12-24,AVGO,bear_flag_short,Bear Flag Short,short,< signal candle low,350.685,352.86,347.14,350.22,,,,,gpt_to_size,Finviz bear flag pattern; filtered by top dollar volume; GPT to set stop/target
+2025-12-24,AMD,bear_flag_short,Bear Flag Short,short,< signal candle low,214.98,216.54,213.97,215.04,,,,,gpt_to_size,Finviz bear flag pattern; filtered by top dollar volume; GPT to set stop/target
+2025-12-24,AZO,bear_flag_short,Bear Flag Short,short,< signal candle low,3463.6,3479.73,3450.78,3456.02,,,,,gpt_to_size,Finviz bear flag pattern; filtered by top dollar volume; GPT to set stop/target
+2025-12-24,BSX,bear_flag_short,Bear Flag Short,short,< signal candle low,95.97,96.25,95.55,96.13,,,,,gpt_to_size,Finviz bear flag pattern; filtered by top dollar volume; GPT to set stop/target
+2025-12-24,ANET,bear_flag_short,Bear Flag Short,short,< signal candle low,131.05,131.5,130.1101,130.77,,,,,gpt_to_size,Finviz bear flag pattern; filtered by top dollar volume; GPT to set stop/target
+2025-12-24,ABT,bear_flag_short,Bear Flag Short,short,< signal candle low,124.09,125.3268,124.0,124.81,,,,,gpt_to_size,Finviz bear flag pattern; filtered by top dollar volume; GPT to set stop/target
+2025-12-24,AMT,bear_flag_short,Bear Flag Short,short,< signal candle low,174.48,175.18,174.29,174.8,,,,,gpt_to_size,Finviz bear flag pattern; filtered by top dollar volume; GPT to set stop/target
+2025-12-24,BE,bear_flag_short,Bear Flag Short,short,< signal candle low,91.18,92.293,89.6,91.88,,,,,gpt_to_size,Finviz bear flag pattern; filtered by top dollar volume; GPT to set stop/target
+2025-12-24,ALNY,bear_flag_short,Bear Flag Short,short,< signal candle low,395.99,401.47,395.05,400.69,,,,,gpt_to_size,Finviz bear flag pattern; filtered by top dollar volume; GPT to set stop/target
+2025-12-24,ADP,bear_flag_short,Bear Flag Short,short,< signal candle low,256.52,259.0,255.3,258.1,,,,,gpt_to_size,Finviz bear flag pattern; filtered by top dollar volume; GPT to set stop/target
