@@ -1,11 +1,11 @@
 Date,Ticker,Strategy,Setup,Side,EntryTrigger,SignalOpen,SignalHigh,SignalLow,SignalClose,Stop,Target,R,Grade,GradeBasis,Reason
-2026-01-02,AMZN,bear_flag_short,Bear Flag Short,short,< signal candle low,231.34,235.458,224.7,226.5,,,,,gpt_to_size,Finviz bear flag pattern; filtered by top dollar volume; GPT to set stop/target
-2026-01-02,AAPL,bear_flag_short,Bear Flag Short,short,< signal candle low,272.255,277.84,269.0,271.01,,,,,gpt_to_size,Finviz bear flag pattern; filtered by top dollar volume; GPT to set stop/target
-2026-01-02,AVGO,bear_flag_short,Bear Flag Short,short,< signal candle low,352.775,360.66,345.56,347.62,,,,,gpt_to_size,Finviz bear flag pattern; filtered by top dollar volume; GPT to set stop/target
-2026-01-02,AMD,bear_flag_short,Bear Flag Short,short,< signal candle low,218.9,227.15,218.895,223.47,,,,,gpt_to_size,Finviz bear flag pattern; filtered by top dollar volume; GPT to set stop/target
-2026-01-02,APP,bear_flag_short,Bear Flag Short,short,< signal candle low,683.37,683.5,610.58,618.32,,,,,gpt_to_size,Finviz bear flag pattern; filtered by top dollar volume; GPT to set stop/target
-2026-01-02,BMNR,bear_flag_short,Bear Flag Short,short,< signal candle low,28.005,31.26,27.46,31.19,,,,,gpt_to_size,Finviz bear flag pattern; filtered by top dollar volume; GPT to set stop/target
-2026-01-02,ADBE,bear_flag_short,Bear Flag Short,short,< signal candle low,350.675,351.12,331.64,333.3,,,,,gpt_to_size,Finviz bear flag pattern; filtered by top dollar volume; GPT to set stop/target
-2026-01-02,BE,bear_flag_short,Bear Flag Short,short,< signal candle low,90.57,98.85,88.86,98.69,,,,,gpt_to_size,Finviz bear flag pattern; filtered by top dollar volume; GPT to set stop/target
-2026-01-02,BSX,bear_flag_short,Bear Flag Short,short,< signal candle low,95.66,95.84,94.2301,94.71,,,,,gpt_to_size,Finviz bear flag pattern; filtered by top dollar volume; GPT to set stop/target
-2026-01-02,ANET,bear_flag_short,Bear Flag Short,short,< signal candle low,133.81,136.09,132.185,133.6,,,,,gpt_to_size,Finviz bear flag pattern; filtered by top dollar volume; GPT to set stop/target
+2026-01-05,AVGO,bear_flag_short,Bear Flag Short,short,< signal candle low,354.74,355.0,336.5,343.36,,,,,gpt_to_size,Finviz bear flag pattern; filtered by top dollar volume; GPT to set stop/target
+2026-01-05,AAPL,bear_flag_short,Bear Flag Short,short,< signal candle low,270.64,271.51,266.14,267.27,,,,,gpt_to_size,Finviz bear flag pattern; filtered by top dollar volume; GPT to set stop/target
+2026-01-05,AMD,bear_flag_short,Bear Flag Short,short,< signal candle low,230.245,234.02,220.48,221.06,,,,,gpt_to_size,Finviz bear flag pattern; filtered by top dollar volume; GPT to set stop/target
+2026-01-05,APP,bear_flag_short,Bear Flag Short,short,< signal candle low,617.7,642.28,603.77,632.99,,,,,gpt_to_size,Finviz bear flag pattern; filtered by top dollar volume; GPT to set stop/target
+2026-01-05,BMNR,bear_flag_short,Bear Flag Short,short,< signal candle low,32.385,33.78,31.92,33.35,,,,,gpt_to_size,Finviz bear flag pattern; filtered by top dollar volume; GPT to set stop/target
+2026-01-05,ADBE,bear_flag_short,Bear Flag Short,short,< signal candle low,329.98,334.47,327.44,331.56,,,,,gpt_to_size,Finviz bear flag pattern; filtered by top dollar volume; GPT to set stop/target
+2026-01-05,ABBV,bear_flag_short,Bear Flag Short,short,< signal candle low,227.16,227.2425,217.86,220.18,,,,,gpt_to_size,Finviz bear flag pattern; filtered by top dollar volume; GPT to set stop/target
+2026-01-05,BE,bear_flag_short,Bear Flag Short,short,< signal candle low,104.0,107.35,100.51,103.87,,,,,gpt_to_size,Finviz bear flag pattern; filtered by top dollar volume; GPT to set stop/target
+2026-01-05,BSX,bear_flag_short,Bear Flag Short,short,< signal candle low,94.5,95.78,93.86,95.48,,,,,gpt_to_size,Finviz bear flag pattern; filtered by top dollar volume; GPT to set stop/target
+2026-01-05,AMT,bear_flag_short,Bear Flag Short,short,< signal candle low,174.81,176.27,171.035,176.25,,,,,gpt_to_size,Finviz bear flag pattern; filtered by top dollar volume; GPT to set stop/target
