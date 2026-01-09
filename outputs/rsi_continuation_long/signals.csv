@@ -1,4 +1,10 @@
 Date,Ticker,Strategy,Setup,Side,EntryTrigger,SignalOpen,SignalHigh,SignalLow,SignalClose,Stop,Target,R,Grade,GradeBasis,Reason
-2026-01-08,BALL,rsi_continuation_long,RSI Continuation Long,long,> signal candle close,53.13,55.23,52.79,54.83,,,,,gpt_to_size,RSI>70 and rising; GPT to set stop/target
-2026-01-08,BEN,rsi_continuation_long,RSI Continuation Long,long,> signal candle close,24.99,25.615,24.8218,25.45,,,,,gpt_to_size,RSI>70 and rising; GPT to set stop/target
-2026-01-08,BWA,rsi_continuation_long,RSI Continuation Long,long,> signal candle close,46.548,48.16,46.548,47.79,,,,,gpt_to_size,RSI>70 and rising; GPT to set stop/target
+2026-01-09,AA,rsi_continuation_long,RSI Continuation Long,long,> signal candle close,61.17,63.785,60.646,63.67,,,,,gpt_to_size,RSI>70 and rising; GPT to set stop/target
+2026-01-09,AGNC,rsi_continuation_long,RSI Continuation Long,long,> signal candle close,11.48,11.64,11.35,11.41,,,,,gpt_to_size,RSI>70 and rising; GPT to set stop/target
+2026-01-09,AMAT,rsi_continuation_long,RSI Continuation Long,long,> signal candle close,288.4,302.78,286.5,301.18,,,,,gpt_to_size,RSI>70 and rising; GPT to set stop/target
+2026-01-09,AMKR,rsi_continuation_long,RSI Continuation Long,long,> signal candle close,51.54,52.4,50.3237,52.29,,,,,gpt_to_size,RSI>70 and rising; GPT to set stop/target
+2026-01-09,APG,rsi_continuation_long,RSI Continuation Long,long,> signal candle close,40.55,41.93,40.37,41.87,,,,,gpt_to_size,RSI>70 and rising; GPT to set stop/target
+2026-01-09,APLD,rsi_continuation_long,RSI Continuation Long,long,> signal candle close,32.93,38.3168,31.82,37.68,,,,,gpt_to_size,RSI>70 and rising; GPT to set stop/target
+2026-01-09,BA,rsi_continuation_long,RSI Continuation Long,long,> signal candle close,228.5,235.135,228.3,234.53,,,,,gpt_to_size,RSI>70 and rising; GPT to set stop/target
+2026-01-09,BALL,rsi_continuation_long,RSI Continuation Long,long,> signal candle close,54.84,55.72,54.59,55.62,,,,,gpt_to_size,RSI>70 and rising; GPT to set stop/target
+2026-01-09,BE,rsi_continuation_long,RSI Continuation Long,long,> signal candle close,122.17,136.8,121.4621,134.07,,,,,gpt_to_size,RSI>70 and rising; GPT to set stop/target
