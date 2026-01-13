@@ -1,2 +1,2 @@
 Date,SignalDate,Ticker,Strategy,Setup,Side,EntryTrigger,EntryTriggerPrice,SignalOpen,SignalHigh,SignalLow,SignalClose,Stop,Target,R,Grade,GradeBasis,Reason
-2026-01-07,2026-01-07,BA,rsi_reversal_short,Reversal Short,short,< signal close,228.12,232.15,233.57,227.3111,228.12,,,,,gpt_to_size,RSI>=70 + bearish engulfing; GPT to set stop/target
+2026-01-13,2026-01-13,AVAV,rsi_reversal_short,Reversal Short,short,< signal close,363.86,374.49,375.0,352.03,363.86,,,,,gpt_to_size,RSI>=70 + bearish engulfing; GPT to set stop/target
