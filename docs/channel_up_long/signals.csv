@@ -1,11 +1,11 @@
 Date,Ticker,Strategy,Setup,Side,EntryTrigger,SignalOpen,SignalHigh,SignalLow,SignalClose,Stop,Target,R,Grade,GradeBasis,Reason
-2026-01-21,BG,channel_up_long,Channel Up Long,long,> signal candle high,109.94,112.59,109.33,112.07,,,,,gpt_to_size,Finviz channel up pattern; filtered by top dollar volume; GPT to set stop/target
-2026-01-21,AEP,channel_up_long,Channel Up Long,long,> signal candle high,119.75,120.35,117.85,118.98,,,,,gpt_to_size,Finviz channel up pattern; filtered by top dollar volume; GPT to set stop/target
-2026-01-21,AKAM,channel_up_long,Channel Up Long,long,> signal candle high,90.05,94.26,89.86,93.74,,,,,gpt_to_size,Finviz channel up pattern; filtered by top dollar volume; GPT to set stop/target
-2026-01-21,AWI,channel_up_long,Channel Up Long,long,> signal candle high,190.16,192.68,187.395,190.0,,,,,gpt_to_size,Finviz channel up pattern; filtered by top dollar volume; GPT to set stop/target
-2026-01-21,AEIS,channel_up_long,Channel Up Long,long,> signal candle high,253.6,271.62,248.32,269.11,,,,,gpt_to_size,Finviz channel up pattern; filtered by top dollar volume; GPT to set stop/target
-2026-01-21,CADE,channel_up_long,Channel Up Long,long,> signal candle high,44.79,46.74,44.79,46.46,,,,,gpt_to_size,Finviz channel up pattern; filtered by top dollar volume; GPT to set stop/target
-2026-01-21,APG,channel_up_long,Channel Up Long,long,> signal candle high,42.92,42.92,42.085,42.4,,,,,gpt_to_size,Finviz channel up pattern; filtered by top dollar volume; GPT to set stop/target
-2026-01-21,BOOT,channel_up_long,Channel Up Long,long,> signal candle high,196.3257,198.78,192.32,198.78,,,,,gpt_to_size,Finviz channel up pattern; filtered by top dollar volume; GPT to set stop/target
-2026-01-21,ACMR,channel_up_long,Channel Up Long,long,> signal candle high,52.08,54.51,50.8,53.45,,,,,gpt_to_size,Finviz channel up pattern; filtered by top dollar volume; GPT to set stop/target
-2026-01-21,BWA,channel_up_long,Channel Up Long,long,> signal candle high,46.97,48.36,46.68,48.26,,,,,gpt_to_size,Finviz channel up pattern; filtered by top dollar volume; GPT to set stop/target
+2026-01-22,APH,channel_up_long,Channel Up Long,long,> signal candle high,156.0,157.54,148.87,152.5,,,,,gpt_to_size,Finviz channel up pattern; filtered by top dollar volume; GPT to set stop/target
+2026-01-22,AXP,channel_up_long,Channel Up Long,long,> signal candle high,362.98,370.1,362.98,368.02,,,,,gpt_to_size,Finviz channel up pattern; filtered by top dollar volume; GPT to set stop/target
+2026-01-22,ALB,channel_up_long,Channel Up Long,long,> signal candle high,179.3,189.1799,178.48,188.32,,,,,gpt_to_size,Finviz channel up pattern; filtered by top dollar volume; GPT to set stop/target
+2026-01-22,CADE,channel_up_long,Channel Up Long,long,> signal candle high,45.42,45.81,43.56,43.7,,,,,gpt_to_size,Finviz channel up pattern; filtered by top dollar volume; GPT to set stop/target
+2026-01-22,AKAM,channel_up_long,Channel Up Long,long,> signal candle high,94.41,97.565,94.02,97.05,,,,,gpt_to_size,Finviz channel up pattern; filtered by top dollar volume; GPT to set stop/target
+2026-01-22,AEIS,channel_up_long,Channel Up Long,long,> signal candle high,274.64,276.845,266.68,275.62,,,,,gpt_to_size,Finviz channel up pattern; filtered by top dollar volume; GPT to set stop/target
+2026-01-22,BG,channel_up_long,Channel Up Long,long,> signal candle high,112.375,112.895,111.315,112.66,,,,,gpt_to_size,Finviz channel up pattern; filtered by top dollar volume; GPT to set stop/target
+2026-01-22,APG,channel_up_long,Channel Up Long,long,> signal candle high,42.705,42.91,41.57,42.41,,,,,gpt_to_size,Finviz channel up pattern; filtered by top dollar volume; GPT to set stop/target
+2026-01-22,BWA,channel_up_long,Channel Up Long,long,> signal candle high,48.415,48.93,47.63,47.89,,,,,gpt_to_size,Finviz channel up pattern; filtered by top dollar volume; GPT to set stop/target
+2026-01-22,AWI,channel_up_long,Channel Up Long,long,> signal candle high,191.685,191.685,186.53,189.04,,,,,gpt_to_size,Finviz channel up pattern; filtered by top dollar volume; GPT to set stop/target
