@@ -1,11 +1,11 @@
 Date,Ticker,Strategy,Setup,Side,EntryTrigger,SignalOpen,SignalHigh,SignalLow,SignalClose,Stop,Target,R,Grade,GradeBasis,Reason
-2026-01-29,BSX,channel_down_short,Channel Down Short,short,< signal candle low,93.075,93.32,91.45,92.33,,,,,gpt_to_size,Finviz channel down pattern; filtered by top dollar volume; GPT to set stop/target
-2026-01-29,ABT,channel_down_short,Channel Down Short,short,< signal candle low,106.295,107.16,105.34,106.04,,,,,gpt_to_size,Finviz channel down pattern; filtered by top dollar volume; GPT to set stop/target
-2026-01-29,AXON,channel_down_short,Channel Down Short,short,< signal candle low,555.01,556.5,502.56,509.57,,,,,gpt_to_size,Finviz channel down pattern; filtered by top dollar volume; GPT to set stop/target
-2026-01-29,ALNY,channel_down_short,Channel Down Short,short,< signal candle low,349.37,350.34,345.01,347.03,,,,,gpt_to_size,Finviz channel down pattern; filtered by top dollar volume; GPT to set stop/target
-2026-01-29,AFRM,channel_down_short,Channel Down Short,short,< signal candle low,65.24,65.34,61.37,62.8,,,,,gpt_to_size,Finviz channel down pattern; filtered by top dollar volume; GPT to set stop/target
-2026-01-29,AVB,channel_down_short,Channel Down Short,short,< signal candle low,173.23,175.65,172.79,174.73,,,,,gpt_to_size,Finviz channel down pattern; filtered by top dollar volume; GPT to set stop/target
-2026-01-29,AHR,channel_down_short,Channel Down Short,short,< signal candle low,46.58,47.88,45.99,47.21,,,,,gpt_to_size,Finviz channel down pattern; filtered by top dollar volume; GPT to set stop/target
-2026-01-29,AMH,channel_down_short,Channel Down Short,short,< signal candle low,30.985,31.16,30.63,30.9,,,,,gpt_to_size,Finviz channel down pattern; filtered by top dollar volume; GPT to set stop/target
-2026-01-29,BJ,channel_down_short,Channel Down Short,short,< signal candle low,91.47,92.0,90.04,90.25,,,,,gpt_to_size,Finviz channel down pattern; filtered by top dollar volume; GPT to set stop/target
-2026-01-29,CACC,channel_down_short,Channel Down Short,short,< signal candle low,437.95,451.43,434.22,450.38,,,,,gpt_to_size,Finviz channel down pattern; filtered by top dollar volume; GPT to set stop/target
+2026-01-30,ABT,channel_down_short,Channel Down Short,short,< signal candle low,106.16,109.475,105.68,109.3,,,,,gpt_to_size,Finviz channel down pattern; filtered by top dollar volume; GPT to set stop/target
+2026-01-30,BSX,channel_down_short,Channel Down Short,short,< signal candle low,92.67,94.245,92.02,93.53,,,,,gpt_to_size,Finviz channel down pattern; filtered by top dollar volume; GPT to set stop/target
+2026-01-30,AHR,channel_down_short,Channel Down Short,short,< signal candle low,47.0,48.04,46.47,46.91,,,,,gpt_to_size,Finviz channel down pattern; filtered by top dollar volume; GPT to set stop/target
+2026-01-30,AXON,channel_down_short,Channel Down Short,short,< signal candle low,505.36,509.12,481.35,483.65,,,,,gpt_to_size,Finviz channel down pattern; filtered by top dollar volume; GPT to set stop/target
+2026-01-30,ALNY,channel_down_short,Channel Down Short,short,< signal candle low,343.1,346.5,336.39,337.9,,,,,gpt_to_size,Finviz channel down pattern; filtered by top dollar volume; GPT to set stop/target
+2026-01-30,AFRM,channel_down_short,Channel Down Short,short,< signal candle low,62.64,62.64,59.69,60.31,,,,,gpt_to_size,Finviz channel down pattern; filtered by top dollar volume; GPT to set stop/target
+2026-01-30,AVB,channel_down_short,Channel Down Short,short,< signal candle low,174.78,177.71,173.78,177.67,,,,,gpt_to_size,Finviz channel down pattern; filtered by top dollar volume; GPT to set stop/target
+2026-01-30,AMH,channel_down_short,Channel Down Short,short,< signal candle low,30.92,31.415,30.6,31.32,,,,,gpt_to_size,Finviz channel down pattern; filtered by top dollar volume; GPT to set stop/target
+2026-01-30,BFAM,channel_down_short,Channel Down Short,short,< signal candle low,91.93,92.65,90.42,92.63,,,,,gpt_to_size,Finviz channel down pattern; filtered by top dollar volume; GPT to set stop/target
+2026-01-30,ABG,channel_down_short,Channel Down Short,short,< signal candle low,234.72,235.95,231.43,234.51,,,,,gpt_to_size,Finviz channel down pattern; filtered by top dollar volume; GPT to set stop/target
