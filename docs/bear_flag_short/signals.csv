@@ -1,11 +1,11 @@
 Date,Ticker,Strategy,Setup,Side,EntryTrigger,SignalOpen,SignalHigh,SignalLow,SignalClose,Stop,Target,R,Grade,GradeBasis,Reason
-2026-02-10,AMZN,bear_flag_short,Bear Flag Short,short,< signal candle low,208.795,212.6499,206.411,206.9,,,,,gpt_to_size,Finviz bear flag pattern; filtered by top dollar volume; GPT to set stop/target
-2026-02-10,AVGO,bear_flag_short,Bear Flag Short,short,< signal candle low,347.47,348.01,339.84,340.44,,,,,gpt_to_size,Finviz bear flag pattern; filtered by top dollar volume; GPT to set stop/target
-2026-02-10,AMD,bear_flag_short,Bear Flag Short,short,< signal candle low,215.14,219.39,213.13,213.62,,,,,gpt_to_size,Finviz bear flag pattern; filtered by top dollar volume; GPT to set stop/target
-2026-02-10,APP,bear_flag_short,Bear Flag Short,short,< signal candle low,473.155,482.0,461.705,472.92,,,,,gpt_to_size,Finviz bear flag pattern; filtered by top dollar volume; GPT to set stop/target
-2026-02-10,BKNG,bear_flag_short,Bear Flag Short,short,< signal candle low,4219.52,4380.0,4175.88,4284.26,,,,,gpt_to_size,Finviz bear flag pattern; filtered by top dollar volume; GPT to set stop/target
-2026-02-10,BSX,bear_flag_short,Bear Flag Short,short,< signal candle low,74.65,75.42,73.96,74.25,,,,,gpt_to_size,Finviz bear flag pattern; filtered by top dollar volume; GPT to set stop/target
-2026-02-10,ADBE,bear_flag_short,Bear Flag Short,short,< signal candle low,266.71,270.79,263.98,264.67,,,,,gpt_to_size,Finviz bear flag pattern; filtered by top dollar volume; GPT to set stop/target
-2026-02-10,ABBV,bear_flag_short,Bear Flag Short,short,< signal candle low,223.53,225.81,221.94,222.4,,,,,gpt_to_size,Finviz bear flag pattern; filtered by top dollar volume; GPT to set stop/target
-2026-02-10,AXP,bear_flag_short,Bear Flag Short,short,< signal candle low,360.49,369.499,360.49,363.2,,,,,gpt_to_size,Finviz bear flag pattern; filtered by top dollar volume; GPT to set stop/target
-2026-02-10,ABT,bear_flag_short,Bear Flag Short,short,< signal candle low,111.18,112.75,111.0,112.28,,,,,gpt_to_size,Finviz bear flag pattern; filtered by top dollar volume; GPT to set stop/target
+2026-02-11,AMZN,bear_flag_short,Bear Flag Short,short,< signal candle low,208.06,208.57,202.49,204.195,,,,,gpt_to_size,Finviz bear flag pattern; filtered by top dollar volume; GPT to set stop/target
+2026-02-11,AMD,bear_flag_short,Bear Flag Short,short,< signal candle low,217.88,219.65,209.21,213.52,,,,,gpt_to_size,Finviz bear flag pattern; filtered by top dollar volume; GPT to set stop/target
+2026-02-11,AVGO,bear_flag_short,Bear Flag Short,short,< signal candle low,346.8,347.2,333.74,342.67,,,,,gpt_to_size,Finviz bear flag pattern; filtered by top dollar volume; GPT to set stop/target
+2026-02-11,APP,bear_flag_short,Bear Flag Short,short,< signal candle low,459.0,471.97,438.18,456.81,,,,,gpt_to_size,Finviz bear flag pattern; filtered by top dollar volume; GPT to set stop/target
+2026-02-11,BAC,bear_flag_short,Bear Flag Short,short,< signal candle low,55.97,56.11,53.24,53.825,,,,,gpt_to_size,Finviz bear flag pattern; filtered by top dollar volume; GPT to set stop/target
+2026-02-11,BKNG,bear_flag_short,Bear Flag Short,short,< signal candle low,4253.575,4377.795,4199.48,4309.025,,,,,gpt_to_size,Finviz bear flag pattern; filtered by top dollar volume; GPT to set stop/target
+2026-02-11,ALAB,bear_flag_short,Bear Flag Short,short,< signal candle low,160.76,162.0,141.6601,143.71,,,,,gpt_to_size,Finviz bear flag pattern; filtered by top dollar volume; GPT to set stop/target
+2026-02-11,ADBE,bear_flag_short,Bear Flag Short,short,< signal candle low,263.075,264.2,255.71,257.16,,,,,gpt_to_size,Finviz bear flag pattern; filtered by top dollar volume; GPT to set stop/target
+2026-02-11,ABBV,bear_flag_short,Bear Flag Short,short,< signal candle low,222.175,224.15,218.05,220.81,,,,,gpt_to_size,Finviz bear flag pattern; filtered by top dollar volume; GPT to set stop/target
+2026-02-11,BSX,bear_flag_short,Bear Flag Short,short,< signal candle low,74.1,74.5,72.69,73.47,,,,,gpt_to_size,Finviz bear flag pattern; filtered by top dollar volume; GPT to set stop/target
