@@ -1,0 +1,2 @@
+Date,SignalDate,Ticker,Strategy,Setup,Side,EntryTrigger,EntryTriggerPrice,SignalOpen,SignalHigh,SignalLow,SignalClose,Stop,Target,R,Grade,GradeBasis,Reason
+2026-02-12,2026-02-12,BSX,rsi_reversal_long,Reversal Long,long,> signal close,74.12,73.35,75.29,73.16,74.12,,,,,gpt_to_size,RSI<=30 + bullish engulfing; GPT to set stop/target
