@@ -1,11 +1,11 @@
 Date,Ticker,Strategy,Setup,Side,EntryTrigger,SignalOpen,SignalHigh,SignalLow,SignalClose,Stop,Target,R,Grade,GradeBasis,Reason
-2026-02-25,BE,channel_up_long,Channel Up Long,long,> signal candle high,169.33,180.8999,167.54,174.77,,,,,gpt_to_size,Finviz channel up pattern; filtered by top dollar volume; GPT to set stop/target
-2026-02-25,ABNB,channel_up_long,Channel Up Long,long,> signal candle high,125.8232,132.15,125.8232,132.04,,,,,gpt_to_size,Finviz channel up pattern; filtered by top dollar volume; GPT to set stop/target
-2026-02-25,AEP,channel_up_long,Channel Up Long,long,> signal candle high,132.17,132.76,130.27,132.46,,,,,gpt_to_size,Finviz channel up pattern; filtered by top dollar volume; GPT to set stop/target
-2026-02-25,APG,channel_up_long,Channel Up Long,long,> signal candle high,45.5,46.89,44.5,44.76,,,,,gpt_to_size,Finviz channel up pattern; filtered by top dollar volume; GPT to set stop/target
-2026-02-25,AUGO,channel_up_long,Channel Up Long,long,> signal candle high,83.8,87.24,83.02,84.75,,,,,gpt_to_size,Finviz channel up pattern; filtered by top dollar volume; GPT to set stop/target
-2026-02-25,BTSG,channel_up_long,Channel Up Long,long,> signal candle high,40.85,41.2,40.51,40.81,,,,,gpt_to_size,Finviz channel up pattern; filtered by top dollar volume; GPT to set stop/target
-2026-02-25,AIT,channel_up_long,Channel Up Long,long,> signal candle high,279.465,284.31,278.01,280.76,,,,,gpt_to_size,Finviz channel up pattern; filtered by top dollar volume; GPT to set stop/target
-2026-02-25,BBT,channel_up_long,Channel Up Long,long,> signal candle high,31.015,31.275,30.53,31.19,,,,,gpt_to_size,Finviz channel up pattern; filtered by top dollar volume; GPT to set stop/target
-2026-02-25,ATMU,channel_up_long,Channel Up Long,long,> signal candle high,66.5,66.5,64.1801,64.66,,,,,gpt_to_size,Finviz channel up pattern; filtered by top dollar volume; GPT to set stop/target
-2026-02-25,BKV,channel_up_long,Channel Up Long,long,> signal candle high,29.13,30.12,28.13,30.0,,,,,gpt_to_size,Finviz channel up pattern; filtered by top dollar volume; GPT to set stop/target
+2026-02-26,BE,channel_up_long,Channel Up Long,long,> signal candle high,164.42,169.115,158.84,168.57,,,,,gpt_to_size,Finviz channel up pattern; filtered by top dollar volume; GPT to set stop/target
+2026-02-26,ABNB,channel_up_long,Channel Up Long,long,> signal candle high,135.58,137.48,135.08,136.97,,,,,gpt_to_size,Finviz channel up pattern; filtered by top dollar volume; GPT to set stop/target
+2026-02-26,AEP,channel_up_long,Channel Up Long,long,> signal candle high,132.455,132.54,131.15,132.11,,,,,gpt_to_size,Finviz channel up pattern; filtered by top dollar volume; GPT to set stop/target
+2026-02-26,BURL,channel_up_long,Channel Up Long,long,> signal candle high,312.55,312.98,307.075,308.64,,,,,gpt_to_size,Finviz channel up pattern; filtered by top dollar volume; GPT to set stop/target
+2026-02-26,AEIS,channel_up_long,Channel Up Long,long,> signal candle high,333.41,339.2704,322.5,337.35,,,,,gpt_to_size,Finviz channel up pattern; filtered by top dollar volume; GPT to set stop/target
+2026-02-26,APG,channel_up_long,Channel Up Long,long,> signal candle high,44.34,45.14,44.08,45.13,,,,,gpt_to_size,Finviz channel up pattern; filtered by top dollar volume; GPT to set stop/target
+2026-02-26,BYD,channel_up_long,Channel Up Long,long,> signal candle high,85.59,88.09,85.39,87.71,,,,,gpt_to_size,Finviz channel up pattern; filtered by top dollar volume; GPT to set stop/target
+2026-02-26,BTSG,channel_up_long,Channel Up Long,long,> signal candle high,40.6,40.6,39.14,40.12,,,,,gpt_to_size,Finviz channel up pattern; filtered by top dollar volume; GPT to set stop/target
+2026-02-26,BCO,channel_up_long,Channel Up Long,long,> signal candle high,131.5,136.37,129.7,135.58,,,,,gpt_to_size,Finviz channel up pattern; filtered by top dollar volume; GPT to set stop/target
+2026-02-26,AUGO,channel_up_long,Channel Up Long,long,> signal candle high,84.53,90.19,83.7345,89.84,,,,,gpt_to_size,Finviz channel up pattern; filtered by top dollar volume; GPT to set stop/target
