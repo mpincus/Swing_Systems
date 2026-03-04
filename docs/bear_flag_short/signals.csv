@@ -1,11 +1,11 @@
 Date,Ticker,Strategy,Setup,Side,EntryTrigger,SignalOpen,SignalHigh,SignalLow,SignalClose,Stop,Target,R,Grade,GradeBasis,Reason
-2026-03-03,AVGO,bear_flag_short,Bear Flag Short,short,< signal candle low,313.0,315.88,307.4,313.84,,,,,gpt_to_size,Finviz bear flag pattern; filtered by top dollar volume; GPT to set stop/target
-2026-03-03,AMZN,bear_flag_short,Bear Flag Short,short,< signal candle low,203.1,209.178,202.48,208.63,,,,,gpt_to_size,Finviz bear flag pattern; filtered by top dollar volume; GPT to set stop/target
-2026-03-03,AAPL,bear_flag_short,Bear Flag Short,short,< signal candle low,263.48,265.56,260.13,263.69,,,,,gpt_to_size,Finviz bear flag pattern; filtered by top dollar volume; GPT to set stop/target
-2026-03-03,AMD,bear_flag_short,Bear Flag Short,short,< signal candle low,191.46,193.64,188.23,190.99,,,,,gpt_to_size,Finviz bear flag pattern; filtered by top dollar volume; GPT to set stop/target
-2026-03-03,APP,bear_flag_short,Bear Flag Short,short,< signal candle low,414.01,444.16,406.1,438.89,,,,,gpt_to_size,Finviz bear flag pattern; filtered by top dollar volume; GPT to set stop/target
-2026-03-03,BAC,bear_flag_short,Bear Flag Short,short,< signal candle low,48.75,50.51,48.5,49.97,,,,,gpt_to_size,Finviz bear flag pattern; filtered by top dollar volume; GPT to set stop/target
-2026-03-03,ASTS,bear_flag_short,Bear Flag Short,short,< signal candle low,88.01,97.57,84.05,92.68,,,,,gpt_to_size,Finviz bear flag pattern; filtered by top dollar volume; GPT to set stop/target
-2026-03-03,APH,bear_flag_short,Bear Flag Short,short,< signal candle low,130.14,131.9225,127.6,129.58,,,,,gpt_to_size,Finviz bear flag pattern; filtered by top dollar volume; GPT to set stop/target
-2026-03-03,AXP,bear_flag_short,Bear Flag Short,short,< signal candle low,300.11,309.41,299.81,307.82,,,,,gpt_to_size,Finviz bear flag pattern; filtered by top dollar volume; GPT to set stop/target
-2026-03-03,BX,bear_flag_short,Bear Flag Short,short,< signal candle low,108.5,113.25,105.09,110.92,,,,,gpt_to_size,Finviz bear flag pattern; filtered by top dollar volume; GPT to set stop/target
+2026-03-04,AMZN,bear_flag_short,Bear Flag Short,short,< signal candle low,210.51,217.54,210.15,216.82,,,,,gpt_to_size,Finviz bear flag pattern; filtered by top dollar volume; GPT to set stop/target
+2026-03-04,AVGO,bear_flag_short,Bear Flag Short,short,< signal candle low,315.68,322.64,311.77,316.96,,,,,gpt_to_size,Finviz bear flag pattern; filtered by top dollar volume; GPT to set stop/target
+2026-03-04,AMD,bear_flag_short,Bear Flag Short,short,< signal candle low,192.12,202.44,189.86,202.03,,,,,gpt_to_size,Finviz bear flag pattern; filtered by top dollar volume; GPT to set stop/target
+2026-03-04,AAPL,bear_flag_short,Bear Flag Short,short,< signal candle low,264.65,266.15,261.42,262.45,,,,,gpt_to_size,Finviz bear flag pattern; filtered by top dollar volume; GPT to set stop/target
+2026-03-04,APP,bear_flag_short,Bear Flag Short,short,< signal candle low,445.0,485.16,443.57,482.863,,,,,gpt_to_size,Finviz bear flag pattern; filtered by top dollar volume; GPT to set stop/target
+2026-03-04,BAC,bear_flag_short,Bear Flag Short,short,< signal candle low,49.89,50.41,49.21,50.3,,,,,gpt_to_size,Finviz bear flag pattern; filtered by top dollar volume; GPT to set stop/target
+2026-03-04,C,bear_flag_short,Bear Flag Short,short,< signal candle low,111.18,112.325,110.49,111.32,,,,,gpt_to_size,Finviz bear flag pattern; filtered by top dollar volume; GPT to set stop/target
+2026-03-04,APH,bear_flag_short,Bear Flag Short,short,< signal candle low,132.02,133.475,129.15,132.75,,,,,gpt_to_size,Finviz bear flag pattern; filtered by top dollar volume; GPT to set stop/target
+2026-03-04,AXP,bear_flag_short,Bear Flag Short,short,< signal candle low,309.105,312.46,307.0,311.21,,,,,gpt_to_size,Finviz bear flag pattern; filtered by top dollar volume; GPT to set stop/target
+2026-03-04,BKNG,bear_flag_short,Bear Flag Short,short,< signal candle low,4146.025,4322.74,4129.5,4254.13,,,,,gpt_to_size,Finviz bear flag pattern; filtered by top dollar volume; GPT to set stop/target
