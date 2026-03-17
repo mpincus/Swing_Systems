@@ -1,11 +1,11 @@
 Date,Ticker,Strategy,Setup,Side,EntryTrigger,SignalOpen,SignalHigh,SignalLow,SignalClose,Stop,Target,R,Grade,GradeBasis,Reason
-2026-03-16,AMAT,channel_up_long,Channel Up Long,long,> signal candle high,347.7,350.7499,343.57,346.18,,,,,gpt_to_size,Finviz channel up pattern; filtered by top dollar volume; GPT to set stop/target
-2026-03-16,BMY,channel_up_long,Channel Up Long,long,> signal candle high,59.45,59.8,58.87,59.71,,,,,gpt_to_size,Finviz channel up pattern; filtered by top dollar volume; GPT to set stop/target
-2026-03-16,AEP,channel_up_long,Channel Up Long,long,> signal candle high,134.76,135.0,133.51,134.15,,,,,gpt_to_size,Finviz channel up pattern; filtered by top dollar volume; GPT to set stop/target
-2026-03-16,AKAM,channel_up_long,Channel Up Long,long,> signal candle high,107.91,108.2,104.55,105.44,,,,,gpt_to_size,Finviz channel up pattern; filtered by top dollar volume; GPT to set stop/target
-2026-03-16,AHR,channel_up_long,Channel Up Long,long,> signal candle high,52.65,53.55,52.52,52.7,,,,,gpt_to_size,Finviz channel up pattern; filtered by top dollar volume; GPT to set stop/target
-2026-03-16,CASY,channel_up_long,Channel Up Long,long,> signal candle high,668.38,676.89,661.0,673.27,,,,,gpt_to_size,Finviz channel up pattern; filtered by top dollar volume; GPT to set stop/target
-2026-03-16,ATO,channel_up_long,Channel Up Long,long,> signal candle high,189.91,189.95,187.07,187.82,,,,,gpt_to_size,Finviz channel up pattern; filtered by top dollar volume; GPT to set stop/target
-2026-03-16,BTU,channel_up_long,Channel Up Long,long,> signal candle high,34.92,36.05,34.52,35.07,,,,,gpt_to_size,Finviz channel up pattern; filtered by top dollar volume; GPT to set stop/target
-2026-03-16,AGX,channel_up_long,Channel Up Long,long,> signal candle high,473.5,483.0,461.62,466.52,,,,,gpt_to_size,Finviz channel up pattern; filtered by top dollar volume; GPT to set stop/target
-2026-03-16,AUGO,channel_up_long,Channel Up Long,long,> signal candle high,75.22,76.75,74.05,76.6,,,,,gpt_to_size,Finviz channel up pattern; filtered by top dollar volume; GPT to set stop/target
+2026-03-17,AMAT,channel_up_long,Channel Up Long,long,> signal candle high,346.18,352.8145,343.01,352.46,,,,,gpt_to_size,Finviz channel up pattern; filtered by top dollar volume; GPT to set stop/target
+2026-03-17,BMY,channel_up_long,Channel Up Long,long,> signal candle high,60.015,60.805,59.59,59.71,,,,,gpt_to_size,Finviz channel up pattern; filtered by top dollar volume; GPT to set stop/target
+2026-03-17,ABNB,channel_up_long,Channel Up Long,long,> signal candle high,129.55,133.54,129.55,131.95,,,,,gpt_to_size,Finviz channel up pattern; filtered by top dollar volume; GPT to set stop/target
+2026-03-17,AKAM,channel_up_long,Channel Up Long,long,> signal candle high,106.39,107.0,103.6,105.84,,,,,gpt_to_size,Finviz channel up pattern; filtered by top dollar volume; GPT to set stop/target
+2026-03-17,AEP,channel_up_long,Channel Up Long,long,> signal candle high,134.79,135.0,133.37,133.62,,,,,gpt_to_size,Finviz channel up pattern; filtered by top dollar volume; GPT to set stop/target
+2026-03-17,BTSG,channel_up_long,Channel Up Long,long,> signal candle high,40.5,42.41,39.36,42.1,,,,,gpt_to_size,Finviz channel up pattern; filtered by top dollar volume; GPT to set stop/target
+2026-03-17,CASY,channel_up_long,Channel Up Long,long,> signal candle high,673.31,694.93,673.31,691.78,,,,,gpt_to_size,Finviz channel up pattern; filtered by top dollar volume; GPT to set stop/target
+2026-03-17,CACI,channel_up_long,Channel Up Long,long,> signal candle high,609.145,623.12,607.5,612.93,,,,,gpt_to_size,Finviz channel up pattern; filtered by top dollar volume; GPT to set stop/target
+2026-03-17,ATO,channel_up_long,Channel Up Long,long,> signal candle high,188.77,188.955,186.52,186.98,,,,,gpt_to_size,Finviz channel up pattern; filtered by top dollar volume; GPT to set stop/target
+2026-03-17,AHR,channel_up_long,Channel Up Long,long,> signal candle high,52.885,53.368,52.425,53.03,,,,,gpt_to_size,Finviz channel up pattern; filtered by top dollar volume; GPT to set stop/target
