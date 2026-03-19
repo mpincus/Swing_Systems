@@ -1,2 +1,2 @@
 Date,Ticker,Strategy,Setup,Side,EntryTrigger,SignalOpen,SignalHigh,SignalLow,SignalClose,Stop,Target,R,Grade,GradeBasis,Reason
-2026-03-18,AR,rsi_continuation_long,RSI Continuation Long,long,> signal candle close,41.25,41.82,40.13,41.5,,,,,gpt_to_size,RSI>70 and rising; GPT to set stop/target
+2026-03-19,APA,rsi_continuation_long,RSI Continuation Long,long,> signal candle close,37.09,39.03,36.94,38.08,,,,,gpt_to_size,RSI>70 and rising; GPT to set stop/target
